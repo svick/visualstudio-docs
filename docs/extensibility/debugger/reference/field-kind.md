@@ -1,135 +1,117 @@
 ---
 title: "FIELD_KIND | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "FIELD_KIND"
 helpviewer_keywords: 
   - "FIELD_KIND enumeration"
 ms.assetid: fd522b9c-52e2-42fa-939d-343347d5c3b1
-caps.latest.revision: 14
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # FIELD_KIND
 Specifies the kind of field contained in an [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) object.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 enum enum_FIELD_KIND {   
-   FIELD_KIND_NONE       = 0x00000000,  
+   FIELD_KIND_NONE       = 0x00000000,  
   
-   // Type of field  
-   FIELD_KIND_TYPE       = 0x00000001,  
-   FIELD_KIND_SYMBOL     = 0x00000002,  
+   // Type of field  
+   FIELD_KIND_TYPE       = 0x00000001,  
+   FIELD_KIND_SYMBOL     = 0x00000002,  
   
-   // Storage type of the field  
-   FIELD_TYPE_PRIMITIVE  = 0x00000010,  
-   FIELD_TYPE_STRUCT     = 0x00000020,  
-   FIELD_TYPE_CLASS      = 0x00000040,  
-   FIELD_TYPE_INTERFACE  = 0x00000080,  
-   FIELD_TYPE_UNION      = 0x00000100,  
-   FIELD_TYPE_ARRAY      = 0x00000200,  
-   FIELD_TYPE_METHOD     = 0x00000400,  
-   FIELD_TYPE_BLOCK      = 0x00000800,  
-   FIELD_TYPE_POINTER    = 0x00001000,  
-   FIELD_TYPE_ENUM       = 0x00002000,  
-   FIELD_TYPE_LABEL      = 0x00004000,  
-   FIELD_TYPE_TYPEDEF    = 0x00008000,  
-   FIELD_TYPE_BITFIELD   = 0x00010000,  
-   FIELD_TYPE_NAMESPACE  = 0x00020000,  
-   FIELD_TYPE_MODULE     = 0x00040000,  
-   FIELD_TYPE_DYNAMIC    = 0x00080000,  
-   FIELD_TYPE_PROP       = 0x00100000,  
-   FIELD_TYPE_INNERCLASS = 0x00200000,  
-   FIELD_TYPE_REFERENCE  = 0x00400000,  
-   FIELD_TYPE_EXTENDED   = 0x00800000,  
+   // Storage type of the field  
+   FIELD_TYPE_PRIMITIVE  = 0x00000010,  
+   FIELD_TYPE_STRUCT     = 0x00000020,  
+   FIELD_TYPE_CLASS      = 0x00000040,  
+   FIELD_TYPE_INTERFACE  = 0x00000080,  
+   FIELD_TYPE_UNION      = 0x00000100,  
+   FIELD_TYPE_ARRAY      = 0x00000200,  
+   FIELD_TYPE_METHOD     = 0x00000400,  
+   FIELD_TYPE_BLOCK      = 0x00000800,  
+   FIELD_TYPE_POINTER    = 0x00001000,  
+   FIELD_TYPE_ENUM       = 0x00002000,  
+   FIELD_TYPE_LABEL      = 0x00004000,  
+   FIELD_TYPE_TYPEDEF    = 0x00008000,  
+   FIELD_TYPE_BITFIELD   = 0x00010000,  
+   FIELD_TYPE_NAMESPACE  = 0x00020000,  
+   FIELD_TYPE_MODULE     = 0x00040000,  
+   FIELD_TYPE_DYNAMIC    = 0x00080000,  
+   FIELD_TYPE_PROP       = 0x00100000,  
+   FIELD_TYPE_INNERCLASS = 0x00200000,  
+   FIELD_TYPE_REFERENCE  = 0x00400000,  
+   FIELD_TYPE_EXTENDED   = 0x00800000,  
   
-   // Specific information about symbols  
-   FIELD_SYM_MEMBER      = 0x01000000,  
-   FIELD_SYM_LOCAL       = 0x02000000,  
-   FIELD_SYM_PARAM       = 0x04000000,  
-   FIELD_SYM_THIS        = 0x08000000,  
-   FIELD_SYM_GLOBAL      = 0x10000000,  
-   FIELD_SYM_PROP_GETTER = 0x20000000,  
-   FIELD_SYM_PROP_SETTER = 0x40000000,  
-   FIELD_SYM_EXTENDED    = 0x80000000,  
+   // Specific information about symbols  
+   FIELD_SYM_MEMBER      = 0x01000000,  
+   FIELD_SYM_LOCAL       = 0x02000000,  
+   FIELD_SYM_PARAM       = 0x04000000,  
+   FIELD_SYM_THIS        = 0x08000000,  
+   FIELD_SYM_GLOBAL      = 0x10000000,  
+   FIELD_SYM_PROP_GETTER = 0x20000000,  
+   FIELD_SYM_PROP_SETTER = 0x40000000,  
+   FIELD_SYM_EXTENDED    = 0x80000000,  
   
-   FIELD_KIND_MASK       = 0x0000000f,  
-   FIELD_TYPE_MASK       = 0x00fffff0,  
-   FIELD_SYM_MASK        = 0xff000000,  
+   FIELD_KIND_MASK       = 0x0000000f,  
+   FIELD_TYPE_MASK       = 0x00fffff0,  
+   FIELD_SYM_MASK        = 0xff000000,  
   
-   FIELD_KIND_ALL        = 0xffffffff  
+   FIELD_KIND_ALL        = 0xffffffff  
 };  
 typedef DWORD FIELD_KIND;  
 ```  
   
-```c#  
+```csharp  
 public enum enum_FIELD_KIND {  
-   FIELD_KIND_NONE       = 0x00000000,  
+   FIELD_KIND_NONE       = 0x00000000,  
   
-   // Type of field  
-   FIELD_KIND_TYPE       = 0x00000001,  
-   FIELD_KIND_SYMBOL     = 0x00000002,  
+   // Type of field  
+   FIELD_KIND_TYPE       = 0x00000001,  
+   FIELD_KIND_SYMBOL     = 0x00000002,  
   
-   // Storage type of the field  
-   FIELD_TYPE_PRIMITIVE  = 0x00000010,  
-   FIELD_TYPE_STRUCT     = 0x00000020,  
-   FIELD_TYPE_CLASS      = 0x00000040,  
-   FIELD_TYPE_INTERFACE  = 0x00000080,  
-   FIELD_TYPE_UNION      = 0x00000100,  
-   FIELD_TYPE_ARRAY      = 0x00000200,  
-   FIELD_TYPE_METHOD     = 0x00000400,  
-   FIELD_TYPE_BLOCK      = 0x00000800,  
-   FIELD_TYPE_POINTER    = 0x00001000,  
-   FIELD_TYPE_ENUM       = 0x00002000,  
-   FIELD_TYPE_LABEL      = 0x00004000,  
-   FIELD_TYPE_TYPEDEF    = 0x00008000,  
-   FIELD_TYPE_BITFIELD   = 0x00010000,  
-   FIELD_TYPE_NAMESPACE  = 0x00020000,  
-   FIELD_TYPE_MODULE     = 0x00040000,  
-   FIELD_TYPE_DYNAMIC    = 0x00080000,  
-   FIELD_TYPE_PROP       = 0x00100000,  
-   FIELD_TYPE_INNERCLASS = 0x00200000,  
-   FIELD_TYPE_REFERENCE  = 0x00400000,  
-   FIELD_TYPE_EXTENDED   = 0x00800000,  
+   // Storage type of the field  
+   FIELD_TYPE_PRIMITIVE  = 0x00000010,  
+   FIELD_TYPE_STRUCT     = 0x00000020,  
+   FIELD_TYPE_CLASS      = 0x00000040,  
+   FIELD_TYPE_INTERFACE  = 0x00000080,  
+   FIELD_TYPE_UNION      = 0x00000100,  
+   FIELD_TYPE_ARRAY      = 0x00000200,  
+   FIELD_TYPE_METHOD     = 0x00000400,  
+   FIELD_TYPE_BLOCK      = 0x00000800,  
+   FIELD_TYPE_POINTER    = 0x00001000,  
+   FIELD_TYPE_ENUM       = 0x00002000,  
+   FIELD_TYPE_LABEL      = 0x00004000,  
+   FIELD_TYPE_TYPEDEF    = 0x00008000,  
+   FIELD_TYPE_BITFIELD   = 0x00010000,  
+   FIELD_TYPE_NAMESPACE  = 0x00020000,  
+   FIELD_TYPE_MODULE     = 0x00040000,  
+   FIELD_TYPE_DYNAMIC    = 0x00080000,  
+   FIELD_TYPE_PROP       = 0x00100000,  
+   FIELD_TYPE_INNERCLASS = 0x00200000,  
+   FIELD_TYPE_REFERENCE  = 0x00400000,  
+   FIELD_TYPE_EXTENDED   = 0x00800000,  
   
-   // Specific information about symbols  
-   FIELD_SYM_MEMBER      = 0x01000000,  
-   FIELD_SYM_LOCAL       = 0x02000000,  
-   FIELD_SYM_PARAM       = 0x04000000,  
-   FIELD_SYM_THIS        = 0x08000000,  
-   FIELD_SYM_GLOBAL      = 0x10000000,  
-   FIELD_SYM_PROP_GETTER = 0x20000000,  
-   FIELD_SYM_PROP_SETTER = 0x40000000,  
-   FIELD_SYM_EXTENDED    = 0x80000000,  
+   // Specific information about symbols  
+   FIELD_SYM_MEMBER      = 0x01000000,  
+   FIELD_SYM_LOCAL       = 0x02000000,  
+   FIELD_SYM_PARAM       = 0x04000000,  
+   FIELD_SYM_THIS        = 0x08000000,  
+   FIELD_SYM_GLOBAL      = 0x10000000,  
+   FIELD_SYM_PROP_GETTER = 0x20000000,  
+   FIELD_SYM_PROP_SETTER = 0x40000000,  
+   FIELD_SYM_EXTENDED    = 0x80000000,  
   
-   FIELD_KIND_MASK       = 0x0000000f,  
-   FIELD_TYPE_MASK       = 0x00fffff0,  
-   FIELD_SYM_MASK        = 0xff000000,  
+   FIELD_KIND_MASK       = 0x0000000f,  
+   FIELD_TYPE_MASK       = 0x00fffff0,  
+   FIELD_SYM_MASK        = 0xff000000,  
   
-   FIELD_KIND_ALL        = 0xffffffff  
+   FIELD_KIND_ALL        = 0xffffffff  
 };  
 ```  
   
@@ -236,7 +218,7 @@ public enum enum_FIELD_KIND {
 ## Remarks  
  Returned from a call to the [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) method.  
   
- Depending on the kind of field, [QueryInterface](/visual-cpp/atl/queryinterface) can be called on the [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interface for a more specific form of interface. For example, if [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) returns `FIELD_TYPE_METHOD`, you can then call `QueryInterface` on I`DebugField` to obtain the [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) interface.  
+ Depending on the kind of field, [QueryInterface](/cpp/atl/queryinterface) can be called on the [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interface for a more specific form of interface. For example, if [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) returns `FIELD_TYPE_METHOD`, you can then call `QueryInterface` on I`DebugField` to obtain the [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) interface.  
   
 ## Requirements  
  Header: sh.h  

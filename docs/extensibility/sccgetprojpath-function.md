@@ -1,37 +1,19 @@
 ---
 title: "SccGetProjPath Function | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "SccGetProjPath"
 helpviewer_keywords: 
   - "SccGetProjPath function"
 ms.assetid: 1079847e-d45f-4cb8-9d92-1e01ce5d08f6
-caps.latest.revision: 15
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# SccGetProjPath Function
+# SccGetProjPath function
 This function prompts the user for a project path, which is a string that is meaningful only to the source control plug-in. It is called when the user is:  
   
 -   Creating a new project  
@@ -42,20 +24,20 @@ This function prompts the user for a project path, which is a string that is mea
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 SCCRTN SccGetProjPath (  
-   LPVOID pvContext,  
-   HWND   hWnd,  
-   LPSTR  lpUser,  
-   LPSTR  lpProjName,  
-   LPSTR  lpLocalPath,  
-   LPSTR  lpAuxProjPath,  
-   BOOL   bAllowChangePath,  
-   LPBOOL pbNew  
+   LPVOID pvContext,  
+   HWND   hWnd,  
+   LPSTR  lpUser,  
+   LPSTR  lpProjName,  
+   LPSTR  lpLocalPath,  
+   LPSTR  lpAuxProjPath,  
+   BOOL   bAllowChangePath,  
+   LPBOOL pbNew  
 );  
 ```  
   
-#### Parameters  
+### Parameters  
  pvContext  
  [in] The source control plug-in context structure.  
   
@@ -90,7 +72,7 @@ SCCRTN SccGetProjPath (
 |TRUE|A new project was created.|  
 |FALSE|An existing project was selected.|  
   
-## Return Value  
+## Return value  
  The source control plug-in implementation of this function is expected to return one of the following values:  
   
 |Value|Description|  
@@ -117,6 +99,6 @@ SCCRTN SccGetProjPath (
   
  For example, if a user in the **New Project** wizard in Visual Studio adds his or her project to source control, Visual Studio calls this function, and the plug-in determines if it is okay to create a new project in the source control system to contain the Visual Studio project. If the user clicks **Cancel** before completing the wizard, the project is never created. If the user clicks **OK**, Visual Studio calls `SccOpenProject`, passing in `SCC_OPT_CREATEIFNEW`, and the source controlled project is created at that time.  
   
-## See Also  
- [Source Control Plug-in API Functions](../extensibility/source-control-plug-in-api-functions.md)   
+## See also  
+ [Source control plug-in API functions](../extensibility/source-control-plug-in-api-functions.md)   
  [SccOpenProject](../extensibility/sccopenproject-function.md)

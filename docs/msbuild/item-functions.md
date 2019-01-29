@@ -1,46 +1,27 @@
 ---
 title: "Item Functions | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "msbuild, Item functions"
 ms.assetid: 5e6df3cc-2db8-4cbd-8fdd-3ffd03ac0876
-caps.latest.revision: 28
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# Item Functions
+# Item functions
 Starting with MSBuild 4.0, code in tasks and targets can call item functions to get information about the items in the project. These functions simplify getting Distinct() items and are faster than looping through the items.  
   
-## String Item Functions  
+## String item functions  
  You can use string methods and properties in the .NET Framework to operate on any item value. For <xref:System.String> methods, specify the method name. For <xref:System.String> properties, specify the property name after "get_".  
   
  For items that have multiple strings, the string method or property runs on each string.  
   
  The following example shows how to use these string item functions.  
   
-```  
+```xml  
 <ItemGroup>  
     <theItem Include="andromeda;tadpole;cartwheel" />  
 </ItemGroup>  
@@ -61,7 +42,7 @@ Starting with MSBuild 4.0, code in tasks and targets can call item functions to 
   -->  
 ```  
   
-## Intrinsic Item Functions  
+## Intrinsic item functions  
  The table below lists the intrinsic functions available for items.  
   
 |Function|Example|Description|  
@@ -73,13 +54,13 @@ Starting with MSBuild 4.0, code in tasks and targets can call item functions to 
 |`Reverse`|`@(MyItem->Reverse())`|Returns the items in reverse order.|  
 |`AnyHaveMetadataValue`|`@(MyItem->AnyHaveMetadataValue("MetadataName", "MetadataValue"))`|Returns a `boolean` to indicate whether any item has the given metadata name and value. The comparison is case insensitive.|  
 |`ClearMetadata`|`@(MyItem->ClearMetadata())`|Returns items with their metadata cleared. Only the `itemspec` is retained.|  
-|`HasMetadata`|`@(MyItem->HasMetadataValue("MetadataName")`|Returns items that have the given metadata name. The comparison is case insensitive.|  
+|`HasMetadata`|`@(MyItem->HasMetadata("MetadataName"))`|Returns items that have the given metadata name. The comparison is case insensitive.|  
 |`Metadata`|`@(MyItem->Metadata("MetadataName"))`|Returns the values of the metadata that have the metadata name.|  
-|`WithMetadataValue`|`@(MyItem->WithMetadataValue("MetadataName", "MetadataValue")`|Returns items that have the given metadata name and value. The comparison is case insensitive.|  
+|`WithMetadataValue`|`@(MyItem->WithMetadataValue("MetadataName", "MetadataValue"))`|Returns items that have the given metadata name and value. The comparison is case insensitive.|  
   
  The following example shows how to use intrinsic item functions.  
   
-```  
+```xml  
 <ItemGroup>  
     <TheItem Include="first">  
         <Plant>geranium</Plant>  
@@ -112,5 +93,5 @@ Starting with MSBuild 4.0, code in tasks and targets can call item functions to 
   -->  
 ```  
   
-## See Also  
+## See also  
  [Items](../msbuild/msbuild-items.md)

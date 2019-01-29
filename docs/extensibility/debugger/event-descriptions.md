@@ -1,38 +1,20 @@
 ---
 title: "Event Descriptions | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "debugging [Debugging SDK], events"
 ms.assetid: 09f61652-7e16-4bb0-8055-f61a84bf384e
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Event Descriptions
+# Event descriptions
 Each type of event has a specific purpose.  
   
-## Events and the Reasons for Their Use  
+## Events and the reasons for their use  
   
 |Event|Description|  
 |-----------|-----------------|  
@@ -51,10 +33,10 @@ Each type of event has a specific purpose.
 |Message events|Sent when messages are sent to users.|  
 |Module load events|Sent when a new module is loaded or unloaded.|  
 |Output string events|Sent when the program writes debug output.|  
-|Create and destroy events|Sent to announce the creation or destruction of processes, programs, properties, sessions and threads so the Visual Studio IDE can keep track of the state of the programs being debugged.|  
+|Create and destroy events|Sent to announce the creation or destruction of processes, programs, properties, sessions, and threads so the Visual Studio IDE can keep track of the state of the programs being debugged.|  
 |Step complete events|Sent when a step is complete.|  
 |Thread name change events|Sent when the user changes the name of a thread.|  
 |Program name change events|Sent when the user changes the name of a program.|  
   
-## See Also  
- [Sending Events](../../extensibility/debugger/sending-events.md)
+## See also  
+ [Sending events](../../extensibility/debugger/sending-events.md)

@@ -1,36 +1,18 @@
 ---
 title: "Breakpoint-Related Methods | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "debugging [Debugging SDK], breakpoint methods"
   - "breakpoints, methods"
 ms.assetid: a6f77bf0-bf81-443f-8683-5f12075bbe10
-caps.latest.revision: 8
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Breakpoint-Related Methods
+# Breakpoint-related methods
 A debug engine (DE) must support the setting of breakpoints. Visual Studio debugging supports the following types of breakpoints:  
   
 -   Bound  
@@ -94,5 +76,5 @@ A debug engine (DE) must support the setting of breakpoints. Visual Studio debug
   
  Viewing the source code at a breakpoint requires you to implement the methods of [IDebugStackFrame2::GetDocumentContext](../../extensibility/debugger/reference/idebugstackframe2-getdocumentcontext.md) and/or the methods of [IDebugStackFrame2::GetCodeContext](../../extensibility/debugger/reference/idebugstackframe2-getcodecontext.md).  
   
-## See Also  
- [Execution Control and State Evaluation](../../extensibility/debugger/execution-control-and-state-evaluation.md)
+## See also  
+ [Execution control and state evaluation](../../extensibility/debugger/execution-control-and-state-evaluation.md)

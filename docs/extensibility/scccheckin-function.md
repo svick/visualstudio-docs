@@ -1,54 +1,36 @@
 ---
 title: "SccCheckin Function | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "SccCheckin"
 helpviewer_keywords: 
   - "SccCheckin function"
 ms.assetid: e3f26ac2-6163-42e1-a764-22cfea5a3bc6
-caps.latest.revision: 16
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# SccCheckin Function
+# SccCheckin function
 This function checks in previously checked-out files to the source control system, storing the changes and creating a new version. This function is called with a count and an array of names of the files to be checked in.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 SCCRTN SccCheckin (  
-   LPVOID    pvContext,  
-   HWND      hWnd,  
-   LONG      nFiles,  
-   LPSTR*    lpFileNames,  
-   LPCSTR    lpComment,  
-   LONG      fOptions,  
-   LPCMDOPTS pvOptions  
+   LPVOID    pvContext,  
+   HWND      hWnd,  
+   LONG      nFiles,  
+   LPSTR*    lpFileNames,  
+   LPCSTR    lpComment,  
+   LONG      fOptions,  
+   LPCMDOPTS pvOptions  
 );  
 ```  
   
-#### Parameters  
+### Parameters  
  pvContext  
  [in] The source control plug-in context structure.  
   
@@ -62,7 +44,7 @@ SCCRTN SccCheckin (
  [in] Array of fully qualified local path names of files to be checked in.  
   
  lpComment  
- [in] Comment to be applied to each of the selected files being checked in. This is `NULL` if the source control plug-in should prompt for a comment.  
+ [in] Comment to be applied to each of the selected files being checked in. This parameter is `NULL` if the source control plug-in should prompt for a comment.  
   
  fOptions  
  [in] Command flags, either 0 or `SCC_KEEP_CHECKEDOUT`.  
@@ -70,12 +52,12 @@ SCCRTN SccCheckin (
  pvOptions  
  [in] SCC plug-in-specific options.  
   
-## Return Value  
+## Return value  
  The source control plug-in implementation of this function is expected to return one of the following values:  
   
 |Value|Description|  
 |-----------|-----------------|  
-|SCC_OK|Files was successfully checked in.|  
+|SCC_OK|File was successfully checked in.|  
 |SCC_E_FILENOTCONTROLLED|The selected file is not under source code control.|  
 |SCC_E_ACCESSFAILURE|There was a problem accessing the source control system, probably due to network or contention issues. A retry is recommended.|  
 |SCC_E_NONSPECIFICERROR|Nonspecific failure. File was not checked in.|  
@@ -84,7 +66,7 @@ SCCRTN SccCheckin (
 |SCC_E_VERIFYMERGE|File has been auto-merged but has not been checked in pending user verification.|  
 |SCC_E_FIXMERGE|File has been auto-merged but has not been checked in due to a merge conflict that must be manually resolved.|  
 |SCC_E_NOTAUTHORIZED|The user is not allowed to perform this operation.|  
-|SCC_I_OPERATIONCANCELED|Operation was cancelled before completion.|  
+|SCC_I_OPERATIONCANCELED|Operation was canceled before completion.|  
 |SCC_I_RELOADFILE|A file or project needs to be reloaded.|  
 |SCC_E_FILENOTEXIST|Local file was not found.|  
   
@@ -93,5 +75,5 @@ SCCRTN SccCheckin (
   
  The `fOptions` argument can be given a value of the `SCC_KEEP_CHECKEDOUT` flag to indicate the user's intent to check the file in and check it out again.  
   
-## See Also  
- [Source Control Plug-in API Functions](../extensibility/source-control-plug-in-api-functions.md)
+## See also  
+ [Source control plug-in API functions](../extensibility/source-control-plug-in-api-functions.md)

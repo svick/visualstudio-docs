@@ -1,13 +1,7 @@
 ---
 title: "&lt;Commands&gt; Element (Bootstrapper) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "FSharp"
   - "VB"
@@ -16,31 +10,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<Commands> element [bootstrapper]"
 ms.assetid: e61d5787-fe1f-4ebf-b0cf-0d7909be7ffb
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;Commands&gt; Element (Bootstrapper)
+# &lt;Commands&gt; element (bootstrapper)
 The `Commands` element implements tests described by the elements underneath the `InstallChecks` element, and declares which package the [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] bootstrapper should install if the test fails.  
   
 ## Syntax  
   
-```  
+```xml  
 <Commands  
     Reboot  
 >  
@@ -78,7 +59,7 @@ The `Commands` element implements tests described by the elements underneath the
 </Commands>  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `Commands` element is required. The element has the following attribute.  
   
 |Attribute|Description|  
@@ -141,7 +122,7 @@ The `Commands` element implements tests described by the elements underneath the
 ## Example  
  The following code example defines commands for installing the .NET Framework 2.0.  
   
-```  
+```xml  
 <Commands Reboot="Immediate">  
     <Command PackageFile="instmsia.exe"  
              Arguments= ' /q /c:"msiinst /delayrebootq"'  
@@ -216,6 +197,6 @@ The `Commands` element implements tests described by the elements underneath the
 </Commands>  
 ```  
   
-## See Also  
- [Product and Package Schema Reference](../deployment/product-and-package-schema-reference.md)   
- [\<InstallChecks> Element](../deployment/installchecks-element-bootstrapper.md)
+## See also  
+ [Product and package schema reference](../deployment/product-and-package-schema-reference.md)   
+ [\<InstallChecks> element](../deployment/installchecks-element-bootstrapper.md)

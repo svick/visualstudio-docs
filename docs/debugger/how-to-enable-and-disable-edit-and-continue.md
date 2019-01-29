@@ -1,17 +1,12 @@
 ---
-title: "How to: Enable and Disable Edit and Continue | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "How to: Enable and disable Edit and Continue | Microsoft Docs"
+ms.custom: "seodec18"
+ms.date: "10/04/2018"
+ms.topic: "conceptual"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
 helpviewer_keywords: 
   - "/INCREMENTAL linker option"
@@ -25,47 +20,35 @@ helpviewer_keywords:
   - "Step command"
   - "Go command"
 ms.assetid: fd961a1c-76fa-420d-ad8f-c1a6c003b0db
-caps.latest.revision: 26
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "dotnet"
+  - "cplusplus"
 ---
-# How to: Enable and Disable Edit and Continue
-You can disable or enable Edit and Continue in the **Options** dialog box at design time. You cannot change this setting while you are debugging.  
+# How to: Enable and disable Edit and Continue (C#, VB, C++)
+
+You can disable or enable **Edit and Continue** in the Visual Studio **Options** dialog box at design time. **Edit and Continue** works only in debug builds. For more information, see [Edit and Continue](../debugger/edit-and-continue.md). 
   
- Edit and Continue works only in debug builds. For native C++, Edit and Continue requires using the /INCREMENTAL option.  
+For native C++, **Edit and Continue** requires using the `/INCREMENTAL` option. For more information about feature requirements in C++, see this [blog post](https://blogs.msdn.microsoft.com/vcblog/2016/07/01/c-edit-and-continue-in-visual-studio-2015-update-3/) and [Edit and Continue (Visual C++)](../debugger/edit-and-continue-visual-cpp.md).
   
-## Procedures  
+**To enable or disable Edit and Continue:**  
   
-#### To enable/disable Edit and Continue  
-  
-1.  Open debugging options page (**Tools / Options / Debugging**).  
-  
-2.  Scroll down to **Edit and Continue** category.  
-  
-3.  To enable, select the **Enable Edit and Continue** check box. To disable, clear the check box.  
+1.  If you're in a debugging session, stop debugging (**Debug** > **Stop Debugging** or **Shift**+**F5**).
+
+1.  In **Tools** > **Options** > (or **Debug** > **Options**) > **Debugging** > **General**, select **Edit and Continue** in the right pane.  
   
     > [!NOTE]
-    >  If IntelliTrace is enabled and you collect both IntelliTrace events and call information, Edit and Continue is disabled. For more information, see [Configure IntelliTrace](http://msdn.microsoft.com/en-us/7657ecab-e07e-4b1b-872d-f05d966be37e).  
+    >  If IntelliTrace is enabled and you collect both IntelliTrace events and call information, Edit and Continue is disabled. For more information, see [IntelliTrace](../debugger/intellitrace.md).
+    
+1.  For C++ code, make sure **Enable Native Edit and Continue** is selected, and set the additional options:
+    - **Apply changes on continue (Native only)**  
+      
+      If selected, Visual Studio automatically compiles and applies code changes when you continue debugging from a break state. Otherwise, you can choose to apply changes using **Debug** > **Apply Code Changes**.  
+      
+    - **Warn about stale code (Native only)**  
+      
+      If selected, gives warnings about stale code. 
   
-4.  Click **OK**.  
-  
- For more information about these options, see [General, Debugging, Options Dialog Box](../debugger/general-debugging-options-dialog-box.md).  
-  
-## See Also  
- [Edit and Continue](../debugger/edit-and-continue.md)
+1.  Click **OK**.    

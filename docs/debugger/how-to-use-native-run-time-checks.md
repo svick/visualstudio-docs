@@ -1,24 +1,15 @@
 ---
 title: "How to: Use Native Run-Time Checks | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "c.runtime.errorchecks"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
   - "JScript"
-  - "VB"
-  - "CSharp"
-  - "C++"
 helpviewer_keywords: 
   - "/RTC compiler option [C++], /O compiler option"
   - "run-time checks, native"
@@ -41,50 +32,36 @@ helpviewer_keywords:
   - "stack pointers"
   - "arrays [Visual Studio], debugging"
 ms.assetid: dc7b2f1e-5ff6-42e0-89b3-dc9dead83ee1
-caps.latest.revision: 19
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "cplusplus"
 ---
 # How to: Use Native Run-Time Checks
-In Visual C++, you can use native [runtime_checks](/visual-cpp/preprocessor/runtime-checks) to catch common run-time errors such as:  
+In Visual C++, you can use native [runtime_checks](/cpp/preprocessor/runtime-checks) to catch common run-time errors such as:  
   
--   Stack pointer corruption.  
+- Stack pointer corruption.  
   
--   Overruns of local arrays.  
+- Overruns of local arrays.  
   
--   Stack corruption.  
+- Stack corruption.  
   
--   Dependencies on uninitialized local variables.  
+- Dependencies on uninitialized local variables.  
   
--   Loss of data on an assignment to a shorter variable.  
+- Loss of data on an assignment to a shorter variable.  
   
- If you use **/RTC** with an optimized (**/O**) build, a compiler error results. If you use a `runtime_checks` pragma in an optimized build, the pragma has no effect.  
+  If you use **/RTC** with an optimized (**/O**) build, a compiler error results. If you use a `runtime_checks` pragma in an optimized build, the pragma has no effect.  
   
- When you debug a program that has run-time checks enabled, the default action is for the program to stop and break to the debugger when a run-time error occurs. You can change this default behavior for any run-time check. For more information, see [Managing Exceptions with the Debugger](../debugger/managing-exceptions-with-the-debugger.md).  
+  When you debug a program that has run-time checks enabled, the default action is for the program to stop and break to the debugger when a run-time error occurs. You can change this default behavior for any run-time check. For more information, see [Managing Exceptions with the Debugger](../debugger/managing-exceptions-with-the-debugger.md).  
   
- The following procedures describe how to enable native run-time checks in a debug build, and how to modify native run-time check behavior.  
+  The following procedures describe how to enable native run-time checks in a debug build, and how to modify native run-time check behavior.  
   
- Other topics in this section provide information about:  
+  Other topics in this section provide information about:  
   
--   [Customizing Run-Time Checks with the C Run-Time Library](../debugger/native-run-time-checks-customization.md)  
+- [Customizing Run-Time Checks with the C Run-Time Library](../debugger/native-run-time-checks-customization.md)  
   
--   [Using Run-Time Checks without the C Run-Time Library](../debugger/using-run-time-checks-without-the-c-run-time-library.md)  
+- [Using Run-Time Checks without the C Run-Time Library](../debugger/using-run-time-checks-without-the-c-run-time-library.md)  
   
 ### To enable native run-time checks in a debug build  
   
@@ -95,6 +72,7 @@ In Visual C++, you can use native [runtime_checks](/visual-cpp/preprocessor/runt
 -   Use the `runtime_checks` pragma.  
   
 ## See Also  
- [Debugging in Visual Studio](../debugger/debugging-in-visual-studio.md)   
- [runtime_checks](/visual-cpp/preprocessor/runtime-checks)   
- [Run-Time Error Checking](/visual-cpp/c-runtime-library/run-time-error-checking)
+ [Debugging in Visual Studio](../debugger/index.md)  
+ [First look at the debugger](../debugger/debugger-feature-tour.md)   
+ [runtime_checks](/cpp/preprocessor/runtime-checks)   
+ [Run-Time Error Checking](/cpp/c-runtime-library/run-time-error-checking)

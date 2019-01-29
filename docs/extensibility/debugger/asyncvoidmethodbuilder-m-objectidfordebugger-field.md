@@ -1,35 +1,17 @@
 ---
 title: "AsyncVoidMethodBuilder.m_objectIdForDebugger Field | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "m_objectIdForDebugger field, AsyncVoidMethodBuilder structure [.NET Framework debug engines]"
 ms.assetid: 81331a7b-6bec-46e4-a53e-515d0fad2400
-caps.latest.revision: 3
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# AsyncVoidMethodBuilder.m_objectIdForDebugger Field
+# AsyncVoidMethodBuilder.m_objectIdForDebugger field
 Represents the lazily initialized object used by the debugger to uniquely identify this builder.  
   
  **Namespace:** <xref:System.Runtime.CompilerServices?displayProperty=fullName>  
@@ -40,10 +22,10 @@ Represents the lazily initialized object used by the debugger to uniquely identi
   
 ## Syntax  
   
-```  
+```csharp  
 .field private object m_objectIdForDebugger  
 ```  
   
-## See Also  
+## See also  
  <xref:System.Runtime.CompilerServices.AsyncVoidMethodBuilder>   
- [Parallel Extension Internals for the .NET Framework](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)
+ [Parallel extension internals for the .NET Framework](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)

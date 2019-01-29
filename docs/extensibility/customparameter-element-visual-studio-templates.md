@@ -1,37 +1,20 @@
 ---
 title: "CustomParameter Element (Visual Studio Templates) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords: 
   - "http://schemas.microsoft.com/developer/vstemplate/2005#CustomParameter"
 helpviewer_keywords: 
   - "CustomParameters element [Visual Studio project templates]"
 ms.assetid: 743c4489-74ac-403a-bbaa-eed7d785a3ac
-caps.latest.revision: 6
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# CustomParameter Element (Visual Studio Templates)
+# CustomParameter element (Visual Studio templates)
 Contains a custom parameter name and value to use when a project or item is created from the template.  
   
 ## Syntax  
@@ -40,7 +23,7 @@ Contains a custom parameter name and value to use when a project or item is crea
 <CustomParameter Name="name" Value="value">  
 ```  
   
-## Attributes and Elements  
+## Attributes and elements  
  The following sections describe attributes, child elements, and parent elements.  
   
 ### Attributes  
@@ -50,10 +33,10 @@ Contains a custom parameter name and value to use when a project or item is crea
 |`Name`|Required. The name of the parameter. The format for parameters is $*name*$.|  
 |`Value`|Required. The replacement value for the parameter.|  
   
-### Child Elements  
+### Child elements  
  None.  
   
-### Parent Elements  
+### Parent elements  
   
 |Element|Description|  
 |-------------|-----------------|  
@@ -72,7 +55,7 @@ Contains a custom parameter name and value to use when a project or item is crea
 </CustomParameters>  
 ```  
   
-## See Also  
- [CustomParameters Element (Visual Studio Templates)](../extensibility/customparameters-element-visual-studio-templates.md)   
- [Template Parameters](../ide/template-parameters.md)   
- [Visual Studio Template Schema Reference](../extensibility/visual-studio-template-schema-reference.md)
+## See also  
+ [CustomParameters element (Visual Studio templates)](../extensibility/customparameters-element-visual-studio-templates.md)   
+ [Template parameters](../ide/template-parameters.md)   
+ [Visual Studio template schema reference](../extensibility/visual-studio-template-schema-reference.md)

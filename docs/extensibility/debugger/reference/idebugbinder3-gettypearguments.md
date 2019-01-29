@@ -1,35 +1,17 @@
 ---
 title: "IDebugBinder3::GetTypeArguments | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugBinder3::GetTypeArguments"
 helpviewer_keywords: 
   - "IDebugBinder3::GetTypeArguments method"
 ms.assetid: fa0c37a7-327f-463e-9a9d-bb3f534584cb
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugBinder3::GetTypeArguments
 This method retrieves a list of argument types associated with this object.  
@@ -38,19 +20,19 @@ This method retrieves a list of argument types associated with this object.
   
 ```cpp  
 HRESULT GetTypeArguments(  
-   UINT          skip,  
-   UINT          count,  
-   IDebugField** ppFields,  
-   UINT*         pFetched  
+   UINT          skip,  
+   UINT          count,  
+   IDebugField** ppFields,  
+   UINT*         pFetched  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetTypeArguments(  
-   uint          skip,  
-   uint          count,  
-   IDebugField[] ppFields,  
-   out uint      pFetched  
+   uint          skip,  
+   uint          count,  
+   IDebugField[] ppFields,  
+   out uint      pFetched  
 );  
 ```  
   
@@ -65,7 +47,7 @@ int GetTypeArguments(
  [in, out] An array of fields that will be filled in on return of this method.  
   
  `pFetched`  
- [out] (optional) The number of argument type fields actually returned.  
+ [out] \(optional) The number of argument type fields actually returned.  
   
 ## Return Value  
  If successful, returns `S_OK`; otherwise, returns an error code.  

@@ -1,61 +1,43 @@
 ---
 title: "IDebugComPlusSymbolProvider::GetSymAttribute | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "IDebugComPlusSymbolProvider::GetSymAttribute"
   - "GetSymAttribute"
 ms.assetid: 6cbaac92-a60b-4165-a7f5-c34407770f3c
-caps.latest.revision: 9
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugComPlusSymbolProvider::GetSymAttribute
 Retrieves the debug symbols with the given parent attribute for the specified module.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 HRESULT GetSymAttribute (  
-   ULONG32  ulAppDomainID,  
-   GUID     guidModule,  
-   _mdToken tokParent,  
-   LPOLESTR pstrName,  
-   ULONG32  cBuffer,  
-   ULONG32* pcBuffer,  
-   BYTE*    buffer  
+   ULONG32  ulAppDomainID,  
+   GUID     guidModule,  
+   _mdToken tokParent,  
+   LPOLESTR pstrName,  
+   ULONG32  cBuffer,  
+   ULONG32* pcBuffer,  
+   BYTE*    buffer  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetSymAttribute (  
-   uint      ulAppDomainID,  
-   Guid      guidModule,  
-   int       tokParent,  
-   string    pstrName,  
-   uint      cBuffer,  
-   out uint  pcBuffer,  
-   out int[] buffer  
+   uint      ulAppDomainID,  
+   Guid      guidModule,  
+   int       tokParent,  
+   string    pstrName,  
+   uint      cBuffer,  
+   out uint  pcBuffer,  
+   out int[] buffer  
 );  
 ```  
   
@@ -87,7 +69,7 @@ int GetSymAttribute (
 ## Example  
  The following example shows how to implement this method for a **CDebugSymbolProvider** object that exposes the [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) interface.  
   
-```cpp#  
+```cpp  
 HRESULT CDebugSymbolProvider::GetSymAttribute(  
     ULONG32 ulAppDomainID,  
     GUID guidModule,  

@@ -1,36 +1,17 @@
 ---
 title: "Item Definitions | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "msbuild, item definitions"
 ms.assetid: 8e3dc223-f9e5-4974-aa0e-5dc7967419cb
-caps.latest.revision: 21
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# Item Definitions
+# Item definitions
 [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] 2.0 enables the static declaration of items in project files by using the [ItemGroup](../msbuild/itemgroup-element-msbuild.md) element. However, metadata may be added only at the item level, even if the metadata is identical for all items. Starting in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] 3.5, a project element named [ItemDefinitionGroup](../msbuild/itemdefinitiongroup-element-msbuild.md) overcomes this limitation. *ItemDefinitionGroup* lets you define a set of item definitions, which add default metadata values to all items in the named item type.  
   
  The *ItemDefinitionGroup* element appears immediately after the [Project](../msbuild/project-element-msbuild.md) element of the project file. Item definitions provide the following functionality:  
@@ -45,7 +26,7 @@ translation.priority.ht:
   
 -   Conditions can be used to control the inclusion of metadata.  
   
-## Item Metadata Default Values  
+## Item metadata default values  
  Item metadata that is defined in an ItemDefinitionGroup is just a declaration of default metadata. The metadata does not apply unless you define an Item that uses an ItemGroup to contain the metadata values.  
   
 > [!NOTE]
@@ -53,7 +34,7 @@ translation.priority.ht:
   
  Metadata explicitly defined in an ItemGroup takes precedence over metadata in ItemDefinitionGroup. Metadata in ItemDefinitionGroup is applied only for undefined metadata in an ItemGroup. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -73,7 +54,7 @@ translation.priority.ht:
 > [!NOTE]
 >  XML Element and Parameter names are case\-sensitive. Item metadata and Item\/Property names are not case\-sensitive. Therefore, ItemDefinitionGroup items that have names that differ only by case should be treated as the same ItemGroup.  
   
-## Value Sources  
+## Value sources  
  The values for metadata that is defined in an ItemDefinitionGroup can come from many different sources, as follows:  
   
 -   PropertyGroup Property  
@@ -84,27 +65,27 @@ translation.priority.ht:
   
 -   Environment variable  
   
--   Global property \(from the MSBuild.exe command line\)  
+-   Global property (from the *MSBuild.exe* command line)  
   
 -   Reserved property  
   
--   Well\-known metadata on an Item from an ItemDefinitionGroup  
+-   Well-known metadata on an Item from an ItemDefinitionGroup  
   
 -   CDATA section \<\!\[CDATA\[anything here is not parsed\]\]\>  
   
 > [!NOTE]
 >  Item metadata from an ItemGroup is not useful in an ItemDefinitionGroup metadata declaration because ItemDefinitionGroup elements are processed before ItemGroup elements.  
   
-## Additive and Multiple Definitions  
+## Additive and multiple definitions  
  When you add definitions or use multiple ItemDefinitionGroups, remember the following:  
   
 -   Additional metadata specification is added to the type.  
   
 -   The last specification takes precedence.  
   
- When you have multiple ItemDefinitionGroups, each subsequent specification adds its metadata to the previous definition. For example:  
+When you have multiple ItemDefinitionGroups, each subsequent specification adds its metadata to the previous definition. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -118,11 +99,11 @@ translation.priority.ht:
 </ItemDefinitionGroup>  
 ```  
   
- In this example, the metadata "o" is added to "m" and "n".  
+In this example, the metadata "o" is added to "m" and "n".  
   
- In addition, previously defined metadata values can also be added. For example:  
+In addition, previously defined metadata values can also be added. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -135,14 +116,14 @@ translation.priority.ht:
 </ItemDefinitionGroup>    
 ```  
   
- In this example, the previously defined value for metadata "m" \(m1\) is added to the new value \(m2\), so that the final value is "m1;m2".  
+In this example, the previously defined value for metadata "m" \(m1\) is added to the new value \(m2\), so that the final value is "m1;m2".  
   
 > [!NOTE]
 >  This can also occur in the same ItemDefinitionGroup.  
   
- When you override the previously defined metadata, the last specification takes precedence. In the following example, the final value of metadata "m" goes from "m1" to "m1a".  
+When you override the previously defined metadata, the last specification takes precedence. In the following example, the final value of metadata "m" goes from "m1" to "m1a".  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -155,10 +136,10 @@ translation.priority.ht:
 </ItemDefinitionGroup>    
 ```  
   
-## Using Conditions in an ItemDefinitionGroup  
+## Use conditions in an ItemDefinitionGroup  
  You can use conditions in an ItemDefinitionGroup to control the inclusion of metadata. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">  
     <i>  
         <m>m1</m>  
@@ -166,14 +147,14 @@ translation.priority.ht:
 </ItemDefinitionGroup>  
 ```  
   
- In this case, the default metadata "m1" on item "i" is included only if the value of the "Configuration" property is "Debug".  
+In this case, the default metadata "m1" on item "i" is included only if the value of the "Configuration" property is "Debug".  
   
 > [!NOTE]
 >  Only local metadata references are supported in conditions.  
   
- References to metadata defined in an earlier ItemDefinitionGroup are local to the item, not the definition group. That is, the scope of the references are item\-specific. For example:  
+References to metadata defined in an earlier ItemDefinitionGroup are local to the item, not the definition group. That is, the scope of the references are item-specific. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <test>  
         <yes>1</yes>  
@@ -188,7 +169,7 @@ translation.priority.ht:
   
 In the above example, item "i" references item "test" in its Condition. This Condition will never be true because MSBuild interprets a reference to another item's metadata in an ItemDefinitionGroup as the empty string. Therefore, "m" would be set to "m0."
  
-``` 
+```xml 
   <ItemDefinitionGroup>
     <i>
       <m>m0</m>
@@ -201,10 +182,10 @@ In the above example, item "i" references item "test" in its Condition. This Con
 
 In the above example, "m" would be set to the value "m1" as the Condition references item "i"'s metadata value for item "yes." 
   
-## Overriding and Deleting Metadata  
+## Override and delete metadata  
  Metadata defined in an ItemDefinitionGroup element can be overridden in a later ItemDefinitionGroup element by setting the metadata value to blank. You can also effectively delete a metadata item by setting it to an empty value. For example:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -217,12 +198,12 @@ In the above example, "m" would be set to the value "m1" as the Condition refere
 </ItemDefinitionGroup>  
 ```  
   
- The item "i" still contains metadata "m", but its value is now empty.  
+The item "i" still contains metadata "m", but its value is now empty.  
   
-## Scope of Metadata  
- ItemDefinitionGroups have global scope on defined and global properties wherever they are defined. Default metadata definitions in an ItemDefinitionGroup can be self\-referential. For example, the following uses a simple metadata reference:  
+## Scope of metadata  
+ ItemDefinitionGroups have global scope on defined and global properties wherever they are defined. Default metadata definitions in an ItemDefinitionGroup can be self-referential. For example, the following uses a simple metadata reference:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -231,9 +212,9 @@ In the above example, "m" would be set to the value "m1" as the Condition refere
 </ItemDefinitionGroup>  
 ```  
   
- A qualified metadata reference can also be used:  
+A qualified metadata reference can also be used:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
       <m>m1</m>  
@@ -242,9 +223,9 @@ In the above example, "m" would be set to the value "m1" as the Condition refere
 </ItemDefinitionGroup>  
 ```  
   
- However, the following is not valid:  
+However, the following is not valid:  
   
-```  
+```xml  
 <ItemDefinitionGroup>  
     <i>  
         <m>m1</m>  
@@ -253,9 +234,9 @@ In the above example, "m" would be set to the value "m1" as the Condition refere
 </ItemDefinitionGroup>  
 ```  
   
- Beginning in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] 3.5, ItemGroups can also be self\-referential. For example:  
+Beginning in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] 3.5, ItemGroups can also be self-referential. For example:  
   
-```  
+```xml  
 <ItemGroup>  
     <item Include="a">  
         <m>m1</m>  
@@ -264,5 +245,5 @@ In the above example, "m" would be set to the value "m1" as the Condition refere
 </ItemGroup>  
 ```  
   
-## See Also  
+## See also  
  [Batching](../msbuild/msbuild-batching.md)

@@ -1,13 +1,7 @@
 ---
 title: "&lt;Schedules&gt; Element (Bootstrapper) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "FSharp"
   - "VB"
@@ -16,31 +10,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<Schedules> element [bootstrapper]"
 ms.assetid: 28d094cf-64f5-42b1-bd8a-3697082aab4f
-caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;Schedules&gt; Element (Bootstrapper)
+# &lt;Schedules&gt; element (bootstrapper)
 The `Schedules` element contains `Schedule` elements, which define specific times at which commands defined by the `Command` element should be run.  
   
 ## Syntax  
   
-```  
+```xml
 <Schedules>  
     <Schedule  
         Name  
@@ -52,7 +33,7 @@ The `Schedules` element contains `Schedule` elements, which define specific time
 </Schedules>  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `Schedules` element is a child of the `Product` element. Each `Product` element might have at most one `Schedules` element. The `Schedules` element has no attributes.  
   
 ## Schedule  
@@ -75,6 +56,6 @@ The `Schedules` element contains `Schedule` elements, which define specific time
 ## AfterPackage  
  The `AfterPackage` element instructs the installer to execute a command after the specified package is installed.  
   
-## See Also  
- [\<Product> Element](../deployment/product-element-bootstrapper.md)   
- [Product and Package Schema Reference](../deployment/product-and-package-schema-reference.md)
+## See also  
+ [\<Product> element](../deployment/product-element-bootstrapper.md)   
+ [Product and package schema reference](../deployment/product-and-package-schema-reference.md)

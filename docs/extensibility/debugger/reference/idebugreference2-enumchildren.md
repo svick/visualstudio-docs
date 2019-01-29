@@ -1,60 +1,42 @@
 ---
 title: "IDebugReference2::EnumChildren | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugReference2::EnumChildren"
 helpviewer_keywords: 
   - "IDebugReference2::EnumChildren"
 ms.assetid: 35b3c2f3-69f4-4013-b555-f847221f62e8
-caps.latest.revision: 10
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugReference2::EnumChildren
 Get a list of selected children of a reference. Reserved for future use.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 HRESULT EnumChildren (   
-   DEBUGREF_INFO_FLAGS        dwFields,  
-   DWORD                      dwRadix,  
-   DBG_ATTRIB_FLAGS           dwAttribFilter,  
-   LPCOLESTR                  pszNameFilter,  
-   DWORD                      dwTimeout,  
-   IEnumDebugReferenceInfo2** ppEnum  
+   DEBUGREF_INFO_FLAGS        dwFields,  
+   DWORD                      dwRadix,  
+   DBG_ATTRIB_FLAGS           dwAttribFilter,  
+   LPCOLESTR                  pszNameFilter,  
+   DWORD                      dwTimeout,  
+   IEnumDebugReferenceInfo2** ppEnum  
 );  
 ```  
   
-```c#  
+```csharp  
 int EnumChildren (   
-   enum_DEBUGREF_INFO_FLAGS     dwFields,  
-   uint                         dwRadix,  
-   enum_DBG_ATTRIB_FLAGS        dwAttribFilter,  
-   string                       pszNameFilter,  
-   uint                         dwTimeout,  
-   out IEnumDebugReferenceInfo2 ppEnum  
+   enum_DEBUGREF_INFO_FLAGS     dwFields,  
+   uint                         dwRadix,  
+   enum_DBG_ATTRIB_FLAGS        dwAttribFilter,  
+   string                       pszNameFilter,  
+   uint                         dwTimeout,  
+   out IEnumDebugReferenceInfo2 ppEnum  
 );  
 ```  
   

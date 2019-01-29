@@ -1,34 +1,16 @@
 ---
 title: "Enumerations (Visual Studio Debugging) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "enumerations [Visual Studio SDK]"
   - "debugging [Debugging SDK], enumerations"
 ms.assetid: 557065bf-081f-4d57-8744-bae02b8a5a6e
-caps.latest.revision: 15
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Enumerations (Visual Studio Debugging)
 Following are enumerations for the [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] Debugging SDK.  
@@ -124,7 +106,7 @@ Following are enumerations for the [!INCLUDE[vsprvs](../../../code-quality/inclu
  Specifies the scope of the disassembly stream.  
   
  [DisplayKind](../../../extensibility/debugger/reference/displaykind.md)  
- Enumerates the valid values that represent the kinds of information to take from an an [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) object and display to the user.  
+ Enumerates the valid values that represent the kinds of information to take from an [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) object and display to the user.  
   
  [DOCCONTEXT_COMPARE](../../../extensibility/debugger/reference/doccontext-compare.md)  
  Specifies the criteria for comparing two document contexts.  

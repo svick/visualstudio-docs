@@ -1,13 +1,7 @@
 ---
 title: "&lt;publisherIdentity&gt; Element (ClickOnce Deployment) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -17,38 +11,25 @@ helpviewer_keywords:
   - "required element for signed manifests [ClickOnce], publisherIdentity Element"
   - "publisherIdentity Element [ClickOnce deployment manifest], syntax, elements, and attributes"
 ms.assetid: 34c579db-d2f2-4b66-b9c8-47207f33d950
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;publisherIdentity&gt; Element (ClickOnce Deployment)
+# &lt;publisherIdentity&gt; element (ClickOnce deployment)
 Contains information about the publisher that signed this deployment manifest.  
   
 ## Syntax  
   
-```  
+```xml  
 <publisherIdentity  
    name  
    issuerKeyHash  
 />  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `publisherIdentity` element is required for signed manifests. The following table shows the attributes that the `publisherIdentity` element supports.  
   
 |Attribute|Description|  
@@ -58,7 +39,7 @@ Contains information about the publisher that signed this deployment manifest.
   
 #### Parameters  
   
-## Property Value/Return Value  
+## Property value/return value  
   
 ## Exceptions  
   

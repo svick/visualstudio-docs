@@ -1,68 +1,50 @@
 ---
 title: "CONTEXT_INFO | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "CONTEXT_INFO"
 helpviewer_keywords: 
   - "CONTEXT_INFO structure"
 ms.assetid: 6b513f4e-e7b0-4969-adf0-2205ccc1e09b
-caps.latest.revision: 11
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # CONTEXT_INFO
 This structure describes a memory context or code context.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 typedef struct _tagCONTEXT_INFO {   
-   CONTEXT_INFO_FIELDS dwFields;  
-   BSTR                bstrModuleUrl;  
-   BSTR                bstrFunction;  
-   TEXT_POSITION       posFunctionOffset;  
-   BSTR                bstrAddress;  
-   BSTR                bstrAddressOffset;  
-   BSTR                bstrAddressAbsolute;  
+   CONTEXT_INFO_FIELDS dwFields;  
+   BSTR                bstrModuleUrl;  
+   BSTR                bstrFunction;  
+   TEXT_POSITION       posFunctionOffset;  
+   BSTR                bstrAddress;  
+   BSTR                bstrAddressOffset;  
+   BSTR                bstrAddressAbsolute;  
 } CONTEXT_INFO;  
 ```  
   
-```c#  
+```csharp  
 public struct CONTEXT_INFO {  
-   public uint          dwFields;  
-   public string        bstrModuleUrl;  
-   public string        bstrFunction;  
-   public TEXT_POSITION posFunctionOffset;  
-   public string        bstrAddress;  
-   public string        bstrAddressOffset;  
-   public string        bstrAddressAbsolute;  
+   public uint          dwFields;  
+   public string        bstrModuleUrl;  
+   public string        bstrFunction;  
+   public TEXT_POSITION posFunctionOffset;  
+   public string        bstrAddress;  
+   public string        bstrAddressOffset;  
+   public string        bstrAddressAbsolute;  
 };  
 ```  
   
 ## Members  
  dwFields  
- A combination of flags from he [CONTEXT_INFO_FIELDS](../../../extensibility/debugger/reference/context-info-fields.md) enumeration that specifies which fields are filled out**.**  
+ A combination of flags from he [CONTEXT_INFO_FIELDS](../../../extensibility/debugger/reference/context-info-fields.md) enumeration that specifies which fields are filled out<strong>.</strong>  
   
  bstrModuleUrl  
  The name of the module where the context is located.  

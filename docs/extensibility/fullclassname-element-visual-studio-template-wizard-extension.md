@@ -1,37 +1,20 @@
 ---
 title: "FullClassName Element (Visual Studio Template Wizard Extension) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.technology: "vs-ide-general"
+ms.topic: "conceptual"
 f1_keywords: 
   - "http://schemas.microsoft.com/developer/vstemplate/2005#FullClassName"
 helpviewer_keywords: 
   - "FullClassName element [Visual Studio project template]"
 ms.assetid: 651e1010-d529-4856-85ff-c77ceca5d2ed
-caps.latest.revision: 9
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# FullClassName Element (Visual Studio Template Wizard Extension)
+# FullClassName element (Visual Studio template wizard extension)
 The fully qualified name of the class that implements the `IWizard` interface.  
   
  \<VSTemplate>  
@@ -41,26 +24,26 @@ The fully qualified name of the class that implements the `IWizard` interface.
   
 ## Syntax  
   
-```  
+```xml  
 <FullClassName>ClassName</FullClassName>  
 ```  
   
-## Attributes and Elements  
+## Attributes and elements  
  The following sections describe attribute, child elements, and parent elements.  
   
 ### Attributes  
  None.  
   
-### Child Elements  
+### Child elements  
  None.  
   
-### Parent Elements  
+### Parent elements  
   
 |Element|Description|  
 |-------------|-----------------|  
 |[WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md)|Contains the registration elements for customizing the template wizard.|  
   
-## Text Value  
+## Text value  
  A text value is required.  
   
  This text specifies the class that implements the `IWizard` interface. The specified class must exist in the assembly specified by the [Assembly](../extensibility/assembly-element-visual-studio-template-wizard-extension.md) element.  
@@ -99,7 +82,7 @@ The fully qualified name of the class that implements the `IWizard` interface.
 </VSTemplate>  
 ```  
   
-## See Also  
- [Visual Studio Template Schema Reference](../extensibility/visual-studio-template-schema-reference.md)   
- [Creating Project and Item Templates](../ide/creating-project-and-item-templates.md)   
- [How to: Use Wizards with Project Templates](../extensibility/how-to-use-wizards-with-project-templates.md)
+## See also  
+ [Visual Studio template schema reference](../extensibility/visual-studio-template-schema-reference.md)   
+ [Create project and item templates](../ide/creating-project-and-item-templates.md)   
+ [How to: Use wizards with project templates](../extensibility/how-to-use-wizards-with-project-templates.md)

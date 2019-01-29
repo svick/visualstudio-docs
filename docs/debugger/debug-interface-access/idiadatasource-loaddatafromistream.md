@@ -1,46 +1,26 @@
 ---
 title: "IDiaDataSource::loadDataFromIStream | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaDataSource::loadDataFromIStream method"
 ms.assetid: 8fe33eea-1457-4b8c-ae19-f1ede5578483
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaDataSource::loadDataFromIStream
 Prepares the debug data stored in a program database (.pdb) file accessed through an in-memory data stream.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT loadDataFromIStream (   
-   IStream* pIStream  
+   IStream* pIStream  
 );  
 ```  
   
@@ -54,7 +34,7 @@ HRESULT loadDataFromIStream ( 
 |Value|Description|  
 |-----------|-----------------|  
 |E_PDB_FORMAT|Attempted to access a file with an obsolete format.|  
-|E_INVALIDARG|Invalidparameter.|  
+|E_INVALIDARG|Invalid parameter.|  
 |E_UNEXPECTED|Data source has already been prepared.|  
   
 ## Remarks  

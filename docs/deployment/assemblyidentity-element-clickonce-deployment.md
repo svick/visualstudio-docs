@@ -1,13 +1,7 @@
 ---
 title: "&lt;assemblyIdentity&gt; Element (ClickOnce Deployment) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 f1_keywords: 
   - "urn:schemas-microsoft-com:asm.v2#assemblyIdentity"
 dev_langs: 
@@ -17,31 +11,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<assemblyIdentity> element [ClickOnce deployment manifest]"
 ms.assetid: f4a3bb83-c800-47d0-9905-9a5ae2486838
-caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;assemblyIdentity&gt; Element (ClickOnce Deployment)
+# &lt;assemblyIdentity&gt; element (ClickOnce deployment)
 Identifies the primary assembly of the [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application.  
   
 ## Syntax  
   
-```  
+```xml  
   
       <assemblyIdentity    
    name   
@@ -52,7 +33,7 @@ Identifies the primary assembly of the [!INCLUDE[ndptecclick](../deployment/incl
 />  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `assemblyIdentity` element is required. It contains no child elements and has the following attributes.  
   
 |Attribute|Description|  
@@ -66,9 +47,9 @@ Identifies the primary assembly of the [!INCLUDE[ndptecclick](../deployment/incl
 ## Remarks  
   
 ## Example  
- The following code example illustrates an `assemblyIdentity` element in a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] deployment manifest. This code example is part of a larger example provided for the [ClickOnce Deployment Manifest](../deployment/clickonce-deployment-manifest.md) topic.  
+ The following code example illustrates an `assemblyIdentity` element in a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] deployment manifest. This code example is part of a larger example provided for the [ClickOnce deployment manifest](../deployment/clickonce-deployment-manifest.md) topic.  
   
-```  
+```xml  
 <!-- Identify the deployment. -->  
 <assemblyIdentity   
   name="My Application Deployment.app"  
@@ -79,6 +60,6 @@ Identifies the primary assembly of the [!INCLUDE[ndptecclick](../deployment/incl
   xmlns="urn:schemas-microsoft-com:asm.v1" />  
 ```  
   
-## See Also  
- [ClickOnce Deployment Manifest](../deployment/clickonce-deployment-manifest.md)   
- [\<assemblyIdentity> Element](../deployment/assemblyidentity-element-clickonce-application.md)
+## See also  
+ [ClickOnce deployment manifest](../deployment/clickonce-deployment-manifest.md)   
+ [\<assemblyIdentity> element](../deployment/assemblyidentity-element-clickonce-application.md)

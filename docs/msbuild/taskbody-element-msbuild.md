@@ -1,13 +1,7 @@
 ---
 title: "TaskBody Element (MSBuild) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: "03/13/2017"
+ms.topic: "reference"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -17,76 +11,63 @@ helpviewer_keywords:
   - "TaskBody element [MSBuild]"
   - "<TaskBody> element [MSBuild]"
 ms.assetid: 49d8741b-f1ea-4470-94fd-a1ac27341a6a
-caps.latest.revision: 7
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# TaskBody Element (MSBuild)
-Contains the data that is passed to a `UsingTask``TaskFactory`. For more information, see [UsingTask Element (MSBuild)](../msbuild/usingtask-element-msbuild.md).  
-  
+# TaskBody element (MSBuild)
+Contains the data that is passed to a `UsingTask` `TaskFactory`. For more information, see [UsingTask element (MSBuild)](../msbuild/usingtask-element-msbuild.md).  
+
  \<Project>  
  \<UsingTask>  
  \<TaskBody>  
-  
+
 ## Syntax  
-  
-```  
+
+```xml
 <TaskBody Evaluate="true/false" />  
 ```  
-  
-## Attributes and Elements  
+
+## Attributes and elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`Evaluate`|Optional Boolean attribute.<br /><br /> If `true`, MSBuild evaluates any inner elements, and expands items and properties before it passes the information to the `TaskFactory` when the task is instantiated.|  
-  
-### Child Elements  
-  
+
+### Child elements  
+
 |Element|Description|  
 |-------------|-----------------|  
 |Data|The text between the `TaskBody` tags is sent verbatim to the `TaskFactory`.|  
-  
-### Parent Elements  
-  
-|Element|Description|  
-|-------------|-----------------|  
-|[UsingTask](../msbuild/usingtask-element-msbuild.md)|Provides a way to register tasks in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. There may be zero or more `UsingTask` elements in a project.|  
-  
+
+### Parent elements  
+
+| Element | Description |
+| - | - |
+| [UsingTask](../msbuild/usingtask-element-msbuild.md) | Provides a way to register tasks in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. There may be zero or more `UsingTask` elements in a project. |
+
 ## Example  
  The following example shows how to use the `TaskBody` element with an `Evaluate` attribute.  
-  
-```  
+
+```xml  
 <UsingTask TaskName="MyTask" AssemblyName="My.Assembly" TaskFactory="MyTaskFactory">  
-       <ParameterGroup>  
-              <Parameter1 ParameterType="System.String" Required="False" Output="False"/>  
-              <Parameter2 ParameterType="System.Int" Required="True" Output="False"/>  
-              ...  
+       <ParameterGroup>  
+              <Parameter1 ParameterType="System.String" Required="False" Output="False"/>  
+              <Parameter2 ParameterType="System.Int" Required="True" Output="False"/>  
+              ...  
 </ParameterGroup>  
-       <TaskBody Evaluate="true">  
-      ... Task factory-specific data ...  
-       </TaskBody>  
+       <TaskBody Evaluate="true">  
+      ... Task factory-specific data ...  
+       </TaskBody>  
 </UsingTask>  
 ```  
-  
-## See Also  
+
+## See also  
  [Tasks](../msbuild/msbuild-tasks.md)   
- [Task Reference](../msbuild/msbuild-task-reference.md)   
- [Project File Schema Reference](../msbuild/msbuild-project-file-schema-reference.md)
+ [Task reference](../msbuild/msbuild-task-reference.md)   
+ [Project file schema reference](../msbuild/msbuild-project-file-schema-reference.md)

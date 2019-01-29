@@ -1,35 +1,17 @@
 ---
 title: "Calling Debugger Events | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "debugging [Debugging SDK], events"
 ms.assetid: b3440ac3-80af-40c6-bef4-cbf00fa67885
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Calling Debugger Events
+# Call debugger events
 Events in debugging sessions occur in a specific order.  
   
 ## Discussion  
@@ -59,5 +41,5 @@ Events in debugging sessions occur in a specific order.
   
 12. [Exception handling](../../extensibility/debugger/exception-handling-visual-studio-sdk.md)  
   
-## See Also  
- [Creating a Custom Debug Engine](../../extensibility/debugger/creating-a-custom-debug-engine.md)
+## See also  
+ [Creating a custom debug engine](../../extensibility/debugger/creating-a-custom-debug-engine.md)

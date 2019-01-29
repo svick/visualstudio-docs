@@ -1,64 +1,60 @@
 ---
-title: "Talk to Us | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/16/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Talk to us"
+ms.date: 10/09/2018
+ms.prod: visual-studio-dev15
+ms.prod: visual-studio-dev15
+ms.topic: conceptual
 helpviewer_keywords:
   - "product support [Visual Studio]"
   - "Help [Visual Studio], product support"
 ms.assetid: e0846d4d-2ce1-48e3-b219-674ff070bf4e
-author: "TerryGLee"
-ms.author: "tglee"
-manager: "ghogen"
-translation.priority.ht:
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt:
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+author: TerryGLee
+ms.author: tglee
+manager: jillfra
+ms.workload:
+  - "multiple"
 ---
-# Talk to Us
-We're interested in your ideas for improving our documentation. We can’t respond personally, but we’ll make sure your feedback gets to the right person.  
+# Visual Studio product feedback
 
-## I like/dislike something in the Visual Studio documentation  
- Please use our feedback button (**Was this page helpful?**) at the bottom of the page. You can find this button on all MSDN pages. If you’re looking for an answer and you can’t find it, please tell us what information you’re looking for.  
+Talk to us! We're interested in your ideas for improving our products and documentation. We can't always respond personally, but we'll make sure that your feedback gets to the right person or team.
 
-## I would like to report a problem with Visual Studio  
- If you are running into issues using Visual Studio such as crashes, sluggish performance, unexpected behavior, and so on, please report the problem to us by right-clicking on the feedback icon next to **QuickLaunch**, or by choosing **Help &#124; Send Feedback &#124; Report a Problem** from the main menu. For more information, see [How to Report a Problem with Visual Studio 2017 RC](how-to-report-a-problem-with-visual-studio-2017.md).  
+## I want to report a problem with Visual Studio
 
-## I want to make a suggestion about Visual Studio features  
- If there's something we can do better please let us know! Choose **Provide a Suggestion** to suggest a feature or change to the Visual Studio team. Your suggestion will automatically be posted to [UserVoice](https://visualstudio.uservoice.com) where others can vote for for it.  
+If you experience problems with Visual Studio&mdash;such as crashes, sluggish performance, or unexpected behavior&mdash;let us know by using the **Report a Problem** tool. In Visual Studio, choose the feedback icon next to **Quick Launch**, or choose **Help** > **Send Feedback** > **Report a Problem** from the menu bar. Next, Visual Studio opens the [Developer Community](https://developercommunity.visualstudio.com) page in your browser, where you can sign in to report the problem. For more information, see [How to report a problem with Visual Studio 2017](how-to-report-a-problem-with-visual-studio-2017.md).
 
-## Rate this product  
- Pre-release versions of Visual Studio have a **Rate this Product** menu item that enables you to send feedback on the quality of the build you are running. You won't see this in released versions of the product.  
+## I want to make a suggestion about Visual Studio features
 
-## I need help!  
- See [Microsoft Support](http://go.microsoft.com/fwlink/?LinkID=99019) for online help.  
+If there's something we can do better, tell us about it! In Visual Studio, choose **Help** > **Send Feedback** > **Provide a Suggestion** from the menu bar. Next, Visual Studio opens the [Developer Community](https://developercommunity.visualstudio.com) page in your browser, where you can sign in to share your idea. For more information, see [Suggest a feature for Visual Studio 2017](suggest-a-feature.md).
 
- Support outside the United States and Canada may vary. For a list of regional contacts, see [Microsoft Worldwide Sites](http://www.microsoft.com/worldwide/).  
+### Rate this product
 
- For more options, see [Support Overview](http://www.visualstudio.com/support/support-overview-vs).  
+Pre-release versions of Visual Studio have a **Rate this Product** menu item that released versions of the product don't have. Use the **Rate this Product** menu item to send feedback on the quality of the pre-release build that you're running.
 
- For larger organizations that require managed support directly from Microsoft, contracts are available through various Premier Support offerings. For more information, see [Microsoft Services Premier Support](http://go.microsoft.com/fwlink/?LinkId=258223).  
+## I want to contact Microsoft Support
 
- If the product came installed with a new computer or device, the hardware manufacturer provides technical support and assistance for this software. Contact the manufacturer directly for support.  
+For Visual Studio support information, see the [Support life cycle & servicing](/visualstudio/productinfo/vs-servicing-vs) page.
 
- Microsoft support services are subject to then-current prices, terms, and conditions. Prices, terms, and conditions are subject to change without notice.  
+For other Microsoft products and services, see [Microsoft support](http://go.microsoft.com/fwlink/?LinkID=99019) for online help.
 
-## I want to get involved in the developer community  
- If you want to share your questions and answers with other developers, you can use the [Visual Studio Developer Community](https://developercommunity.visualstudio.com/index.html) site, the [MSDN Forums](http://social.msdn.microsoft.com/Forums/home), or [StackOverflow](http://stackoverflow.com/). You can also view code from other developers and share your own examples on the [Developer code samples](http://code.msdn.microsoft.com/) and [CodePlex](http://www.codeplex.com/) websites.  
+> [!NOTE]
+> Support outside the United States and Canada may vary. For a list of regional contacts, see [Microsoft worldwide sites](http://www.microsoft.com/worldwide/).
 
-## See Also  
- [How to Report a Problem with Visual Studio](how-to-report-a-problem-with-visual-studio-2017.md)
+For larger organizations that require managed support directly from Microsoft, contracts are available through various Enterprise Support offerings. For more information, see [Microsoft Enterprise Support solutions](http://go.microsoft.com/fwlink/?LinkId=258223).
+
+If the product came installed with a new computer or device, the hardware manufacturer provides technical support and assistance for this software. Contact the manufacturer directly for support.
+
+Microsoft support services are subject to then-current prices, terms, and conditions. Prices, terms, and conditions can change without notice.
+
+## I want to get involved in the developer community
+
+If you want to share your questions and answers with other developers, use the [Visual Studio Developer Community](https://developercommunity.visualstudio.com) site, the [MSDN forums](https://social.msdn.microsoft.com/Forums/home), or [StackOverflow](http://stackoverflow.com/). You can also view code from other developers and share your own examples on the [Developer code samples](https://code.msdn.microsoft.com/) site.
+
+## I want to help improve the Visual Studio documentation
+
+Please use the **Was this page helpful?** feedback button at the bottom of the page. You can find this button on all our documentation pages. Alternatively, you can add feedback to any Visual Studio page on [docs.microsoft.com](https://docs.microsoft.com/visualstudio/) by using the **Sign in to give documentation feedback** button, also at the bottom of the page.
+
+## See also
+
+* [How to report a problem with Visual Studio](how-to-report-a-problem-with-visual-studio-2017.md)
+* [Developer Community](https://developercommunity.visualstudio.com)
+* [Developer Community data privacy](developer-community-privacy.md)

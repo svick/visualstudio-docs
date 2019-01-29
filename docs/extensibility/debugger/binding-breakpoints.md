@@ -1,38 +1,20 @@
 ---
 title: "Binding Breakpoints | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "breakpoints, binding"
 ms.assetid: 70737387-c52f-4dae-8865-77d4b203bf25
-caps.latest.revision: 12
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Binding Breakpoints
-If the user sets a breakpoint, perhaps by pressing F9, the IDE formulates the request and prompts the debug session to create the breakpoint.  
+# Bind breakpoints
+If the user sets a breakpoint, perhaps by pressing **F9**, the IDE formulates the request and prompts the debug session to create the breakpoint.  
   
-## Setting a Breakpoint  
+## Set a breakpoint  
  Setting a breakpoint is a two-step process, because the code or data affected by the breakpoint might not yet be available. First, the breakpoint must be described, and then, as code or data becomes available, it must be bound to that code or data, as follows:  
   
 1.  The breakpoint is requested from the relevant debug engines (DEs), and then the breakpoint is bound to the code or data as it becomes available.  
@@ -45,7 +27,7 @@ If the user sets a breakpoint, perhaps by pressing F9, the IDE formulates the re
   
 5.  If the DE is able to bind the breakpoint, it sends a breakpoint bound event back to the debug session. If not, it sends a breakpoint error event instead.  
   
-## Pending Breakpoints  
+## Pending breakpoints  
  A pending breakpoint can bind to multiple code locations. For example, a line of source code for a C++ template can bind to every code sequence generated from the template. The debug session can use a breakpoint bound event to enumerate the code contexts bound to a breakpoint at the time the event was sent. More code contexts can be bound later, so the DE may send multiple breakpoint bound events for each bind request. However, a DE should send only one breakpoint error event per bind request.  
   
 ## Implementation  
@@ -65,5 +47,5 @@ If the user sets a breakpoint, perhaps by pressing F9, the IDE formulates the re
   
  If a DE handles a breakpoint, cannot bind it, but some other DE might bind it, it returns a warning. The IDE responds by placing a question glyph inside the breakpoint glyph to the left of the source code line.  
   
-## See Also  
- [Debugging Tasks](../../extensibility/debugger/debugging-tasks.md)
+## See also  
+ [Debugging tasks](../../extensibility/debugger/debugging-tasks.md)

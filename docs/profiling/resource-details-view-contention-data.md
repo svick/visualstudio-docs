@@ -1,37 +1,17 @@
 ---
 title: "Resource Details View - Contention Data | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "vs.performance.view.resourcedetails"
 helpviewer_keywords: 
   - "Resource Details view"
 ms.assetid: a4ecfe1c-abbc-4fb3-9ab2-34de50486901
-caps.latest.revision: 9
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # Resource Details View - Contention Data
 The Resource Details view presents a timeline graph of the blocking events that were caused by contentions over a selected resource. A blocking event occurs when a thread is forced to suspend execution because another thread has locked access to the resource.  
@@ -60,9 +40,9 @@ The Resource Details view presents a timeline graph of the blocking events that 
   
 #### To view or edit the source code of a function in the call stack  
   
--   In the **Call Stack** window, click the function name.  
+- In the **Call Stack** window, click the function name.  
   
- The function source code must be part of the current project.  
+  The function source code must be part of the current project.  
   
 #### To view the call tree of contention events for the resource  
   

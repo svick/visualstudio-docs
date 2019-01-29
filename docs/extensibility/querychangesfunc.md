@@ -1,36 +1,18 @@
 ---
 title: "QUERYCHANGESFUNC | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "QUERYCHANGESFUNC"
 helpviewer_keywords: 
   - "QUERYCHANGESFUNC callback function"
   - "QUERYCHANGESDATA structure"
 ms.assetid: 9d383e2c-eee1-4996-973a-0652d4c5951c
-caps.latest.revision: 16
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # QUERYCHANGESFUNC
 This is a callback function used by the [SccQueryChanges](../extensibility/sccquerychanges-function.md) operation to enumerate a collection of file names and determine each file's status.  
@@ -39,10 +21,10 @@ This is a callback function used by the [SccQueryChanges](../extensibility/sccqu
   
 ## Signature  
   
-```cpp#  
+```cpp  
 typedef BOOL (*QUERYCHANGESFUNC)(  
-   LPVOID pvCallerData,  
-   QUERYCHANGESDATA * pChangesData  
+   LPVOID pvCallerData,  
+   QUERYCHANGESDATA * pChangesData  
 );  
 ```  
   
@@ -53,7 +35,7 @@ typedef BOOL (*QUERYCHANGESFUNC)(
  pChangesData  
  [in] Pointer to a [QUERYCHANGESDATA Structure](#LinkQUERYCHANGESDATA) structure describing the changes to a file.  
   
-## Return Value  
+## Return value  
  The IDE returns an appropriate error code:  
   
 |Value|Description|  
@@ -65,7 +47,7 @@ typedef BOOL (*QUERYCHANGESFUNC)(
 ##  <a name="LinkQUERYCHANGESDATA"></a> QUERYCHANGESDATA Structure  
  The structure passed in for each file looks like the following:  
   
-```cpp#  
+```cpp  
 struct QUERYCHANGESDATA_A  
 {  
     DWORD  dwSize;  
@@ -110,7 +92,7 @@ struct QUERYCHANGESDATA_W
  lpLatestName  
  The current file name for this item.  
   
-## See Also  
- [Callback Functions Implemented by the IDE](../extensibility/callback-functions-implemented-by-the-ide.md)   
+## See also  
+ [Callback functions implemented by the IDE](../extensibility/callback-functions-implemented-by-the-ide.md)   
  [SccQueryChanges](../extensibility/sccquerychanges-function.md)   
- [Error Codes](../extensibility/error-codes.md)
+ [Error codes](../extensibility/error-codes.md)

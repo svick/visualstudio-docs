@@ -1,35 +1,17 @@
 ---
 title: "IDebugProcess3::GetDebugReason | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugProcess3::GetDebugReason"
 helpviewer_keywords: 
   - "IDebugProcess3::GetDebugReason"
 ms.assetid: f23fbabc-8b18-4278-bebf-4cdc7091513c
-caps.latest.revision: 11
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugProcess3::GetDebugReason
 This method returns the reason that the process was launched for debugging.  
@@ -38,13 +20,13 @@ This method returns the reason that the process was launched for debugging.
   
 ```cpp  
 HRESULT GetDebugReason(  
-   DEBUG_REASON* pReason  
+   DEBUG_REASON* pReason  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetDebugReason(  
-   out enum_DEBUG_REASON pReason  
+   out enum_DEBUG_REASON pReason  
 );  
 ```  
   

@@ -1,62 +1,43 @@
 ---
 title: "How to: Use Reserved XML Characters in Project Files | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "MSBuild, using reserved XML characters"
   - "MSBuild, reserved XML characters"
 ms.assetid: 1ae37275-96bf-4e6e-897b-6b048e5bbe93
-caps.latest.revision: 14
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Use Reserved XML Characters in Project Files
+# How to: Use reserved XML characters in project files
 When you author project files, you might need to use reserved XML characters, for example, in property values or in task parameter values. However, some reserved characters must be replaced by a named entity so that the project file can be parsed.  
   
-## Using Reserved Characters  
+## Use reserved characters  
  The following table describes the reserved XML characters that must be replaced by the corresponding named entity so that the project file can be parsed.  
   
 |Reserved character|Named entity|  
 |------------------------|------------------|  
-|\<|&lt;|  
-|>|&gt;|  
-|&|&amp;|  
-|"|&quot;|  
-|'|&apos;|  
+|\<|&amp;lt;|  
+|>|&amp;gt;|  
+|&|&amp;amp;|  
+|"|&amp;quot;|  
+|'|&amp;apos;|  
   
 #### To use double quotes in a project file  
   
--   Replace the double quotes with the corresponding named entity, &quot;. For example, to place double quotes around the `EXEFile` item list, type:  
+-   Replace the double quotes with the corresponding named entity, &amp;quot;. For example, to place double quotes around the `EXEFile` item list, type:  
   
-    ```  
-    <Message Text="The output file is "@(EXEFile)"."/>  
+    ```xml  
+    <Message Text="The output file is &quot;@(EXEFile)&quot;."/>  
     ```  
   
 ## Example  
  In the following code example, double quotes are used to highlight the file name in the message that is output by the project file.  
   
-```  
+```xml  
 <Project DefaultTargets="Compile"  
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >  
     <!-- Set the application name as a property -->  
@@ -78,11 +59,11 @@ When you author project files, you might need to use reserved XML characters, fo
                 ItemName = "EXEFile"/>  
         </Csc>  
         <!-- Log the file name of the output file -->  
-        <Message Text="The output file is "@(EXEFile)"."/>  
+        <Message Text="The output file is &quot;@(EXEFile)&quot;."/>  
     </Target>  
 </Project>  
 ```  
   
-## See Also  
- [MSBuild Reference](../msbuild/msbuild-reference.md)
- [MSBuild](../msbuild/msbuild1.md)
+## See also  
+ [MSBuild reference](../msbuild/msbuild-reference.md)    
+ [MSBuild](../msbuild/msbuild.md)    

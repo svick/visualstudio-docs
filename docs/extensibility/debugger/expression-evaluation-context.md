@@ -1,35 +1,17 @@
 ---
 title: "Expression Evaluation Context | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "expression evaluation, context"
 ms.assetid: a2fd3758-09bd-45ae-8ecc-2d276c0036ba
-caps.latest.revision: 11
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Expression Evaluation Context
+# Expression evaluation context
 In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] debugging, an **expression evaluation context**:  
   
 -   Represents a context for expression evaluation. Generally, an evaluation context corresponds to the lexical scope within which to evaluate variables, parameters, functions, and methods. For example, an expression evaluation context associated with a stack frame will provide the context for evaluating local variables, method parameters, and class members (if applicable).  
@@ -40,6 +22,6 @@ In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] debugging, an **
   
      Given a `BSTR` and an [IDebugExpressionContext2](../../extensibility/debugger/reference/idebugexpressioncontext2.md) interface, a debug engine (DE) can create an [IDebugExpression2](../../extensibility/debugger/reference/idebugexpression2.md) interface by parsing an expression. Given an `IDebugExpression2` interface, the DE can get a value through synchronous or asynchronous expression evaluation. This value, along with the name and type of the variable or argument, is sent to the IDE for display.  
   
-## See Also  
- [Expression Evaluation Interfaces](../../extensibility/debugger/reference/expression-evaluation-interfaces.md)   
- [Debugger Contexts](../../extensibility/debugger/debugger-contexts.md)
+## See also  
+ [Expression evaluation interfaces](../../extensibility/debugger/reference/expression-evaluation-interfaces.md)   
+ [Debugger contexts](../../extensibility/debugger/debugger-contexts.md)

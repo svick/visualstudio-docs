@@ -1,36 +1,18 @@
 ---
 title: "Command Flag Element | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "CommandFlag element (VSCT XML schema)"
   - "VSCT XML schema elements, CommandFlag"
 ms.assetid: 5ef63399-d2db-4dc1-97ce-be1bd4ef4e39
-caps.latest.revision: 12
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Command Flag Element
+# Command flag Eelement
 Modifies its parent element.  
   
 ## Syntax  
@@ -39,13 +21,13 @@ Modifies its parent element.
 <CommandFlag>DynamicVisibility</CommandFlag>  
 ```  
   
-## Attributes and Elements  
+## Attributes and elements  
  The following section describes valid element values.  
   
 ### Attributes  
  None.  
   
-### Child Elements  
+### Child elements  
   
 |Value|Description|  
 |-----------|-----------------|  
@@ -84,8 +66,8 @@ Modifies its parent element.
   
 |Element|Description|  
 |-------------|-----------------|  
-|[Buttons Element](../extensibility/buttons-element.md)|Provides a group for [Button Element](../extensibility/button-element.md) elements.|  
-|[Menus Element](../extensibility/menus-element.md)|Defines all the menus that a VSPackage implements.|  
+|[Buttons element](../extensibility/buttons-element.md)|Provides a group for [Button element](../extensibility/button-element.md) elements.|  
+|[Menus element](../extensibility/menus-element.md)|Defines all the menus that a VSPackage implements.|  
   
-## See Also  
- [Visual Studio Command Table (.Vsct) Files](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## See also  
+ [Visual Studio command table (.Vsct) Files](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

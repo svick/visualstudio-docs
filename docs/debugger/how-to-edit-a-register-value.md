@@ -1,48 +1,27 @@
 ---
 title: "How to: Edit a Register Value | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "vs.debug.register.edit"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
   - "JScript"
-  - "VB"
-  - "CSharp"
-  - "C++"
 helpviewer_keywords: 
   - "Registers window, editing register values"
   - "register values"
 ms.assetid: e27b6bd8-e6d4-4f1d-8a86-9f4047bb1167
-caps.latest.revision: 24
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Edit a Register Value
+# How to: Edit a Register Value (C#, C++, Visual Basic, F#)
+
 The Registers window is available only if address-level debugging is enabled in the **Options** dialog box, **Debugging** node.  
   
 ### To change the value of a register  

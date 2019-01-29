@@ -1,13 +1,7 @@
 ---
 title: "MSBuild Conditional Constructs | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -23,29 +17,16 @@ helpviewer_keywords:
   - "Otherwise Element [MSBuild]"
   - "When Element [MSBuild]"
 ms.assetid: dd54258e-f4fb-448f-9da4-d1817e0cbaf2
-caps.latest.revision: 9
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# MSBuild Conditional Constructs
+# MSBuild conditional constructs
 [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] provides a mechanism for either/or processing with the [Choose](../msbuild/choose-element-msbuild.md), [When](../msbuild/when-element-msbuild.md), and [Otherwise](../msbuild/otherwise-element-msbuild.md) elements.  
   
-## Using the Choose Element  
+## Use the Choose element  
  The `Choose` element contains a series of `When` elements with `Condition` attributes that are tested in order from top to bottom until one evaluates to `true`. If more than one `When` element evaluates to `true`, only the first one is used. An `Otherwise` element, if present, will be evaluated if no condition on a `When` element evaluates to `true`.  
   
  `Choose` elements can be used as child elements of `Project`, `When` and `Otherwise` elements. `When` and `Otherwise` elements can have `ItemGroup`, `PropertyGroup`, or `Choose` child elements.  
@@ -53,7 +34,7 @@ translation.priority.ht:
 ## Example  
  The following example uses the `Choose` and `When` elements for either/or processing. The properties and items for the project are set depending on the value of the `Configuration` property.  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >  
     <PropertyGroup>  
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>  
@@ -89,8 +70,8 @@ translation.priority.ht:
 </Project>  
 ```  
   
-## See Also  
- [Choose Element (MSBuild)](../msbuild/choose-element-msbuild.md)   
- [When Element (MSBuild)](../msbuild/when-element-msbuild.md)   
- [Otherwise Element (MSBuild)](../msbuild/otherwise-element-msbuild.md)   
- [MSBuild Reference](../msbuild/msbuild-reference.md)
+## See also  
+ [Choose element (MSBuild)](../msbuild/choose-element-msbuild.md)   
+ [When element (MSBuild)](../msbuild/when-element-msbuild.md)   
+ [Otherwise element (MSBuild)](../msbuild/otherwise-element-msbuild.md)   
+ [MSBuild reference](../msbuild/msbuild-reference.md)

@@ -1,63 +1,45 @@
 ---
 title: "BasicType | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "BasicType enumeration"
 ms.assetid: 19ae53ba-cd6e-47b6-9f94-27ae663ce955
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # BasicType
 Specifies the symbol's basic type.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 enum BasicType {   
-   btNoType   = 0,  
-   btVoid     = 1,  
-   btChar     = 2,  
-   btWChar    = 3,  
-   btInt      = 6,  
-   btUInt     = 7,  
-   btFloat    = 8,  
-   btBCD      = 9,  
-   btBool     = 10,  
-   btLong     = 13,  
-   btULong    = 14,  
-   btCurrency = 25,  
-   btDate     = 26,  
-   btVariant  = 27,  
-   btComplex  = 28,  
-   btBit      = 29,  
-   btBSTR     = 30,  
-   btHresult  = 31  
+   btNoType   = 0,  
+   btVoid     = 1,  
+   btChar     = 2,  
+   btWChar    = 3,  
+   btInt      = 6,  
+   btUInt     = 7,  
+   btFloat    = 8,  
+   btBCD      = 9,  
+   btBool     = 10,  
+   btLong     = 13,  
+   btULong    = 14,  
+   btCurrency = 25,  
+   btDate     = 26,  
+   btVariant  = 27,  
+   btComplex  = 28,  
+   btBit      = 29,  
+   btBSTR     = 30,  
+   btHresult  = 31,  
+   btChar16   = 32,  // char16_t
+   btChar32   = 33,  // char32_t
 };  
 ```  
   

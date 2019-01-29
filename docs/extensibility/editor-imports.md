@@ -1,43 +1,25 @@
 ---
 title: "Editor Imports | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "editors [Visual Studio SDK], new - services"
 ms.assetid: 8d096de3-33b4-427a-a122-4aeff8a72da0
-caps.latest.revision: 19
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Editor Imports
+# Editor imports
 You can import a number of editor services, factories, and brokers that provide your extension with different kinds of access to the core editor. For example, you can import the <xref:Microsoft.VisualStudio.Text.Operations.ITextStructureNavigatorSelectorService> to provide you with a <xref:Microsoft.VisualStudio.Text.Operations.ITextStructureNavigator> for a given content type. (This navigator allows you perform different kinds of searches on a text buffer.)  
   
  To use an editor import, you import it as a field or property of a class that exports a Managed Extensibility Framework component part.  
   
 > [!NOTE]
->  For more information about the Managed Extensibility Framework, see [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/Library/6c61b4ec-c6df-4651-80f1-4854f8b14dde).  
+>  For more information about the Managed Extensibility Framework, see [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index).  
   
-## Import Syntax  
+## Import syntax  
  The following example shows how to import the editor options factory service.  
   
 ```  
@@ -54,29 +36,29 @@ internal IEditorOptionsFactoryService m_editorOptions = null;
   
  For more examples of using imports, see the following walkthroughs:  
   
- [Walkthrough: Creating a Margin Glyph](../extensibility/walkthrough-creating-a-margin-glyph.md)  
+ [Walkthrough: Create a margin glyph](../extensibility/walkthrough-creating-a-margin-glyph.md)  
   
- [Walkthrough: Customizing the Text View](../extensibility/walkthrough-customizing-the-text-view.md)  
+ [Walkthrough: Customize the text view](../extensibility/walkthrough-customizing-the-text-view.md)  
   
- [Walkthrough: Highlighting Text](../extensibility/walkthrough-highlighting-text.md)  
+ [Walkthrough: Highlight text](../extensibility/walkthrough-highlighting-text.md)  
   
- [Walkthrough: Displaying QuickInfo Tooltips](../extensibility/walkthrough-displaying-quickinfo-tooltips.md)  
+ [Walkthrough: Display QuickInfo tooltips](../extensibility/walkthrough-displaying-quickinfo-tooltips.md)  
   
- [Walkthrough: Displaying Signature Help](../extensibility/walkthrough-displaying-signature-help.md)  
+ [Walkthrough: Display Signature Help](../extensibility/walkthrough-displaying-signature-help.md)  
   
- [Walkthrough: Displaying Statement Completion](../extensibility/walkthrough-displaying-statement-completion.md)  
+ [Walkthrough: Display statement completion](../extensibility/walkthrough-displaying-statement-completion.md)  
   
- [Walkthrough: Displaying SmartTags](../misc/walkthrough-displaying-smarttags.md)  
+ [Walkthrough: Display light bulb suggestions](../extensibility/walkthrough-displaying-light-bulb-suggestions.md)  
   
-## Importing the Service Provider  
+## Import the service provider  
  You can also import a <xref:Microsoft.VisualStudio.Shell.SVsServiceProvider> (found in the assembly Microsoft.VisualStudio.Shell.Immutable.10.0) in the same way to get access to Visual Studio services:  
   
-```  
+```csharp  
 [Import]  
 internal SVsServiceProvider ServiceProvider = null;   
 ```  
   
- See [Walkthrough: Accessing the DTE Object from an Editor Extension](../extensibility/walkthrough-accessing-the-dte-object-from-an-editor-extension.md) for more information.  
+ See [Walkthrough: Access the DTE object from an editor extension](../extensibility/walkthrough-accessing-the-dte-object-from-an-editor-extension.md) for more information.  
   
 ## Services  
  Editor services are generally single entities that provide a service and are shared across multiple components.  
@@ -85,7 +67,7 @@ internal SVsServiceProvider ServiceProvider = null;
 |------------|--------------|  
 |<xref:Microsoft.VisualStudio.Utilities.IFileExtensionRegistryService>|The relationship between file extensions and <xref:Microsoft.VisualStudio.Utilities.IContentType> objects.|  
 |<xref:Microsoft.VisualStudio.Utilities.IContentTypeRegistryService>|The collection of <xref:Microsoft.VisualStudio.Utilities.IContentType> objects.|  
-|<xref:Microsoft.VisualStudio.Editor.IVsFontsAndColorsInformationService>|<xref:Microsoft.VisualStudio.Editor.IVsFontsAndColorsInformation> objects|  
+|<xref:Microsoft.VisualStudio.Editor.IVsFontsAndColorsInformationService>|<xref:Microsoft.VisualStudio.Editor.IVsFontsAndColorsInformation> objects.|  
 |<xref:Microsoft.VisualStudio.Editor.IVsEditorAdaptersFactoryService>|Many editor adapter objects:<br /><br /> <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow><br /><br /> <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBuffer><br /><br /> <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator><br /><br /> <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>|  
 |<xref:Microsoft.VisualStudio.Text.IncrementalSearch.IIncrementalSearchFactoryService>|An <xref:Microsoft.VisualStudio.Text.IncrementalSearch.IIncrementalSearch> object for a given text view.|  
 |<xref:Microsoft.VisualStudio.Text.ITextBufferFactoryService>|An <xref:Microsoft.VisualStudio.Text.ITextBuffer>.|  
@@ -120,7 +102,7 @@ internal SVsServiceProvider ServiceProvider = null;
 |<xref:Microsoft.VisualStudio.Language.StandardClassification.IStandardClassificationService>|Standard <xref:Microsoft.VisualStudio.Text.Classification.IClassificationType> objects.|  
 |<xref:Microsoft.VisualStudio.Text.Operations.ITextUndoHistoryRegistry>|Maintains the relationship between text buffers and  <xref:Microsoft.VisualStudio.Text.Operations.ITextUndoHistory> objects.|  
   
-## Other Imports  
+## Other imports  
  Provider factories and brokers are generally entities that can have multiple instances in multiple components.  
   
 |Import|Provides|  
@@ -132,5 +114,5 @@ internal SVsServiceProvider ServiceProvider = null;
 |<xref:Microsoft.VisualStudio.Language.Intellisense.IQuickInfoBroker>|An <xref:Microsoft.VisualStudio.Language.Intellisense.IQuickInfoSession>.|  
 |<xref:Microsoft.VisualStudio.Language.Intellisense.ISignatureHelpBroker>|An <xref:Microsoft.VisualStudio.Language.Intellisense.ISignatureHelpSession>.|  
   
-## See Also  
- [Language Service and Editor Extension Points](../extensibility/language-service-and-editor-extension-points.md)
+## See also  
+ [Language service and editor extension points](../extensibility/language-service-and-editor-extension-points.md)

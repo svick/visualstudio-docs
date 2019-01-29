@@ -1,23 +1,14 @@
 ---
 title: "Debugging, Options Dialog Box | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
+  - "VB"
+  - "FSharp"
   - "C++"
   - "JScript"
   - "SQL"
-  - "VB"
-  - "CSharp"
-  - "C++"
 helpviewer_keywords: 
   - "debugger, settings"
   - "options, setting debugging options"
@@ -25,25 +16,11 @@ helpviewer_keywords:
   - "Options dialog box, debugging"
   - "debugging [Visual Studio], settings and preparation"
 ms.assetid: 9450589a-42ea-45bf-b128-89447225cca6
-caps.latest.revision: 14
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # Debugging, Options Dialog Box
 The **Debugging** folder, in the **Options** dialog box on the **Tools** menu, provides the following pages, which enable you to specify debugger tool options.  
@@ -57,6 +34,7 @@ The **Debugging** folder, in the **Options** dialog box on the **Tools** menu, p
 -   [Symbols, Debugging, Options Dialog Box](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)  
   
 ## See Also  
- [Debugger Security](../debugger/debugger-security.md)   
- [Debugging in Visual Studio](../debugger/debugging-in-visual-studio.md)   
+ [Debugger Security](../debugger/debugger-security.md) 
+ [Debugging in Visual Studio](../debugger/index.md)  
+ [First look at the debugger](../debugger/debugger-feature-tour.md)   
  [Debugging User Interface Reference](../debugger/debugging-user-interface-reference.md)

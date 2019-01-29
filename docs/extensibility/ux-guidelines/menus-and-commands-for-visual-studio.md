@@ -1,31 +1,13 @@
 ---
 title: "Menus and Commands for Visual Studio | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.assetid: 0a1ed675-2bd1-4603-ba3a-f40dfb5cfb69
-caps.latest.revision: 4
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Menus and Commands for Visual Studio
 ## Command usage  
@@ -33,7 +15,7 @@ translation.priority.mt:
 ### Overview  
  Unlike Microsoft Office, which is a suite that comprises many separate products, Visual Studio contains many products that each contribute their command sets to the global Visual Studio IDE. The IDE manages the complexity of thousands of commands by filtering the functionality available to the user based on context.  
   
- When a user's context changes – such as switching from a design window to a code editing window – functionality unrelated to the new context disappears. At the same time, new functionality surfaces together with related dynamic information, such as Properties and Toolbox options. The user should not notice the swapping of the available command set. If the user is distracted or confused by commands appearing or disappearing, then the UI design needs adjustment. The user's current context is always indicated in one or more ways, such as in the IDE title bar, the Properties window, or the Property Pages dialog box.  
+ When a user's context changes - such as switching from a design window to a code editing window - functionality unrelated to the new context disappears. At the same time, new functionality surfaces together with related dynamic information, such as Properties and Toolbox options. The user should not notice the swapping of the available command set. If the user is distracted or confused by commands appearing or disappearing, then the UI design needs adjustment. The user's current context is always indicated in one or more ways, such as in the IDE title bar, the Properties window, or the Property Pages dialog box.  
   
  Command bars allow for flexibility in the UI. The only command structures inherent to the Visual Studio environment are the main menu and the main command bar, which can both be customized and even hidden. Other command bars appear and disappear based on the state of the application. Tool windows and document editors can also contain embedded toolbars within their window edges.  
   
@@ -47,7 +29,7 @@ translation.priority.mt:
   
 -   appear on a default toolbar.  
   
--   are likely to be added by users to a toolbar through the **Customize…** dialog.  
+-   are likely to be added by users to a toolbar through the **Customize...** dialog.  
   
 -   have an icon associated with the same action in another Microsoft product.  
   
@@ -58,14 +40,14 @@ translation.priority.mt:
  Be aware that your commands will be customized by others and design them accordingly. There is no such thing as a hidden command. All Visual Studio commands appear in the **Tools > Customize** dialog, the Command Window, auto-complete, the **Tools > Options > Keyboard** dialog, and the Development Tools Environment (DTE). Make sure to give your commands a name and tooltip in your .ctc file so that users can find them easily.  
   
 ##### Do not duplicate shared commands on an embedded toolbar.  
- It is useful to place commands in close proximity to the area of the user’s focus. One way to do this is to create an embedded toolbar at the top of your tool window or document editor. The commands placed on the toolbar should be specific to the content region within the window. Do not duplicate shared commands on these toolbars. For example, never place a “Save” icon within an embedded toolbar.  
+ It is useful to place commands in close proximity to the area of the user's focus. One way to do this is to create an embedded toolbar at the top of your tool window or document editor. The commands placed on the toolbar should be specific to the content region within the window. Do not duplicate shared commands on these toolbars. For example, never place a "Save" icon within an embedded toolbar.  
   
 ### Content and command visibility  
  Commands exist in the following scopes: **Environment**, **Hierarchy**, and **Document**. Know each scope in order to have confidence in command placement.  
   
  Commands in the **Environment** scope establish primary context and are shared between multiple contexts. They alter the visibility or arrangement of documents and tool windows. Among the commands in the environment scope are **New Project**, **Connect to Server**, **Attach Process**, **Cut**, **Copy**, **Paste**, **Find**, **Options**, **Customize**, **New Window**, and **View Help**.  
   
- Commands in the **Hierarchy** scope manage hierarchies in Visual Studio including **Project**, **Team**, and **Data**. They relate to a project's subcontext – for example, **Debug**, **Build**, **Test**, **Architecture**, or **Analyze**. Among the commands in the Hierarchy scope are **Add New Item**, **New Query**, **Project Settings**, **Add New Data Source**, **Launch Performance Wizard**, and **New Diagram**.  
+ Commands in the **Hierarchy** scope manage hierarchies in Visual Studio including **Project**, **Team**, and **Data**. They relate to a project's subcontext - for example, **Debug**, **Build**, **Test**, **Architecture**, or **Analyze**. Among the commands in the Hierarchy scope are **Add New Item**, **New Query**, **Project Settings**, **Add New Data Source**, **Launch Performance Wizard**, and **New Diagram**.  
   
  Commands in the **Document** scope act on the contents of a document, such as code, design, or a work item query (WIQ). They also act on the view of a tool window or are otherwise specific to that tool window. Document scope commands also act on the file objects that are themselves hierarchy-specific, such as **Remove from Project**. Among the commands in the document scope are **Refactor > Rename**, **Create Copy of Work Item**, **Expand All**, **Collapse All**, and **Create User Task**.  
   
@@ -137,7 +119,7 @@ translation.priority.mt:
   
 -   Flyout menus should contain at least three items and no more than seven.  
   
--   Flyout menus should go only one level deep – some Visual Studio menu items have cascading submenus, but this pattern is not encouraged.  
+-   Flyout menus should go only one level deep - some Visual Studio menu items have cascading submenus, but this pattern is not encouraged.  
   
 -   Use no more than six separators. Groupings should adhere to the following illustration:  
   
@@ -159,7 +141,7 @@ translation.priority.mt:
   
 -   Do not exceed 25 top-level menu items.  
   
--   Flyout menus are acceptable but must not exceed one level deep – never use cascading flyouts.  
+-   Flyout menus are acceptable but must not exceed one level deep - never use cascading flyouts.  
   
 -   Use no more than six separators.  
   
@@ -196,29 +178,29 @@ translation.priority.mt:
   
  **General toolbar guidelines:**  
   
--   Each toolbar has 24 pixels in common controls (gripper, overflow).  
+- Each toolbar has 24 pixels in common controls (gripper, overflow).  
   
--   Each toolbar button is 22 pixels wide including padding. Making the icon a split button adds another 11 pixels of width.  
+- Each toolbar button is 22 pixels wide including padding. Making the icon a split button adds another 11 pixels of width.  
   
--   Duplication of commands across toolbars is allowed.  
+- Duplication of commands across toolbars is allowed.  
   
- **Document-specific toolbars** appear when a certain file type is active and disappear when a different file type becomes active.  
+  **Document-specific toolbars** appear when a certain file type is active and disappear when a different file type becomes active.  
   
--   Document-specific toolbars may not have more than 12 buttons.  
+- Document-specific toolbars may not have more than 12 buttons.  
   
--   The total width of the toolbar may not exceed 300 pixels.  
+- The total width of the toolbar may not exceed 300 pixels.  
   
--   Each file type can have either one embedded toolbar or one document-specific global toolbar, but not both.  
+- Each file type can have either one embedded toolbar or one document-specific global toolbar, but not both.  
   
- **Context-specific toolbars** appear when a certain context is set and tend to stay active for extended periods.  
+  **Context-specific toolbars** appear when a certain context is set and tend to stay active for extended periods.  
   
--   The button limit for all context-specific toolbars is 18.  
+- The button limit for all context-specific toolbars is 18.  
   
--   If most users won't consistently employ this toolbar's commands when the context is active, then don't associate this toolbar with a context.  
+- If most users won't consistently employ this toolbar's commands when the context is active, then don't associate this toolbar with a context.  
   
--   Ensure that the toolbar disappears when exiting context. None of these toolbars should appear on startup.  
+- Ensure that the toolbar disappears when exiting context. None of these toolbars should appear on startup.  
   
- **Toolbars with no context** never appear automatically. These show only when the user activates them. Keep the maximum width below 200 pixels.  
+  **Toolbars with no context** never appear automatically. These show only when the user activates them. Keep the maximum width below 200 pixels.  
   
 ### General organization and shell-defined groups  
  Use existing shared commands, command groups, and menus. If a new command needs to be defined, try to place it in an existing shared command group. If a new group needs to be defined, try to place it in an existing shared menu close to a related command group before creating a new top-level menu. This reduces command complexity while ensuring consistent command placement in the IDE.  
@@ -247,7 +229,7 @@ translation.priority.mt:
   
 -   Use title-case capitalization: the first letter of each word should be capitalized. For more information about text formatting in Visual Studio, see [Text style](../../extensibility/ux-guidelines/fonts-and-formatting-for-visual-studio.md#BKMK_TextStyle).  
   
--   Take into consideration where the command will be placed. Is it in a top-level menu or a flyout? For example, when grouping alignment commands in a flyout, the top-level command should be "Align” and the flyout commands should be "Left," "Right," "Center," "Justify," and so on. It would be redundant to name the flyout commands "Align Left" or "Align Right.”  
+-   Take into consideration where the command will be placed. Is it in a top-level menu or a flyout? For example, when grouping alignment commands in a flyout, the top-level command should be "Align" and the flyout commands should be "Left," "Right," "Center," "Justify," and so on. It would be redundant to name the flyout commands "Align Left" or "Align Right."  
   
      ![Visual Studio Format menu](../../extensibility/ux-guidelines/media/0502-a_formatmenu.png "0502-a_FormatMenu")  
   
@@ -260,7 +242,7 @@ translation.priority.mt:
   
 -   The command will be placed in a default toolbar.  
   
--   The command is a specialty command that users are likely to add to a toolbar using the **“Customize…”** dialog.  
+-   The command is a specialty command that users are likely to add to a toolbar using the **"Customize..."** dialog.  
   
 ## Access and shortcut keys  
   
@@ -283,19 +265,19 @@ translation.priority.mt:
   
  When defining shortcuts, follow these rules:  
   
--   **Use Control (Ctrl) and Function (Fn) key sequences.**  
+- **Use Control (Ctrl) and Function (Fn) key sequences.**  
   
--   **Preserve frequently used shortcuts.** Maintain the most popular shortcuts.  
+- **Preserve frequently used shortcuts.** Maintain the most popular shortcuts.  
   
--   **Make editor shortcuts easy to type.** Bind easy-to-type shortcuts to commands that developers need most while writing code. For example, **Edit.InvokeSmartTag** needs to have a quick shortcut key like Ctrl+/ and not Alt+Shift+F10.  
+- **Make editor shortcuts easy to type.** Bind easy-to-type shortcuts to commands that developers need most while writing code. For example, **Edit.InvokeSmartTag** needs to have a quick shortcut key like Ctrl+/ and not Alt+Shift+F10.  
   
--   **Strive for consistently themed shortcuts.**  
+- **Strive for consistently themed shortcuts.**  
   
--   **Follow Windows guidelines to determine which modifier keys to employ.** Use Ctrl key combinations for commands that have large-scale effects, such as commands that apply to an entire document. Use Shift key combinations for commands that extend or complement the actions of the standard shortcut key. Don't use Ctrl+Alt combinations.  
+- **Follow Windows guidelines to determine which modifier keys to employ.** Use Ctrl key combinations for commands that have large-scale effects, such as commands that apply to an entire document. Use Shift key combinations for commands that extend or complement the actions of the standard shortcut key. Don't use Ctrl+Alt combinations.  
   
--   **Remove extraneous shortcuts.** If you have a legacy feature, consider removing shortcuts that are used with extreme infrequency (fewer than 10 times from the CEIP data) or moderate infrequency (fewer than 100 times from the CEIP data) if an access key provides quick access to the same command. For example: Alt, H, C will open Help/Contents.  
+- **Remove extraneous shortcuts.** If you have a legacy feature, consider removing shortcuts that are used with extreme infrequency (fewer than 10 times from the CEIP data) or moderate infrequency (fewer than 100 times from the CEIP data) if an access key provides quick access to the same command. For example: Alt, H, C will open Help/Contents.  
   
- There is not a simple way to check shortcut availability. If you want to add a shortcut, follow these steps:  
+  There is not a simple way to check shortcut availability. If you want to add a shortcut, follow these steps:  
   
 1.  Check the list of [Visual Studio 2013 shortcuts](http://visualstudioshortcuts.com/2013/) to determine if there are similar commands to group yours with.  
   

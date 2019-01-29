@@ -1,13 +1,7 @@
 ---
 title: "&lt;trustInfo&gt; Element (ClickOnce Application) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 f1_keywords: 
   - "urn:schemas-microsoft-com:asm.v2#IPermission"
   - "urn:schemas-microsoft-com:asm.v2#PermissionSet"
@@ -23,32 +17,18 @@ helpviewer_keywords:
   - "manifests [ClickOnce], trustInfo element"
   - "<trustInfo> element [ClickOnce application manifest]"
 ms.assetid: 8a813a74-e158-4308-be78-565937f6af83
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;trustInfo&gt; Element (ClickOnce Application)
+# &lt;trustInfo&gt; element (ClickOnce application)
 Describes the minimum security permissions required for the application to run on the client computer.  
   
 ## Syntax  
   
-```  
+```xml
   
       <trustInfo>  
    <security>  
@@ -80,7 +60,7 @@ Describes the minimum security permissions required for the application to run o
 </trustInfo>  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `trustInfo` element is required and is in the `asm.v2` namespace. It has no attributes and contains the following elements.  
   
 ## security  
@@ -117,7 +97,7 @@ Describes the minimum security permissions required for the application to run o
   
      Required. Identifies whether the application needs an unrestricted grant of this permission. If `true`, the permission grant is unconditional. If `false`, or if this attribute is undefined, it is restricted according to the permission-specific attributes defined on the `IPermission` tag. Take the following permissions:  
   
-    ```  
+    ```xml  
     <IPermission  
       class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=1.2.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"   
       version="1"   
@@ -154,21 +134,21 @@ Describes the minimum security permissions required for the application to run o
 ## requestedExecutionLevel  
  Optional. Identifies the security level at which the application requests to be executed. This element has no children and has the following attributes.  
   
--   `Level`  
+- `Level`  
   
-     Required. Indicates the security level the application is requesting. Possible values are:  
+   Required. Indicates the security level the application is requesting. Possible values are:  
   
-     `asInvoker`, requesting no additional permissions. This level requires no additional trust prompts.  
+   `asInvoker`, requesting no additional permissions. This level requires no additional trust prompts.  
   
-     `highestAvailable`, requesting the highest permissions available to the parent process.  
+   `highestAvailable`, requesting the highest permissions available to the parent process.  
   
-     `requireAdministrator`, requesting full administrator permissions.  
+   `requireAdministrator`, requesting full administrator permissions.  
   
-     [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applications will only install with a value of `asInvoker`. Installing with any other value will fail.  
+   [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applications will only install with a value of `asInvoker`. Installing with any other value will fail.  
   
--   `uiAccess`  
+- `uiAccess`  
   
-     Optional. Indicates whether the application requires access to protected user interface elements. Values are either `true` or `false`, and the default is false. Only signed applications should have a value of true.  
+   Optional. Indicates whether the application requires access to protected user interface elements. Values are either `true` or `false`, and the default is false. Only signed applications should have a value of true.  
   
 ## Remarks  
  If a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application asks for more permissions than the client computer will grant by default, the common language runtime's Trust Manager will ask the user if she wants to grant the application this elevated level of trust. If she says no, the application will not run; otherwise, it will run with the requested permissions.  
@@ -182,7 +162,7 @@ Describes the minimum security permissions required for the application to run o
   
  The first example illustrates the `trustInfo` element for the default permissions available in the Internet security zone.  
   
-```  
+```xml  
 <trustInfo>  
     <security>  
       <applicationRequestMinimum>  
@@ -218,7 +198,7 @@ Describes the minimum security permissions required for the application to run o
   
  The second example illustrates the `trustInfo` element for the default permissions available in the LocalIntranet security zone.  
   
-```  
+```xml  
 <trustInfo>  
     <security>  
       <applicationRequestMinimum>  
@@ -270,7 +250,7 @@ Describes the minimum security permissions required for the application to run o
   
  The third example illustrates the `trustInfo` element for the default permissions available in the FullTrust security zone.  
   
-```  
+```xml  
 <trustInfo>  
   <security>  
     <applicationRequestMinimum>  
@@ -281,6 +261,6 @@ Describes the minimum security permissions required for the application to run o
 </trustInfo>  
 ```  
   
-## See Also  
- [Trusted Application Deployment Overview](../deployment/trusted-application-deployment-overview.md)   
- [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md)
+## See also  
+ [Trusted Application Deployment overview](../deployment/trusted-application-deployment-overview.md)   
+ [ClickOnce application manifest](../deployment/clickonce-application-manifest.md)

@@ -1,13 +1,7 @@
 ---
 title: "How to: Configure the ClickOnce Trust Prompt Behavior | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -19,26 +13,13 @@ helpviewer_keywords:
   - "ClickOnce applications, trust prompt"
   - "ClickOnce deployment, trust prompt"
 ms.assetid: cc04fa75-012b-47c9-9347-f4216be23cf2
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Configure the ClickOnce Trust Prompt Behavior
+# How to: Configure the ClickOnce trust prompt behavior
 You can configure the ClickOnce trust prompt to control whether end users are given the option of installing ClickOnce applications, such as Windows Forms applications, Windows Presentation Foundation applications, console applications, WPF browser applications, and Office solutions. You configure the trust prompt by setting registry keys on each end user's computer.  
   
  The following table shows the configuration options that can be applied to each of the five zones (Internet, UntrustedSites, MyComputer, LocalIntranet, and TrustedSites).  
@@ -61,7 +42,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
  You can override these settings by enabling, restricting, or disabling the ClickOnce trust prompt.  
   
-## Enabling the ClickOnce Trust Prompt  
+## Enable the ClickOnce trust prompt  
  Enable the trust prompt for a zone when you want end users to be presented with the option of installing and running any ClickOnce application that comes from that zone.  
   
 #### To enable the ClickOnce trust prompt by using the registry editor  
@@ -70,11 +51,11 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
     1.  Click **Start**, and then click **Run**.  
   
-    2.  In the **Open** box, type `regedit32`, and then click **OK**.  
+    2.  In the **Open** box, type `regedit`, and then click **OK**.  
   
 2.  Find the following registry key:  
   
-     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel  
+     **\HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel**  
   
      If the key does not exist, create it.  
   
@@ -94,9 +75,9 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 1.  Create a Visual Basic or Visual C# console application in Visual Studio.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Open the *Program.vb* or *Program.cs* file for editing and add the following code.  
   
-    ```vb#  
+    ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\MICROSOFT\.NETFramework\Security\TrustManager\PromptingLevel")  
     key.SetValue("MyComputer", "Enabled")  
@@ -107,7 +88,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
     key.Close()  
     ```  
   
-    ```c#  
+    ```csharp  
     Microsoft.Win32.RegistryKey key;  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\\MICROSOFT\\.NETFramework\\Security\\TrustManager\\PromptingLevel");  
     key.SetValue("MyComputer", "Enabled");  
@@ -120,7 +101,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 3.  Build and run the application.  
   
-## Restricting the ClickOnce Trust Prompt  
+## Restrict the ClickOnce trust prompt  
  Restrict the trust prompt so that solutions must be signed with Authenticode certificates that have known identity before users are prompted for a trust decision.  
   
 #### To restrict the ClickOnce trust prompt by using the registry editor  
@@ -133,7 +114,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 2.  Find the following registry key:  
   
-     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel  
+     **\HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel** 
   
      If the key does not exist, create it.  
   
@@ -151,9 +132,9 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 1.  Create a Visual Basic or Visual C# console application in Visual Studio.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Open the *Program.vb* or *Program.cs* file for editing and add the following code.  
   
-    ```vb#  
+    ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\MICROSOFT\.NETFramework\Security\TrustManager\PromptingLevel")  
     key.SetValue("MyComputer", "AuthenticodeRequired")  
@@ -164,7 +145,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
     key.Close()  
     ```  
   
-    ```c#  
+    ```csharp  
     Microsoft.Win32.RegistryKey key;  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\\MICROSOFT\\.NETFramework\\Security\\TrustManager\\PromptingLevel");  
     key.SetValue("MyComputer", "AuthenticodeRequired");  
@@ -177,7 +158,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 3.  Build and run the application.  
   
-## Disabling the ClickOnce Trust Prompt  
+## Disable the ClickOnce trust prompt  
  You can disable the trust prompt so that end users are not given the option to install solutions that are not already trusted in their security policy.  
   
 #### To disable the ClickOnce trust prompt by using the registry editor  
@@ -190,7 +171,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 2.  Find the following registry key:  
   
-     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel  
+     **\HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel**  
   
      If the key does not exist, create it.  
   
@@ -208,9 +189,9 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 1.  Create a Visual Basic or Visual C# console application in Visual Studio.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Open the *Program.vb* or *Program.cs* file for editing and add the following code.  
   
-    ```vb#  
+    ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\MICROSOFT\.NETFramework\Security\TrustManager\PromptingLevel")  
     key.SetValue("MyComputer", "Disabled")  
@@ -221,7 +202,7 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
     key.Close()  
     ```  
   
-    ```c#  
+    ```csharp  
     Microsoft.Win32.RegistryKey key;  
     key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey("SOFTWARE\\MICROSOFT\\.NETFramework\\Security\\TrustManager\\PromptingLevel");  
     key.SetValue("MyComputer", "Disabled");  
@@ -235,14 +216,14 @@ You can configure the ClickOnce trust prompt to control whether end users are gi
   
 3.  Build and run the application.  
   
-## See Also  
- [Securing ClickOnce Applications](../deployment/securing-clickonce-applications.md)   
- [Code Access Security for ClickOnce Applications](../deployment/code-access-security-for-clickonce-applications.md)   
+## See also  
+ [Secure ClickOnce applications](../deployment/securing-clickonce-applications.md)   
+ [Code access security for ClickOnce applications](../deployment/code-access-security-for-clickonce-applications.md)   
  [ClickOnce and Authenticode](../deployment/clickonce-and-authenticode.md)   
- [Trusted Application Deployment Overview](../deployment/trusted-application-deployment-overview.md)   
- [How to: Enable ClickOnce Security Settings](../deployment/how-to-enable-clickonce-security-settings.md)   
- [How to: Set a Security Zone for a ClickOnce Application](../deployment/how-to-set-a-security-zone-for-a-clickonce-application.md)   
- [How to: Set Custom Permissions for a ClickOnce Application](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md)   
- [How to: Debug a ClickOnce Application with Restricted Permissions](../deployment/how-to-debug-a-clickonce-application-with-restricted-permissions.md)   
- [How to: Add a Trusted Publisher to a Client Computer for ClickOnce Applications](../deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications.md)   
- [How to: Re-sign Application and Deployment Manifests](../deployment/how-to-re-sign-application-and-deployment-manifests.md)
+ [Trusted application deployment overview](../deployment/trusted-application-deployment-overview.md)   
+ [How to: Enable ClickOnce security settings](../deployment/how-to-enable-clickonce-security-settings.md)   
+ [How to: Set a security zone for a ClickOnce application](../deployment/how-to-set-a-security-zone-for-a-clickonce-application.md)   
+ [How to: Set custom permissions for a ClickOnce application](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md)   
+ [How to: Debug a ClickOnce application with restricted permissions](../deployment/how-to-debug-a-clickonce-application-with-restricted-permissions.md)   
+ [How to: Add a trusted publisher to a client computer for ClickOnce applications](../deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications.md)   
+ [How to: Re-sign application and deployment manifests](../deployment/how-to-re-sign-application-and-deployment-manifests.md)

@@ -1,41 +1,22 @@
 ---
 title: "MarkProfile | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "MarkProfile"
 ms.assetid: 54dac8c8-c8ee-4023-af27-b25466e3a6ec
-caps.latest.revision: 10
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # MarkProfile
-The `MarkProfile` method inserts a profile mark in the .vsp file. Profiling for the thread containing the `MarkProfile` function must be ON for the mark to be inserted.  
+The `MarkProfile` method inserts a profile mark in the .*vsp* file. Profiling for the thread containing the `MarkProfile` function must be ON for the mark to be inserted.  
   
 ## Syntax  
   
-```  
+```cpp  
 PROFILE_COMMAND_STATUS PROFILERAPI MarkProfile( long lMarker );  
 ```  
   
@@ -44,7 +25,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI MarkProfile( long lMarker );
   
  The marker to insert. The marker must be greater than or equal to 0 (zero).  
   
-## Property Value/Return Value  
+## Property value/return value  
  The function indicates success or failure by using **PROFILE_COMMAND_STATUS** enumeration. The return value can be one of the following:  
   
 |Enumerator|Description|  
@@ -58,27 +39,27 @@ PROFILE_COMMAND_STATUS PROFILERAPI MarkProfile( long lMarker );
 |MARK_OK|MARK_OK is returned to indicate success.|  
   
 ## Remarks  
- The mark value is inserted into the .vsp file each time the code runs if the thread containing the MarkProfile function is being profiled. You can call MarkProfile multiple times.  
+ The mark value is inserted into the .*vsp* file each time the code runs if the thread containing the MarkProfile function is being profiled. You can call MarkProfile multiple times.  
   
- Profile marks are global in scope. For example, a profile mark inserted in one thread can be used to mark the start or end of a data segment in any thread in the .vsp file.  
+ Profile marks are global in scope. For example, a profile mark inserted in one thread can be used to mark the start or end of a data segment in any thread in the .*vsp* file.  
   
  The profiling state for the thread that contains the mark profile function must be on when marks and comments inserted with the Mark command or with API functions (CommentMarkAtProfile, CommentMarkProfile, or MarkProfile).  
   
 > [!IMPORTANT]
 >  MarkProfile method should be used with instrumentation profiling only.  
   
-## .NET Framework Equivalent  
- Microsoft.VisualStudio.Profiler.dll  
+## .NET Framework equivalent  
+ *Microsoft.VisualStudio.Profiler.dll*  
   
-## Function Information  
- Header: Declared in VSPerf.h  
+## Function information  
+ Header: Declared in *VSPerf.h*  
   
- Import library: VSPerf.lib  
+ Import library: *VSPerf.lib*  
   
 ## Example  
  The following code illustrates the MarkProfile function.  
   
-```  
+```cpp  
 void ExerciseMarkProfile()  
 {  
     // Declare and initialize variables to pass to   
@@ -110,5 +91,5 @@ void ExerciseMarkProfile()
 }  
 ```  
   
-## See Also  
- [Visual Studio Profiler API Reference (Native)](../profiling/visual-studio-profiler-api-reference-native.md)
+## See also  
+ [Visual Studio profiler API reference (native)](../profiling/visual-studio-profiler-api-reference-native.md)

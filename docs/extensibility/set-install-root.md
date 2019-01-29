@@ -1,44 +1,27 @@
 ---
-title: "Installing to external directories with VSIX v3 | Microsoft Docs"
-ms.custom: ""
+title: "Installing outside the extensions folder with VSIX v3 | Microsoft Docs"
 ms.date: "11/09/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.assetid: 913c3745-8aa9-4260-886e-a05aecfb2225
-caps.latest.revision: 1
 author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Installing to external directories
+# Installing outside the extensions folder
 
->**Note:** This documentation is preliminary and based on the Visual Studio 2017 RC release.
+Starting with Visual Studio 2017 and VSIX v3 (version 3), there is now support for installing extension assets outside of the extensions folder. Currently, the following locations are enabled as valid installation locations (where [INSTALLDIR] is mapped to the Visual Studio instance's installation directory):
 
-Starting with Visual Studio 2017 and VSIX v3 (version 3), there is now support for installing extension assets outside of the extensions folder. Currently, the following locations are enabled as valid installation locations (where [installdir] is mapped to the Visual Studio instance’s installation directory):
+* [INSTALLDIR]\MSBuild
+* [INSTALLDIR]\Xml\Schemas
+* [INSTALLDIR]\Common7\IDE\PublicAssemblies
+* [INSTALLDIR]\Licenses
+* [INSTALLDIR]\Common7\IDE\ReferenceAssemblies
+* [INSTALLDIR]\Common7\IDE\RemoteDebugger
+* [INSTALLDIR]\Common7\IDE\VC\VCTargets
 
-* [installdir]\Common7\IDE\PublicAssemblies
-* [installdir]\Common7\IDE\ReferenceAssemblies
-* [installdir]\MSBuild
-* [installdir]\Schemas
-* [installdir]\Licenses
+>**Note:** The VSIX format does not allow you to install outside the VS install folder structure.
 
 In order to support installing to these directories, the VSIX must be installed "per-instance per-machine". This can be enabled by checking the "all-users" checkbox in the extension.vsixmanifest designer:
 
@@ -50,7 +33,7 @@ To set the installation directories, you can use the **Properties** window in Vi
 
 ![install root properties](media/install-root-properties.png)
 
-This will add some metadata to the corresponding `ProjectReference` property inside of the VSIX project’s .csproj file:
+This will add some metadata to the corresponding `ProjectReference` property inside of the VSIX project's .csproj file:
 
 ```xml
  <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
@@ -64,7 +47,7 @@ This will add some metadata to the corresponding `ProjectReference` property ins
 
 ## How to set a subpath under the InstallRoot
 
-If you’d like to install to a subpath underneath the `InstallRoot`, you can do so by setting the `VsixSubPath` property just like the `InstallRoot` property. For instance, say we want our project reference’s output to install to '[installdir]\MSBuild\MyCompany\MySDK\1.0'. We can do this easily with the property designer:
+If you'd like to install to a subpath underneath the `InstallRoot`, you can do so by setting the `VsixSubPath` property just like the `InstallRoot` property. For instance, say we want our project reference's output to install to '[INSTALLDIR]\MSBuild\MyCompany\MySDK\1.0'. We can do this easily with the property designer:
 
 ![set subpath](media/set-subpath.png)
 

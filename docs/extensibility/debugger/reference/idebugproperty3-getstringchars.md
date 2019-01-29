@@ -1,35 +1,17 @@
 ---
 title: "IDebugProperty3::GetStringChars | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugProperty3::GetStringChars"
 helpviewer_keywords: 
   - "IDebugProperty3::GetStringChars"
 ms.assetid: 832c37f3-85cb-4227-8ab2-f27a80eafe90
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugProperty3::GetStringChars
 Retrieves the string associated with this property and stores it in a user-supplied buffer.  
@@ -38,17 +20,17 @@ Retrieves the string associated with this property and stores it in a user-suppl
   
 ```cpp  
 HRESULT GetStringChars(  
-   ULONG  buflen,  
-   WCHAR* rgString,  
-   ULONG* pceltFetched  
+   ULONG  buflen,  
+   WCHAR* rgString,  
+   ULONG* pceltFetched  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetStringChars(  
-   uint       buflen,   
-   out string rgString,   
-   out uint   pceltFetched  
+   uint       buflen,   
+   out string rgString,   
+   out uint   pceltFetched  
 );  
 ```  
   
@@ -74,29 +56,27 @@ int GetStringChars(
 >  In C++, the returned string does not include a terminating null character. If given, `pceltFetched` will specify the number of characters in the string.  
   
 ## Example  
- <!--FIXME [!CODE [[cpp]]([cpp])]-->  
-  
-```  
+ 
+```cpp  
 CStringW RetrievePropertyString(IDebugProperty2 *pPropInfo)  
 {  
-    CStringW returnString = L"";  
-    CComQIPtr<IDebugProperty3> pProp3 = pPropInfo->pProperty;  
-    If (pProp3 != NULL) {  
-        ULONG dwStrLen = 0;  
-        HRESULT hr;  
-        hr = pProp3->GetStringCharLength(&dwStrLen);  
-        if (SUCCEEDED(hr) && dwStrLen > 0) {  
-            ULONG dwRead;  
-            CStrBufW buf(returnString,dwStrLen,CStrBuf::SET_LENGTH);  
-            hr = pProp3->GetStringChars(dwStrLen,  
+    CStringW returnString = L"";  
+    CComQIPtr<IDebugProperty3> pProp3 = pPropInfo->pProperty;  
+    If (pProp3 != NULL) {  
+        ULONG dwStrLen = 0;  
+        HRESULT hr;  
+        hr = pProp3->GetStringCharLength(&dwStrLen);  
+        if (SUCCEEDED(hr) && dwStrLen > 0) {  
+            ULONG dwRead;  
+            CStrBufW buf(returnString,dwStrLen,CStrBuf::SET_LENGTH);  
+            hr = pProp3->GetStringChars(dwStrLen,  
                                         reinterpret_cast<WCHAR*>(static_cast<CStringW::PXSTR>(buf)),  
                                         &dwRead);  
-        }  
-    }  
-    return(returnString);  
-```  
-  
- <!--FIXME [!CODE [}](})]-->  
+        }  
+    }  
+    return(returnString);
+}
+```    
   
 ## See Also  
  [GetStringCharLength](../../../extensibility/debugger/reference/idebugproperty3-getstringcharlength.md)   

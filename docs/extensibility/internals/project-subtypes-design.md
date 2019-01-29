@@ -1,33 +1,15 @@
 ---
 title: "Project Subtypes Design | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "project subtypes, design"
 ms.assetid: 405488bb-1362-40ed-b0f1-04a57fc98c56
-caps.latest.revision: 32
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Project Subtypes Design
 Project subtypes let VSPackages extend projects based on the Microsoft Build Engine (MSBuild). The use of aggregation lets you reuse the bulk of the core managed project system implemented in [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] yet still customize the behavior for a particular scenario.  
@@ -43,17 +25,17 @@ Project subtypes let VSPackages extend projects based on the Microsoft Build Eng
 ## Project Subtype Design  
  The initialization of a project subtype is achieved by aggregating the main <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> and <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject> objects. This aggregation enables a project subtype to override or enhance most of the capabilities of the base project. Project subtypes get the first chance to handle properties using <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy>, commands using <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> and <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy>, and project item management using <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3>. Project subtypes can also extend:  
   
--   Project configuration objects.  
+- Project configuration objects.  
   
--   Configuration-dependent objects.  
+- Configuration-dependent objects.  
   
--   Configuration-independent browse objects.  
+- Configuration-independent browse objects.  
   
--   Project automation objects.  
+- Project automation objects.  
   
--   Project automation property collections.  
+- Project automation property collections.  
   
- For more information on extensibility by project subtypes, see [Properties and Methods Extended by Project Subtypes](../../extensibility/internals/properties-and-methods-extended-by-project-subtypes.md).  
+  For more information on extensibility by project subtypes, see [Properties and Methods Extended by Project Subtypes](../../extensibility/internals/properties-and-methods-extended-by-project-subtypes.md).  
   
 ##### Policy Files  
  The [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] environment provides an example of extending the base project system with a project subtype in its implementation of policy files. A policy file allows the shaping of the [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] environment by managing features that include the Solution Explorer, **Add Project** dialog box, **Add New Item** dialog box and the **Properties** dialog box. The policy subtype overrides and enhances these features through <xref:Microsoft.VisualStudio.Shell.Interop.IVsFilterAddProjectItemDlg>, `IOleCommandTarget` and <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy> implementations.  

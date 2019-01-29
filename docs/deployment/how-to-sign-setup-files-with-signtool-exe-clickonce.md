@@ -1,13 +1,7 @@
 ---
 title: "How to: Sign Setup Files with SignTool.exe (ClickOnce) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -19,27 +13,14 @@ helpviewer_keywords:
   - "ClickOnce applications, re-signing setup.exe"
   - "ClickOnce deployment, re-signing setup.exe"
 ms.assetid: 545a4005-d283-4110-9821-c78a9833c250
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Sign Setup Files with SignTool.exe (ClickOnce)
-You can use SignTool.exe to sign a Setup program (setup.exe). This process helps ensure that tampered files are not installed on end-user computers.  
+# How to: Sign setup files with SignTool.exe (ClickOnce)
+You can use *SignTool.exe* to sign a Setup program (*setup.exe*). This process helps ensure that tampered files are not installed on end-user computers.  
   
  By default, ClickOnce has signed manifests and a signed Setup program. However, if you want to change the parameters of the Setup program later, you must sign the Setup program later. If you change the parameters after the Setup program is signed, the signature becomes corrupted.  
   
@@ -73,21 +54,21 @@ You can use SignTool.exe to sign a Setup program (setup.exe). This process helps
   
 11. At the customer site, open a command prompt.  
   
-12. Change to the directory that contains the .exe file.  
+12. Change to the directory that contains the *.exe* file.  
   
-13. Sign the .exe file with the following command:  
+13. Sign the *.exe* file with the following command:  
   
-    ```  
+    ```cmd  
     signtool sign /sha1 CertificateHash Setup.exe  
     signtool sign /f CertFileName Setup.exe  
     ```  
   
      For example, to sign the Setup program, use one of the following commands:  
   
-    ```  
+    ```cmd  
     signtool sign /sha1 CCB... Setup.exe  
     signtool sign /f CertFileName Setup.exe  
     ```  
   
-## See Also  
- [How to: Re-sign Application and Deployment Manifests](../deployment/how-to-re-sign-application-and-deployment-manifests.md)
+## See also  
+ [How to: Re-sign application and deployment manifests](../deployment/how-to-re-sign-application-and-deployment-manifests.md)

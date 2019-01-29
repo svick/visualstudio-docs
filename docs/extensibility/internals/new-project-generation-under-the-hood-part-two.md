@@ -1,34 +1,16 @@
 ---
 title: "New Project Generation: Under the Hood, Part Two | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "projects [Visual Studio], new project dialog"
   - "projects [Visual Studio], new project generation"
 ms.assetid: 73ce91d8-0ab1-4a1f-bf12-4d3c49c01e13
-caps.latest.revision: 14
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # New Project Generation: Under the Hood, Part Two
 In [New Project Generation: Under the Hood, Part One](../../extensibility/internals/new-project-generation-under-the-hood-part-one.md) we saw how the **New Project** dialog Box is populated. Let's assume you've selected a **Visual C# Windows Application**, filled out the **Name** and **Location** text boxes, and clicked OK.  
@@ -36,7 +18,7 @@ In [New Project Generation: Under the Hood, Part One](../../extensibility/intern
 ## Generating the Solution Files  
  Choosing an application template directs [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] to unzip and open the corresponding .vstemplate file, and to launch a template to interpret the XML commands in this file. These commands create projects and project items in the new or existing solution.  
   
- The template unpacks source files, called item templates, from the same .zip folder that holds the .vstemplate file. The template copies these files to the new project, customizing them accordingly. For an overview of project and item templates, see [NIB: Visual Studio Templates](http://msdn.microsoft.com/en-us/141fccaa-d68f-4155-822b-27f35dd94041).  
+ The template unpacks source files, called item templates, from the same .zip folder that holds the .vstemplate file. The template copies these files to the new project, customizing them accordingly.  
   
 ### Template Parameter Replacement  
  When the template copies an item template to a new project, it replaces any template parameters with strings to customize the file. A template parameter is a special token that is preceded and followed by a dollar sign, for example, $date$.  
@@ -50,10 +32,10 @@ using System.Windows.Forms;
   
 namespace $safeprojectname$  
 {  
-    static class Program  
-    {  
-        // source code deleted here for brevity  
-    }  
+    static class Program  
+    {  
+        // source code deleted here for brevity  
+    }  
 }  
 ```  
   
@@ -66,10 +48,10 @@ using System.Windows.Forms;
   
 namespace Simple  
 {  
-    static class Program  
-    {  
-        // source code deleted here for brevity  
-    }  
+    static class Program  
+    {  
+        // source code deleted here for brevity  
+    }  
 }  
 ```  
   
@@ -80,10 +62,10 @@ namespace Simple
   
 ```  
 <VSTemplate Version="2.0.0"     xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"     Type="Project">  
-    <TemplateData>  
-    </TemplateData>  
-    <TemplateContent>  
-    </TemplateContent>  
+    <TemplateData>  
+    </TemplateData>  
+    <TemplateContent>  
+    </TemplateContent>  
 </VSTemplate>  
 ```  
   
@@ -93,33 +75,33 @@ namespace Simple
   
 ```  
 <TemplateContent>  
-  <Project File="WindowsApplication.csproj" ReplaceParameters="true">  
-    <ProjectItem ReplaceParameters="true"  
-      TargetFileName="Properties\AssemblyInfo.cs">  
-      AssemblyInfo.cs  
-    </ProjectItem>  
-    <ProjectItem TargetFileName="Properties\Resources.resx">  
-      Resources.resx  
-    </ProjectItem>  
-    <ProjectItem ReplaceParameters="true"       TargetFileName="Properties\Resources.Designer.cs">  
-      Resources.Designer.cs  
-    </ProjectItem>  
-    <ProjectItem TargetFileName="Properties\Settings.settings">  
-      Settings.settings  
-    </ProjectItem>  
-    <ProjectItem ReplaceParameters="true"       TargetFileName="Properties\Settings.Designer.cs">  
-      Settings.Designer.cs  
-    </ProjectItem>  
-    <ProjectItem ReplaceParameters="true" OpenInEditor="true">  
-      Form1.cs  
-    </ProjectItem>  
-    <ProjectItem ReplaceParameters="true">  
-      Form1.Designer.cs  
-    </ProjectItem>  
-    <ProjectItem ReplaceParameters="true">  
-      Program.cs  
-    </ProjectItem>  
-  </Project>  
+  <Project File="WindowsApplication.csproj" ReplaceParameters="true">  
+    <ProjectItem ReplaceParameters="true"  
+      TargetFileName="Properties\AssemblyInfo.cs">  
+      AssemblyInfo.cs  
+    </ProjectItem>  
+    <ProjectItem TargetFileName="Properties\Resources.resx">  
+      Resources.resx  
+    </ProjectItem>  
+    <ProjectItem ReplaceParameters="true"       TargetFileName="Properties\Resources.Designer.cs">  
+      Resources.Designer.cs  
+    </ProjectItem>  
+    <ProjectItem TargetFileName="Properties\Settings.settings">  
+      Settings.settings  
+    </ProjectItem>  
+    <ProjectItem ReplaceParameters="true"       TargetFileName="Properties\Settings.Designer.cs">  
+      Settings.Designer.cs  
+    </ProjectItem>  
+    <ProjectItem ReplaceParameters="true" OpenInEditor="true">  
+      Form1.cs  
+    </ProjectItem>  
+    <ProjectItem ReplaceParameters="true">  
+      Form1.Designer.cs  
+    </ProjectItem>  
+    <ProjectItem ReplaceParameters="true">  
+      Program.cs  
+    </ProjectItem>  
+  </Project>  
 </TemplateContent>  
 ```  
   
@@ -146,12 +128,12 @@ namespace Simple
   
 ```  
 <ItemGroup>  
-    <Reference Include="System" />  
-    <Reference Include="System.Data" />  
-    <Reference Include="System.Deployment" />  
-    <Reference Include="System.Drawing" />  
-    <Reference Include="System.Windows.Forms" />  
-    <Reference Include="System.Xml" />  
+    <Reference Include="System" />  
+    <Reference Include="System.Data" />  
+    <Reference Include="System.Deployment" />  
+    <Reference Include="System.Drawing" />  
+    <Reference Include="System.Windows.Forms" />  
+    <Reference Include="System.Xml" />  
 </ItemGroup>  
 ```  
   
@@ -159,12 +141,12 @@ namespace Simple
   
 ```  
 <ItemGroup>  
-    <Compile Include="Properties\Settings.Designer.cs">  
-        <DependentUpon>Settings.settings</DependentUpon>  
-    </Compile>  
+    <Compile Include="Properties\Settings.Designer.cs">  
+        <DependentUpon>Settings.settings</DependentUpon>  
+    </Compile>  
 </ItemGroup>  
 ```  
   
 ## See Also  
  [New Project Generation: Under the Hood, Part One](../../extensibility/internals/new-project-generation-under-the-hood-part-one.md)  
- [MSBuild](../../msbuild/msbuild1.md)
+ [MSBuild](../../msbuild/msbuild.md)

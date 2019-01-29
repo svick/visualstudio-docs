@@ -1,20 +1,14 @@
 ---
-title: "When Calling a Function Hundreds of Times, How Do I know Which Call Failed? | Microsoft Docs"
-ms.custom: ""
+title: "Find which call failed when calling a function many times | Microsoft Docs"
+ms.custom: "seodec18"
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "vs.debug.functions"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
-  - "C++"
+  - "VB"
+  - "FSharp"
   - "C++"
 helpviewer_keywords: 
   - "conditional breakpoints"
@@ -29,24 +23,11 @@ helpviewer_keywords:
   - "functions [debugger]"
   - "Skip Count"
 ms.assetid: 66cfac86-f5be-4d3a-9329-d44cd74bc586
-caps.latest.revision: 17
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # When Calling a Function Hundreds of Times, How Do I know Which Call Failed?
 ## Problem Description  
@@ -55,7 +36,7 @@ translation.priority.ht:
 ## Solution  
  You can set a breakpoint on the function with the **Hit Count** field to a value so high that it will never be reached. In this case, because you believe the function `CnvtV` is called a couple hundred times, you might set **Hit Count** to 1000 or more. Then run the program and wait for the call to fail. When it fails, open the Breakpoints window and look at the list of breakpoints. The breakpoint you set on `CnvtV` appears, followed by the hit count and number of iterations remaining:  
   
-```  
+```cpp
 CnvtV(int) (no condition) when hit count is equal to 1000 (currently 101)  
 ```  
   
@@ -63,5 +44,5 @@ CnvtV(int) (no condition) when hit count is equal to 1000 (currently 101)
   
 ## See Also  
  [Debugging Native Code FAQs](../debugger/debugging-native-code-faqs.md)   
- [Setting Breakpoints](http://msdn.microsoft.com/en-us/fe4eedc1-71aa-4928-962f-0912c334d583)   
+ [Setting Breakpoints](https://msdn.microsoft.com/library/fe4eedc1-71aa-4928-962f-0912c334d583)   
  [Debugging Native Code](../debugger/debugging-native-code.md)

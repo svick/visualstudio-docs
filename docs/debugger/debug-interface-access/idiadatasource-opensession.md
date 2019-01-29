@@ -1,46 +1,26 @@
 ---
 title: "IDiaDataSource::openSession | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaDataSource::openSession method"
 ms.assetid: a3319ed0-3979-483b-9852-c0af96852c48
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaDataSource::openSession
 Opens a session for querying symbols.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT openSession (   
-   IDiaSession** ppSession  
+   IDiaSession** ppSession  
 );  
 ```  
   
@@ -64,7 +44,7 @@ HRESULT openSession ( 
   
 ## Example  
   
-```cpp#  
+```C++  
 IDiaSession* pSession;  
 HRESULT hr = pSource->openSession( &pSession );  
 if (FAILED(hr))  

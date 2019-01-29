@@ -1,34 +1,16 @@
 ---
 title: "Project Model Core Components | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "project models, objects and interfaces"
   - "project models, services"
 ms.assetid: b2f572d3-b26d-4846-92d1-84055fac141a
-caps.latest.revision: 17
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Project Model Core Components
 The following tables expand on the project model. The tables present brief descriptions of the interfaces and services identified in the model, and the interfaces and services associated with specific objects. Additionally, the tables detail other interfaces that are optional in project creation and maintenance depending on the requirements of your specific project type.  
@@ -56,7 +38,7 @@ The following tables expand on the project model. The tables present brief descr
 |<xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy>|Enables command execution similar to that of `IOleCommandTarget` for commands such as Cut and Rename that apply only when the focus is in Solution Explorer.|  
 |<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>|Serves as the primary command target interface for a project hierarchy. It is the standard interface for querying objects for their command status or state and running commands. Available when you are not focused in the Project window.|  
 |<xref:Microsoft.VisualStudio.Shell.Interop.IPersistFileFormat>|Coordinates the persistence of the project state. Typically, the project state is stored as a project file but can be adapted to storage systems that are not file-based.|  
-|<xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2>|Enables the project to manage all aspects of persistence for its project items, either as files on disk or objects in other storage systems. The `IVsPeristHierarchyItem2` interface is used for items that do not implement the <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2> interface.|  
+|<xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2>|Enables the project to manage all aspects of persistence for its project items, either as files on disk or objects in other storage systems. The `IVsPersistHierarchyItem2` interface is used for items that do not implement the <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2> interface.|  
 |<xref:Microsoft.VisualStudio.Shell.Interop.IVsSccProject2>|Coordinates interactions with source code control.|  
 |<xref:Microsoft.VisualStudio.Shell.Interop.IVsProjectFlavorCfgProvider>|Enables projects to manage configuration information.|  
 |<xref:Microsoft.VisualStudio.Shell.Interop.IVsCfgProvider2>|Manages project configuration objects, such as Debug/Release configurations. Build, deploy, and debug operations are coordinated through project configuration objects.|  
@@ -114,6 +96,6 @@ The following tables expand on the project model. The tables present brief descr
 ## See Also  
  <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>   
  [Checklist: Creating New Project Types](../../extensibility/internals/checklist-creating-new-project-types.md)   
- [Not in Build: Using HierUtil7 Project Classes to Implement a Project Type (C++)](http://msdn.microsoft.com/en-us/a5c16a09-94a2-46ef-87b5-35b815e2f346)   
+ [Not in Build: Using HierUtil7 Project Classes to Implement a Project Type (C++)](https://msdn.microsoft.com/library/a5c16a09-94a2-46ef-87b5-35b815e2f346)   
  [Supporting Symbol-Browsing Tools](../../extensibility/internals/supporting-symbol-browsing-tools.md)   
  [Elements of a Project Model](../../extensibility/internals/elements-of-a-project-model.md)

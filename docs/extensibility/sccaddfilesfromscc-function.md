@@ -1,56 +1,38 @@
 ---
 title: "SccAddFilesFromSCC Function | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "SccAddFilesFromSCC"
 helpviewer_keywords: 
   - "SccAddFilesFromSCC function"
 ms.assetid: f21a3500-ade8-4dd8-8647-10e2179be9c1
-caps.latest.revision: 17
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# SccAddFilesFromSCC Function
+# SccAddFilesFromSCC function
 This function adds a list of files from source control to the currently opened project.  
   
 ## Syntax  
   
 ```cpp  
 SCCRTN SccAddFilesFromSCC(  
-   LPVOID  pContext,  
-   HWND    hWnd,  
-   LPSTR   lpUser,  
-   LPSTR   lpAuxProjPath,  
-   LONG    cFiles,  
-   LPCSTR* lpFilePaths,  
-   LPCSTR  lpDestination,  
-   LPCSTR  lpComment,  
-   LPBOOL  pbResults  
+   LPVOID  pContext,  
+   HWND    hWnd,  
+   LPSTR   lpUser,  
+   LPSTR   lpAuxProjPath,  
+   LONG    cFiles,  
+   LPCSTR* lpFilePaths,  
+   LPCSTR  lpDestination,  
+   LPCSTR  lpComment,  
+   LPBOOL  pbResults  
 );  
 ```  
   
-#### Parameters  
+### Parameters  
  pContext  
  [in] The source control plug-in context pointer.  
   
@@ -78,7 +60,7 @@ SCCRTN SccAddFilesFromSCC(
  pbResults  
  [in, out] Array of flags that are set to indicate success (nonzero or TRUE) or failure (zero or FALSE) for each file (size of the array must be at least `cFiles` long).  
   
-## Return Value  
+## Return value  
  The source control plug-in implementation of this function is expected to return one of the following values:  
   
 |Value|Description|  
@@ -89,5 +71,5 @@ SCCRTN SccAddFilesFromSCC(
 |SCC_E_NONSPECIFICERROR|Unknown error.|  
 |SCC_I_RELOADFILE|A file or project needs to be reloaded.|  
   
-## See Also  
- [Source Control Plug-in API Functions](../extensibility/source-control-plug-in-api-functions.md)
+## See also  
+ [Source control plug-in API functions](../extensibility/source-control-plug-in-api-functions.md)

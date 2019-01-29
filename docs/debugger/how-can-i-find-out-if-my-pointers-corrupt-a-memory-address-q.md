@@ -1,18 +1,12 @@
 ---
-title: "How Can I Find Out If My Pointers Corrupt a Memory Address? | Microsoft Docs"
-ms.custom: ""
+title: "Find out if my pointers corrupt a memory address | Microsoft Docs"
+ms.custom: "seodec18"
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
-  - "FSharp"
-  - "VB"
   - "CSharp"
-  - "C++"
+  - "VB"
+  - "FSharp"
   - "C++"
 helpviewer_keywords: 
   - "addresses, pointers corrupting memory address"
@@ -22,24 +16,11 @@ helpviewer_keywords:
   - "debugging [C++], memory corruption"
   - "corrupted memory address"
 ms.assetid: a147c939-4fb1-415c-8410-cf303781e9e8
-caps.latest.revision: 19
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # How Can I Find Out If My Pointers Corrupt a Memory Address?
 ## Problem Description  
@@ -53,7 +34,7 @@ translation.priority.ht:
   
 #### To find where the memory address is modified  
   
-1.  Set a data breakpoint at 0x00408000. See [Set a data change breakpoint (native C++ only)](../debugger/using-breakpoints.md#BKMK_Set_a_data_change_breakpoint__native_C___only_).  
+1.  Set a data breakpoint at 0x00408000. See [Set a data change breakpoint (native C++ only)](../debugger/using-breakpoints.md#BKMK_set_a_data_breakpoint_native_cplusplus_only).  
   
 2.  When you hit the breakpoint, use the **Memory** window to view memory contents starting at 0x00408000. For more information, see [Memory Windows](../debugger/memory-windows.md).  
   

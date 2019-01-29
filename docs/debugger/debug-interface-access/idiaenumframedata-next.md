@@ -1,48 +1,28 @@
 ---
 title: "IDiaEnumFrameData::Next | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaEnumFrameData::Next method"
 ms.assetid: 546e2e23-efb2-425a-96a1-808c67c519fb
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaEnumFrameData::Next
 Retrieves a specified number of frame data elements in the enumeration sequence.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT Next (   
-   ULONG           celt,   
-   IDiaFrameData** rgelt,  
-   ULONG*          pceltFetched  
+   ULONG           celt,   
+   IDiaFrameData** rgelt,  
+   ULONG*          pceltFetched  
 );  
 ```  
   

@@ -1,63 +1,45 @@
 ---
 title: "BP_FLAGS90 | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "BP_FLAGS90 enumeration"
 ms.assetid: 3e5a06c5-fb30-4b8a-b2d5-4a0570fc80bd
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # BP_FLAGS90
 Enumerates valid values for optional flags. The optional flags may be used to specify additional information when you set a breakpoint. This enumeration extends the [BP_FLAGS](../../../extensibility/debugger/reference/bp-flags.md) enumeration.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 enum enum_BP_FLAGS90  
 {  
-   // VS 8.0 values  
-   BP90_FLAG_NONE               = 0x0000,  
-   BP90_FLAG_MAP_DOCPOSITION    = 0x0001,  
-   BP90_FLAG_DONT_STOP          = 0x0002,  
+   // VS 8.0 values  
+   BP90_FLAG_NONE               = 0x0000,  
+   BP90_FLAG_MAP_DOCPOSITION    = 0x0001,  
+   BP90_FLAG_DONT_STOP          = 0x0002,  
   
-   // Values added in VS 9.0  
-   BP90_FLAG_TRACEPOINT_CONTINUE = 0x0004,  
+   // Values added in VS 9.0  
+   BP90_FLAG_TRACEPOINT_CONTINUE = 0x0004,  
 };  
 typedef DWORD BP_FLAGS90;  
 ```  
   
-```c#  
+```csharp  
 public enum enum_BP_FLAGS90  
 {  
-   // VS 8.0 values  
-   BP90_FLAG_NONE                = 0x0000,  
-   BP90_FLAG_MAP_DOCPOSITION     = 0x0001,  
-   BP90_FLAG_DONT_STOP           = 0x0002,  
+   // VS 8.0 values  
+   BP90_FLAG_NONE                = 0x0000,  
+   BP90_FLAG_MAP_DOCPOSITION     = 0x0001,  
+   BP90_FLAG_DONT_STOP           = 0x0002,  
   
-   // Values added in VS 9.0  
-   BP90_FLAG_TRACEPOINT_CONTINUE = 0x0004,  
+   // Values added in VS 9.0  
+   BP90_FLAG_TRACEPOINT_CONTINUE = 0x0004,  
 };  
 ```  
   

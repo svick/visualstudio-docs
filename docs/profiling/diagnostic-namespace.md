@@ -1,44 +1,24 @@
 ---
 title: "diagnostic Namespace | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "cvmarkersobj/Concurrency::diagnostic"
 helpviewer_keywords: 
   - "Concurrency::diagnostic namespace"
 ms.assetid: ad786b19-7c4c-46ee-bfb6-c4752b373a09
-caps.latest.revision: 6
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# diagnostic Namespace
+# diagnostic namespace
 The `diagnostics` namespace provides functionality for emitting Concurrency Visualizer markers.  
   
 ## Syntax  
   
-```  
+```cpp  
 namespace diagnostic;  
 ```  
   
@@ -58,9 +38,9 @@ namespace diagnostic;
 |[marker_importance Enumeration](../profiling/marker-importance-enumeration.md)|Represents the importance level of a Concurrency Visualizer marker.|  
   
 ## Requirements  
- **Header:** cvmarkersobj.h  
+ **Header:** *cvmarkersobj.h*  
   
  **Namespace:** Concurrency  
   
-## See Also  
- [Concurrency Namespace (Concurrency Visualizer)](../profiling/concurrency-namespace-concurrency-visualizer.md)
+## See also  
+ [Concurrency namespace (Concurrency Visualizer)](../profiling/concurrency-namespace-concurrency-visualizer.md)

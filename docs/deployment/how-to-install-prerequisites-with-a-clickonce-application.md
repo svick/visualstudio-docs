@@ -1,13 +1,7 @@
 ---
 title: "How to: Install Prerequisites with a ClickOnce Application | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -17,26 +11,13 @@ helpviewer_keywords:
   - "prerequisites, ClickOnce"
   - "components, bootstrapping"
 ms.assetid: e964fca5-fdfd-47cf-a1c9-7fb96b1c88b5
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Install Prerequisites with a ClickOnce Application
+# How to: Install prerequisites with a ClickOnce application
 All [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applications require that the correct version of the .NET Framework is installed on a computer before they can be run; many applications have other prerequisites as well. When publishing a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application, you can choose a set of prerequisite components to be packaged along with your application. At installation time, a check will be performed for each prerequisite to determine if it already exists; if not it will be installed prior to installing the [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application.  
   
  Instead of packaging and publishing prerequisites, you can also specify a download location for the components. For example, rather than including prerequisites with every application that you publish, you might use a centralized file share or Web location that contains the installers for all of your prerequisites—at install time, the components will be downloaded and installed from that location.  
@@ -47,7 +28,7 @@ All [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicatio
  Prerequisites are managed in the **Prerequisites** dialog box, accessible from the **Publish** pane of the **Project Designer**.  
   
 > [!NOTE]
->  In addition to the predetermined list of prerequisites, you can add your own components to the list. For more information, see [Creating Bootstrapper Packages](../deployment/creating-bootstrapper-packages.md).  
+>  In addition to the predetermined list of prerequisites, you can add your own components to the list. For more information, see [Creating bootstrapper packages](../deployment/creating-bootstrapper-packages.md).  
   
 ### To specify prerequisites to install with a ClickOnce application  
   
@@ -80,6 +61,6 @@ All [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicatio
     > [!NOTE]
     >  You must make sure that installers for the specified components exist at the specified location.  
   
-## See Also  
- [Publishing ClickOnce Applications](../deployment/publishing-clickonce-applications.md)   
- [How to: Publish a ClickOnce Application using the Publish Wizard](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)
+## See also  
+ [Publish ClickOnce applications](../deployment/publishing-clickonce-applications.md)   
+ [How to: Publish a ClickOnce application using the Publish Wizard](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)

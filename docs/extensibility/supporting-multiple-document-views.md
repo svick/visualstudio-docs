@@ -1,42 +1,24 @@
 ---
 title: "Supporting Multiple Document Views | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "editors [Visual Studio SDK], custom - multiple document views"
 ms.assetid: c7ec2366-91c4-477f-908d-e89068bdb3e3
-caps.latest.revision: 25
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Supporting Multiple Document Views
 You can provide more than one view of a document by creating separate document data and document view objects for your editor. Some cases in which an additional document view would be useful are:  
   
--   New window support: You want your editor to provide two or more views of the same type, so that a user who already has a window open in the editor can open a new window by selecting the **New Window** command from the **Window** menu.  
+- New window support: You want your editor to provide two or more views of the same type, so that a user who already has a window open in the editor can open a new window by selecting the **New Window** command from the **Window** menu.  
   
--   Form and code view support: You want your editor to provide views of different types. [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], for example, provides both a form view and a code view.  
+- Form and code view support: You want your editor to provide views of different types. [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], for example, provides both a form view and a code view.  
   
- For more information about this, see the CreateEditorInstance procedure in the EditorFactory.cs file in the custom editor project created by the Visual Studio Package Template. For more information about this project, see [Walkthrough: Creating a Custom Editor](../extensibility/walkthrough-creating-a-custom-editor.md).  
+  For more information about this, see the CreateEditorInstance procedure in the EditorFactory.cs file in the custom editor project created by the Visual Studio Package Template. For more information about this project, see [Walkthrough: Creating a Custom Editor](../extensibility/walkthrough-creating-a-custom-editor.md).  
   
 ## Synchronizing Views  
  When you implement multiple views, the document data object is responsible for keeping all views synchronized with the data. You can use the event handling interfaces on <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer> to synchronize multiple views with the data.  

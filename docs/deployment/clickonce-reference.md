@@ -1,13 +1,7 @@
 ---
 title: "ClickOnce Reference | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -16,29 +10,16 @@ helpviewer_keywords:
   - "ClickOnce, reference"
   - "manifests [ClickOnce]"
 ms.assetid: 2a7d5704-5e8c-452c-9ef3-5e8ec5e952fe
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# ClickOnce Reference
+# ClickOnce reference
 The following pages describe the structure of the XML files used to represent ClickOnce applications.  
   
-## In This Section  
+## In this section  
  [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md)  
  Lists and describes the elements and attributes that make up an application manifest.  
   
@@ -53,12 +34,12 @@ The following pages describe the structure of the XML files used to represent Cl
   
 ## Reference  
   
-## Related Sections  
- [ClickOnce Security and Deployment](../deployment/clickonce-security-and-deployment.md)  
+## Related sections  
+ [ClickOnce security and deployment](../deployment/clickonce-security-and-deployment.md)  
  Provides detailed conceptual information about ClickOnce deployment.  
   
  <xref:System.Deployment.Application>  
  Provides links to reference documentation of the public classes that support ClickOnce within managed code.  
   
- [Publishing ClickOnce Applications](../deployment/publishing-clickonce-applications.md)  
+ [Publish ClickOnce applications](../deployment/publishing-clickonce-applications.md)  
  Provides walkthroughs and how-to's that perform ClickOnce tasks.

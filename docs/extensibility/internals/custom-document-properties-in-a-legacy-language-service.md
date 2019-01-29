@@ -1,37 +1,19 @@
 ---
 title: "Custom Document Properties in a Legacy Language Service | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "custom document properties, language services [managed package framework]"
   - "document properties, custom"
   - "language services [managed package framework], custom document properties"
 ms.assetid: cc714a67-b33e-4440-9203-3c90f648bd9c
-caps.latest.revision: 18
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Custom Document Properties in a Legacy Language Service
+# Custom document properties in a legacy language service
 Document properties can be displayed in the [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] **Properties** window. Programming languages generally do not have properties associated with individual source files. However, XML supports document properties that affect the encoding, schema, and stylesheet.  
   
 ## Discussion  
@@ -39,13 +21,13 @@ Document properties can be displayed in the [!INCLUDE[vsprvs](../../code-quality
   
  In addition, document properties are typically stored in the source file itself. This requires the language service to parse the property information from the source file to display in the **Properties** window and to update the source file when a change is made to the document properties in the **Properties** window.  
   
-## Customizing the DocumentProperties Class  
+## Customize the DocumentProperties class  
  To support custom document properties, you must derive a class from the <xref:Microsoft.VisualStudio.Package.DocumentProperties> class and add as many properties as you need. You should also supply user attributes to organize them in the **Properties** window display. If a property has only a `get` accessor, it is shown as read-only in the **Properties** window. If a property has both `get` and `set` accessors, the property can also be updated in the **Properties** window.  
   
 ### Example  
- Here is an example class derived from <xref:Microsoft.VisualStudio.Package.DocumentProperties>, showing two properties, Filename and Description. When a property is updated, a custom method on the <xref:Microsoft.VisualStudio.Package.LanguageService> class is called to write the property to the source file.  
+ Here is an example class derived from <xref:Microsoft.VisualStudio.Package.DocumentProperties>, showing two properties, `Filename` and `Description`. When a property is updated, a custom method on the <xref:Microsoft.VisualStudio.Package.LanguageService> class is called to write the property to the source file.  
   
-```c#  
+```csharp  
 using System.ComponentModel;  
 using Microsoft.VisualStudio.Package;  
   
@@ -132,12 +114,12 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## Instantiating the Custom DocumentProperties class  
+## Instantiate the custom DocumentProperties class  
  To instantiate your custom document properties class, you must override the <xref:Microsoft.VisualStudio.Package.LanguageService.CreateDocumentProperties%2A> method in your version of the <xref:Microsoft.VisualStudio.Package.LanguageService> class to return a single instance of your <xref:Microsoft.VisualStudio.Package.DocumentProperties> class.  
   
 ### Example  
   
-```c#  
+```csharp  
 using System.ComponentModel;  
 using Microsoft.VisualStudio.Package;  
   
@@ -159,22 +141,22 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## Properties in the Source File  
+## Properties in the source file  
  Since document properties are usually specific to the source file, the values are stored in the source file itself. This requires support from the language parser or scanner to define these properties. For example, the properties of an XML document are stored on the root node. The values on the root node are modified when the **Properties** window values are changed, and the root node is updated in the editor.  
   
 ### Example  
- This example stores the properties "Filename" and "Description" in the first two lines of the source file, embedded in a special comment header, as:  
+ This example stores the properties `Filename` and `Description` in the first two lines of the source file, embedded in a special comment header, as:  
   
 ```  
 //!Filename = file.testext  
 //!Description = A sample file  
 ```  
   
- This example shows the two methods needed to get and set the document properties from the first two lines of the source file as well as how the properties are updated if the user modifies the source file directly. The `SetPropertyValue` method in the example shown here is the same one called from the `TestDocumentProperties` class as shown in the "Customizing the DocumentProperties class" section.  
+ This example shows the two methods needed to get and set the document properties from the first two lines of the source file as well as how the properties are updated if the user modifies the source file directly. The `SetPropertyValue` method in the example shown here is the same one called from the `TestDocumentProperties` class as shown in the *Customizing the DocumentProperties class* section.  
   
  This example uses the scanner to determine the type of tokens in the first two lines. This example is for illustrative purposes only. A more typical approach to this situation is to parse the source file into what is called a parse tree where each node of the tree contains information about a particular token. The root node would contain the document properties.  
   
-```c#  
+```csharp  
 using System.ComponentModel;  
 using Microsoft.VisualStudio.Package;  
   
@@ -409,5 +391,5 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## See Also  
- [Legacy Language Service Features](../../extensibility/internals/legacy-language-service-features1.md)
+## See also  
+ [Legacy language service features](../../extensibility/internals/legacy-language-service-features1.md)

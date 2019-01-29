@@ -1,82 +1,62 @@
 ---
 title: "SymTagEnum | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "SymTagEnum enumeration"
 ms.assetid: 528a50cf-e13d-46ec-a98c-323d5d047de9
-caps.latest.revision: 12
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # SymTagEnum
 Specifies the type of symbol.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 enum SymTagEnum {   
-   SymTagNull,  
-   SymTagExe,  
-   SymTagCompiland,  
-   SymTagCompilandDetails,  
-   SymTagCompilandEnv,  
-   SymTagFunction,  
-   SymTagBlock,  
-   SymTagData,  
-   SymTagAnnotation,  
-   SymTagLabel,  
-   SymTagPublicSymbol,  
-   SymTagUDT,  
-   SymTagEnum,  
-   SymTagFunctionType,  
-   SymTagPointerType,  
-   SymTagArrayType,   
-   SymTagBaseType,   
-   SymTagTypedef,   
-   SymTagBaseClass,  
-   SymTagFriend,  
-   SymTagFunctionArgType,   
-   SymTagFuncDebugStart,   
-   SymTagFuncDebugEnd,  
-   SymTagUsingNamespace,   
-   SymTagVTableShape,  
-   SymTagVTable,  
-   SymTagCustom,  
-   SymTagThunk,  
-   SymTagCustomType,  
-   SymTagManagedType,  
-   SymTagDimension,  
-   SymTagCallSite,  
-   SymTagInlineSite,  
-   SymTagBaseInterface,  
-   SymTagVectorType,  
-   SymTagMatrixType,  
-   SymTagHLSLType  
+   SymTagNull,  
+   SymTagExe,  
+   SymTagCompiland,  
+   SymTagCompilandDetails,  
+   SymTagCompilandEnv,  
+   SymTagFunction,  
+   SymTagBlock,  
+   SymTagData,  
+   SymTagAnnotation,  
+   SymTagLabel,  
+   SymTagPublicSymbol,  
+   SymTagUDT,  
+   SymTagEnum,  
+   SymTagFunctionType,  
+   SymTagPointerType,  
+   SymTagArrayType,   
+   SymTagBaseType,   
+   SymTagTypedef,   
+   SymTagBaseClass,  
+   SymTagFriend,  
+   SymTagFunctionArgType,   
+   SymTagFuncDebugStart,   
+   SymTagFuncDebugEnd,  
+   SymTagUsingNamespace,   
+   SymTagVTableShape,  
+   SymTagVTable,  
+   SymTagCustom,  
+   SymTagThunk,  
+   SymTagCustomType,  
+   SymTagManagedType,  
+   SymTagDimension,  
+   SymTagCallSite,  
+   SymTagInlineSite,  
+   SymTagBaseInterface,  
+   SymTagVectorType,  
+   SymTagMatrixType,  
+   SymTagHLSLType  
 };  
 ```  
   

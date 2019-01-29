@@ -1,54 +1,36 @@
 ---
 title: "IEnumDebugPrograms2::Next | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IEnumDebugPrograms2::Next"
 helpviewer_keywords: 
   - "IEnumDebugPrograms2::Next"
 ms.assetid: 9120e263-e97c-4a40-ab2c-e9264ce3d6c4
-caps.latest.revision: 13
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IEnumDebugPrograms2::Next
 Returns the next set of elements from the enumeration.  
   
 ## Syntax  
   
-```cpp#  
+```cpp  
 HRESULT Next(  
-   ULONG            celt,  
-   IDebugProgram2** rgelt,  
-   ULONG*           pceltFetched  
+   ULONG            celt,  
+   IDebugProgram2** rgelt,  
+   ULONG*           pceltFetched  
 );  
 ```  
   
-```c#  
+```csharp  
 int Next(  
-   uint             celt,  
-   IDebugProgram2[] rgelt,  
-   ref uint         pceltFetched  
+   uint             celt,  
+   IDebugProgram2[] rgelt,  
+   ref uint         pceltFetched  
 );  
 ```  
   

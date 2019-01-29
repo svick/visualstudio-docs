@@ -1,34 +1,16 @@
 ---
 title: "Selection Context Objects | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "selection, tracking"
   - "selection, context objects"
 ms.assetid: 7308ea8f-a42c-47e5-954e-7dee933dce7a
-caps.latest.revision: 13
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Selection Context Objects
 The [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] integrated development environment (IDE) uses a global selection context object to determine what should be displayed in the IDE. Each window in the IDE can have its own selection context object pushed to the global selection context. The IDE updates the global selection context with values from a window when that window has the focus. For more information, see [Feedback to the User](../../extensibility/internals/feedback-to-the-user.md).  
@@ -39,11 +21,11 @@ The [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] integrated deve
   
  Modifying the global selection context triggers events that VSPackages can monitor. VSPackages can perform the following tasks by implementing `IVsTrackSelectionEx` and <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection> interfaces:  
   
--   Update the currently active file in a hierarchy.  
+- Update the currently active file in a hierarchy.  
   
--   Monitor changes to certain types of elements. For example, if your VSPackage uses a special **Properties** window, you can monitor changes in the active **Properties** window and restart yours when required.  
+- Monitor changes to certain types of elements. For example, if your VSPackage uses a special **Properties** window, you can monitor changes in the active **Properties** window and restart yours when required.  
   
- The following sequence shows the typical course of selection tracking.  
+  The following sequence shows the typical course of selection tracking.  
   
 1.  The IDE retrieves the selection context from the newly opened window and puts it in the global selection context. If the selection context uses HIERARCHY_DONTPROPAGATE or SELCONTAINER_DONTPROPAGATE, that information is not propagated to the global context. For more information, see [Feedback to the User](../../extensibility/internals/feedback-to-the-user.md).  
   

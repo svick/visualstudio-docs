@@ -1,49 +1,29 @@
 ---
 title: "IDiaSession::findSymbolByVAEx | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaSession::findSymbolByVAEx method"
 ms.assetid: 11c685f6-cda2-4474-a432-214ecaae4ffa
-caps.latest.revision: 10
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaSession::findSymbolByVAEx
 Retrieves a specified symbol type that contains, or is closest to, a specified virtual address (VA) and offset.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT findSymbolByVAEx (   
-   ULONGLONG    va,  
-   SymTagEnum   symtag,  
-   IDiaSymbol** ppSymbol,  
-   LONG*        displacement  
+   ULONGLONG    va,  
+   SymTagEnum   symtag,  
+   IDiaSymbol** ppSymbol,  
+   LONG*        displacement  
 );  
 ```  
   
@@ -65,7 +45,7 @@ HRESULT findSymbolByVAEx ( 
   
 ## Example  
   
-```cpp#  
+```C++  
 IDiaSymbol* pFunc;  
 LONG disp = 0;  
 pSession->findSymbolByVAEx( va, SymTagFunction, &pFunc, &disp );  

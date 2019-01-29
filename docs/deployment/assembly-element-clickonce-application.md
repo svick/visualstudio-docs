@@ -1,13 +1,7 @@
 ---
 title: "&lt;assembly&gt; Element (ClickOnce Application) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 f1_keywords: 
   - "urn:schemas-microsoft-com:asm.v2#assembly"
 dev_langs: 
@@ -17,38 +11,25 @@ dev_langs:
 helpviewer_keywords: 
   - "<assembly> element [ClickOnce application manifest]"
 ms.assetid: 51410569-10f9-4c0a-96b5-d39185edbefc
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # &lt;assembly&gt; Element (ClickOnce Application)
 The top-level element for the application manifest.  
   
 ## Syntax  
   
-```  
+```xml  
   
       <assembly  
    manifestVersion  
 />  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `assembly` element is the root element and is required. Its first contained element must be an `assemblyIdentity` element. The manifest elements must be in one of the following namespaces:  
   
  `urn:schemas-microsoft-com:asm.v1`  
@@ -66,9 +47,9 @@ The top-level element for the application manifest.
 |`manifestVersion`|Required. The `manifestVersion` attribute must be set to `1.0`.|  
   
 ## Example  
- The following code example illustrates an `assembly` element in an application manifest for a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application. This code example is part of a larger example provided in [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md).  
+ The following code example illustrates an `assembly` element in an application manifest for a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application. This code example is part of a larger example provided in [ClickOnce application manifest](../deployment/clickonce-application-manifest.md).  
   
-```  
+```xml
 <asmv1:assembly   
   xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd"   
   manifestVersion="1.0"   
@@ -82,6 +63,6 @@ The top-level element for the application manifest.
   xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">  
 ```  
   
-## See Also  
- [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md)   
- [\<assembly> Element](../deployment/assembly-element-clickonce-deployment.md)
+## See also  
+ [ClickOnce application manifest](../deployment/clickonce-application-manifest.md)   
+ [\<assembly> element](../deployment/assembly-element-clickonce-deployment.md)

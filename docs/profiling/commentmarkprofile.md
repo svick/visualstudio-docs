@@ -1,45 +1,26 @@
 ---
 title: "CommentMarkProfile | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "CommentMarkProfile"
   - "CommentMarkProfileA"
 ms.assetid: 33ccff45-c33a-4672-b41f-5b317b848cd1
-caps.latest.revision: 11
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # CommentMarkProfile
-The `CommentMarkProfile` function inserts a numeric marker and a text string in the .vsp file. For the mark and comment to be inserted, profiling for the thread that contains the `CommentMarkProfile` function must be ON.  
+The `CommentMarkProfile` function inserts a numeric marker and a text string in the .*vsp* file. For the mark and comment to be inserted, profiling for the thread that contains the `CommentMarkProfile` function must be ON.  
   
 ## Syntax  
   
-```  
+```cpp  
 PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkProfile(  
-                                   long lMarker,   
-                                   LPCTSTR szComment);  
+                                   long lMarker,   
+                                   LPCTSTR szComment);  
 ```  
   
 #### Parameters  
@@ -51,7 +32,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkProfile(
   
  Pointer to the text string to insert. The string must be less than 256 characters including the NULL terminator.  
   
-## Property Value/Return Value  
+## Property value/return value  
  The function indicates success or failure by using **PROFILE_COMMAND_STATUS** enumeration. The return value can be one of the following:  
   
 |Enumerator|Description|  
@@ -67,15 +48,15 @@ PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkProfile(
 ## Remarks  
  The profiling state for the thread that contains the mark profile function must be on when marks and comments inserted with the VSInstr Mark command or with functions (CommentMarkAtProfile, CommentMarkProfile, or MarkProfile).  
   
- Profile marks are global in scope. For example, a profile mark inserted in one thread can be used to mark the start or end of a data segment in any thread in the .vsp file.  
+ Profile marks are global in scope. For example, a profile mark inserted in one thread can be used to mark the start or end of a data segment in any thread in the .*vsp* file.  
   
 > [!IMPORTANT]
 >  CommentMarkProfile method can only be used with instrumentation.  
   
-## .NET Framework Equivalent  
+## .NET Framework equivalent  
  Microsoft.VisualStudio.Profiler.dll  
   
-## Function Information  
+## Function information  
   
 |||  
 |-|-|  
@@ -86,7 +67,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkProfile(
 ## Example  
  The following code illustrates the CommentMarkProfile function call. The example assumes the use of Win32 string macros and Unicode compiler settings to determine whether the code calls the [!INCLUDE[vcpransi](../profiling/includes/vcpransi_md.md)] function call.  
   
-```  
+```cpp  
 void ExerciseCommentMarkProfile()  
 {  
     // Declare and initalize variables to pass to   
@@ -122,5 +103,5 @@ void ExerciseCommentMarkProfile()
 }  
 ```  
   
-## See Also  
- [Visual Studio Profiler API Reference (Native)](../profiling/visual-studio-profiler-api-reference-native.md)
+## See also  
+ [Visual Studio profiler API reference (native)](../profiling/visual-studio-profiler-api-reference-native.md)

@@ -1,13 +1,7 @@
 ---
 title: "UnregisterAssembly Task | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 f1_keywords: 
   - "http://schemas.microsoft.com/developer/msbuild/2003#UnregisterAssembly"
 dev_langs: 
@@ -19,26 +13,13 @@ helpviewer_keywords:
   - "MSBuild, UnregisterAssembly task"
   - "UnregisterAssembly task [MSBuild]"
 ms.assetid: 04f549dd-3591-4dda-9c3a-cf6ede9df2c3
-caps.latest.revision: 21
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# UnregisterAssembly Task
+# UnregisterAssembly task
 Unregisters the specified assemblies for COM interop purposes. Performs the reverse of the [RegisterAssembly task](../msbuild/registerassembly-task.md).  
   
 ## Parameters  
@@ -58,7 +39,7 @@ Unregisters the specified assemblies for COM interop purposes. Performs the reve
 ## Example  
  The following example uses the `UnregisterAssembly` task to unregister the assembly at the path specified by the `OutputPath` and `FileName` properties, if it exists.  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
     <PropertyGroup>  
         <OutputPath>\Output\</OutputPath>  
@@ -73,7 +54,7 @@ Unregisters the specified assemblies for COM interop purposes. Performs the reve
 </Project>  
 ```  
   
-## See Also  
- [RegisterAssembly Task](../msbuild/registerassembly-task.md)   
+## See also  
+ [RegisterAssembly task](../msbuild/registerassembly-task.md)   
  [Tasks](../msbuild/msbuild-tasks.md)   
- [Task Reference](../msbuild/msbuild-task-reference.md)
+ [Task reference](../msbuild/msbuild-task-reference.md)

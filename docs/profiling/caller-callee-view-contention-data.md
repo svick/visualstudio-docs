@@ -1,36 +1,17 @@
 ---
 title: "Caller - Callee View -  Contention Data | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "Caller/Callee view"
 ms.assetid: a18a1b1b-9b39-43c7-b1f3-708fd20376f6
-caps.latest.revision: 9
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# Caller / Callee View -  Contention Data
+# Caller/Callee view -  contention data
 The Caller/Callee view displays contention information for a selected function and its parent and child functions. The Caller/Callee view contains three grids.  
   
  **Current function** is displayed in the middle grid, and it shows contention information for the selected function. The values include all blocking contentions for the function.  
@@ -60,10 +41,10 @@ The Caller/Callee view displays contention information for a selected function a
 |**Root Function Name**|The name of the current function. Only in [VSPerfReport](../profiling/vsperfreport.md) command-line reports.|  
 |**Source File**|The source file that contains the definition for this function.|  
   
-## See Also  
- [How to: Customize Report View Columns](../profiling/how-to-customize-report-view-columns.md)   
- [Caller/Callee View](../profiling/caller-callee-view.md)   
- [Caller / Callee View - Sampling Data](../profiling/caller-callee-view-sampling-data.md)   
- [Caller/Callee View - NET Memory Instrumentation Data](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
- [Caller/Callee View - .NET Memory Sampling Data](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
- [Caller/Callee View - Instrumentation Data](../profiling/caller-callee-view-instrumentation-data.md)
+## See also  
+ [How to: Customize report view columns](../profiling/how-to-customize-report-view-columns.md)   
+ [Caller/Callee view](../profiling/caller-callee-view.md)   
+ [Caller/Callee view - sampling data](../profiling/caller-callee-view-sampling-data.md)   
+ [Caller/Callee view - .NET memory instrumentation data](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
+ [Caller/Callee view - .NET memory sampling data](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
+ [Caller/Callee view - instrumentation data](../profiling/caller-callee-view-instrumentation-data.md)

@@ -1,13 +1,7 @@
 ---
 title: "How to: Create a Package Manifest | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "FSharp"
   - "VB"
@@ -19,43 +13,30 @@ helpviewer_keywords:
   - "prerequisites, custom bootstrapper package"
   - "dependencies, custom bootstrapper packages"
 ms.assetid: 5aecc507-2764-42f2-ae6f-c227971cf0af
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Create a Package Manifest
+# How to: Create a package manifest
 To deploy prerequisites for your application, you can use a bootstrapper package. A bootstrapper package contains a single product manifest file but a package manifest for each locale. Shared functionality across different localized versions should go into the product manifest.  
   
- For more information about package manifests, see [How to: Create a Product Manifest](../deployment/how-to-create-a-product-manifest.md).  
+ For more information about package manifests, see [How to: Create a product manifest](../deployment/how-to-create-a-product-manifest.md).  
   
-## Creating the Package Manifest  
+## Create the package manifest  
   
 #### To create the package manifest  
   
-1.  Create a directory for the bootstrapper package. This example uses C:\package.  
+1.  Create a directory for the bootstrapper package. This example uses *C:\package*.  
   
-2.  Create a subdirectory with the name of the locale, such as en for English.  
+2.  Create a subdirectory with the name of the locale, such as *en* for English.  
   
-3.  In Visual Studio, create an XML file that is named `package.xml`, and save it to the C:\package\en folder.  
+3.  In Visual Studio, create an XML file that is named *package.xml*, and save it to the *C:\package\en* folder.  
   
 4.  Add XML to list the name of the bootstrapper package, the culture for this localized package manifest, and the optional license agreement. The following XML uses the variables `DisplayName` and `Culture`, which are defined in a later element.  
   
-    ```  
+    ```xml  
     <Package  
         xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"  
         Name="DisplayName"  
@@ -63,17 +44,17 @@ To deploy prerequisites for your application, you can use a bootstrapper package
         LicenseAgreement="eula.txt">  
     ```  
   
-5.  Add XML to list all the files that are in the locale-specific directory. The following XML uses a file that is named eula.txt that is applicable for the **en** locale.  
+5.  Add XML to list all the files that are in the locale-specific directory. The following XML uses a file that is named *eula.txt* that is applicable for the **en** locale.  
   
-    ```  
+    ```xml  
     <PackageFiles>  
       <PackageFile Name="eula.txt"/>  
     </PackageFiles>  
     ```  
   
-6.  Add XML to define localizable strings for the bootstrapper package. The following XML adds error strings for the en locale.  
+6.  Add XML to define localizable strings for the bootstrapper package. The following XML adds error strings for the **en** locale.  
   
-    ```  
+    ```xml  
       <Strings>  
         <String Name="DisplayName">Custom Bootstrapper Package</String>  
         <String Name="CultureName">en</String>  
@@ -84,12 +65,12 @@ To deploy prerequisites for your application, you can use a bootstrapper package
     </Strings>  
     ```  
   
-7.  Copy the C:\package folder to the Visual Studio bootstrapper directory. For Visual Studio 2010, this is the \Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages directory.  
+7.  Copy the *C:\package* folder to the Visual Studio bootstrapper directory. For Visual Studio 2010, this is the *\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages* directory.  
   
 ## Example  
  The package manifest contains locale-specific information, such as error messages, software license terms, and language packs.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <Package  
   xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"  
@@ -111,5 +92,5 @@ installing this package.</String>
 </Package>  
 ```  
   
-## See Also  
- [Product and Package Schema Reference](../deployment/product-and-package-schema-reference.md)
+## See also  
+ [Product and package schema reference](../deployment/product-and-package-schema-reference.md)

@@ -1,35 +1,17 @@
 ---
 title: "IDebugDefaultPort2::GetPortNotify | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugDefaultPort2::GetPortNotify"
 helpviewer_keywords: 
   - "IDebugDefaultPort2::GetPortNotify"
 ms.assetid: 3ae715ee-9886-4694-a52b-59bb3b27467a
-caps.latest.revision: 11
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugDefaultPort2::GetPortNotify
 This method gets an [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md) interface for this port.  
@@ -38,13 +20,13 @@ This method gets an [IDebugPortNotify2](../../../extensibility/debugger/referenc
   
 ```cpp  
 HRESULT GetPortNotify(  
-   IDebugPortNotify2** ppPortNotify  
+   IDebugPortNotify2** ppPortNotify  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetPortNotify(  
-   out IDebugPortNotify2 ppPortNotify  
+   out IDebugPortNotify2 ppPortNotify  
 );  
 ```  
   

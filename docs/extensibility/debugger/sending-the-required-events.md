@@ -1,38 +1,20 @@
 ---
 title: "Sending the Required Events | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "debugging [Debugging SDK], required events"
 ms.assetid: 08319157-43fb-44a9-9a63-50b919fe1377
-caps.latest.revision: 7
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# Sending the Required Events
+# Send the required events
 Use this procedure for sending required events.  
   
-## Process for Sending Required Events  
+## Process for sending required events  
  The following events are required, in this order, when creating a debug engine (DE) and attaching it to a program:  
   
 1.  Send an [IDebugEngineCreateEvent2](../../extensibility/debugger/reference/idebugenginecreateevent2.md) event object to the session debug manager (SDM) when the DE is initialized for debugging one or more programs in a process.  
@@ -46,7 +28,7 @@ Use this procedure for sending required events.
 5.  If the application to be debugged is launched, send an [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) event object to the SDM when the first instruction of code in the run-time architecture is about to be executed. This event is always a stopping event. When stepping into the debugging session, the IDE stops on this event.  
   
 > [!NOTE]
->  Many languages use global initializers or external, precompiled functions (from the CRT library or _Main) at the beginning of their code. If the language of the program you are debugging contains either of these types of elements before the initial entry point, then this code is run and the entry point event is sent when the user entry point, such as **main** or `WinMain`, is reached.  
+>  Many languages use global initializers or external, precompiled functions (from the CRT library or _Main) at the beginning of their code. If the language of the program you are debugging contains either of these types of elements before the initial entry point, this code is run and the entry point event is sent when the user entry point, such as **main** or `WinMain`, is reached.  
   
-## See Also  
- [Enabling a Program to Be Debugged](../../extensibility/debugger/enabling-a-program-to-be-debugged.md)
+## See also  
+ [Enabling a program to be debugged](../../extensibility/debugger/enabling-a-program-to-be-debugged.md)

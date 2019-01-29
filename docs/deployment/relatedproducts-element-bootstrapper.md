@@ -1,13 +1,7 @@
 ---
 title: "&lt;RelatedProducts&gt; Element (Bootstrapper) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "MSBuild.GenerateBootstrapper.MissingDependency"
   - "MSBuild.GenerateBootstrapper.DuplicateItems"
@@ -22,31 +16,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<RelatedProducts> element [bootstrapper]"
 ms.assetid: bf152712-4c1e-48bd-9b7f-311cf0fdb832
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;RelatedProducts&gt; Element (Bootstrapper)
+# &lt;RelatedProducts&gt; element (bootstrapper)
 The `RelatedProducts` element defines other products that either depend upon or are included in the current product.  
   
 ## Syntax  
   
-```  
+```xml  
 <RelatedProducts>  
     <DependsOnProduct  
         Code  
@@ -62,7 +43,7 @@ The `RelatedProducts` element defines other products that either depend upon or 
 </RelatedProducts>  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `RelatedProducts` element is a child of the `Product` element. It has no attributes.  
   
 ## DependsOnProduct  
@@ -89,11 +70,11 @@ The `RelatedProducts` element defines other products that either depend upon or 
 ## Example  
  The following code example specifies that the Microsoft Installer is installed with the [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], and therefore will not need a separate installation.  
   
-```  
+```xml  
 <RelatedProducts>  
     <IncludesProduct Code="Microsoft.Windows.Installer.2.0" />  
 </RelatedProducts>  
 ```  
   
-## See Also  
- [\<Product> Element](../deployment/product-element-bootstrapper.md)
+## See also  
+ [\<Product> element](../deployment/product-element-bootstrapper.md)

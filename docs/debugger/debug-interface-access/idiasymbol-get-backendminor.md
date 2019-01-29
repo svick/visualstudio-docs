@@ -1,46 +1,26 @@
 ---
 title: "IDiaSymbol::get_backEndMinor | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaSymbol::get_backEndMinor method"
 ms.assetid: 37f38d19-6685-440d-a477-7127c4f8699e
-caps.latest.revision: 9
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaSymbol::get_backEndMinor
 Retrieves the back end minor version number of the compiler.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT get_backEndMinor (   
-   DWORD* pRetVal  
+   DWORD* pRetVal  
 );  
 ```  
   

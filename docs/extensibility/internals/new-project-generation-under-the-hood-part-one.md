@@ -1,34 +1,16 @@
 ---
 title: "New Project Generation: Under the Hood, Part One | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "projects [Visual Studio], new project dialog"
   - "projects [Visual Studio], new project generation"
 ms.assetid: 66778698-0258-467d-8b8b-c351744510eb
-caps.latest.revision: 29
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # New Project Generation: Under the Hood, Part One
 Ever thought about how to create your own project type? Wonder what actually happens when you create a new project? Let's take a peek under the hood and see what's really going on.  
@@ -50,11 +32,11 @@ Ever thought about how to create your own project type? Wonder what actually hap
   
  ![New Project dialog box](../../extensibility/internals/media/newproject.gif "NewProject")  
   
- Let’s take a closer look. The **Project types** tree lists the various project types you can create. When you select a project type like **Visual C# Windows**, you’ll see a list of application templates to get you started. **Visual Studio installed templates** are installed by Visual Studio and are available to any user of your computer. New templates that you create or collect can be added to **My Templates** and are available only to you.  
+ Let's take a closer look. The **Project types** tree lists the various project types you can create. When you select a project type like **Visual C# Windows**, you'll see a list of application templates to get you started. **Visual Studio installed templates** are installed by Visual Studio and are available to any user of your computer. New templates that you create or collect can be added to **My Templates** and are available only to you.  
   
  When you select a template like **Windows Application**, a description of the application type appears in the dialog box; in this case, **A project for creating an application with a Windows user interface**.  
   
- At the bottom of the **New Project** dialog box, you’ll see several controls that gather more information. The controls you see depend on the project type, but generally they include a project **Name** text box, a **Location** text box and related **Browse** button, and a **Solution Name** text box and related **Create directory for solution** check box.  
+ At the bottom of the **New Project** dialog box, you'll see several controls that gather more information. The controls you see depend on the project type, but generally they include a project **Name** text box, a **Location** text box and related **Browse** button, and a **Solution Name** text box and related **Create directory for solution** check box.  
   
 ## Populating the New Project Dialog Box  
  Where does the **New Project** dialog box get its information from? There are two mechanisms at work here, one of them deprecated. The **New Project** dialog box combines and displays the information obtained from both mechanisms.  
@@ -180,35 +162,35 @@ devenv /installvstemplates
 #### A Quick Review  
  Let's modify the **New Project** dialog box and create a new user project template.  
   
-1.  Add a MyProjectNode subfolder to the \Program Files\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp folder.  
+1. Add a MyProjectNode subfolder to the \Program Files\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp folder.  
   
-2.  Create a MyProject.vstdir file in the MyProjectNode folder using any text editor.  
+2. Create a MyProject.vstdir file in the MyProjectNode folder using any text editor.  
   
-3.  Add these lines to the .vstdir file:  
+3. Add these lines to the .vstdir file:  
   
-    ```  
-    <TemplateDir Version="1.0.0">  
-        <SortOrder>6</SortOrder>  
-    </TemplateDir>  
-    ```  
+   ```  
+   <TemplateDir Version="1.0.0">  
+       <SortOrder>6</SortOrder>  
+   </TemplateDir>  
+   ```  
   
-4.  Save and close the .vstdir file.  
+4. Save and close the .vstdir file.  
   
-5.  Create a MyProject.vstemplate file in the MyProjectNode folder using any text editor.  
+5. Create a MyProject.vstemplate file in the MyProjectNode folder using any text editor.  
   
-6.  Add these lines to the .vstemplate file:  
+6. Add these lines to the .vstemplate file:  
   
-    ```  
-    <VSTemplate Version="2.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">  
-        <TemplateData>  
-            <ProjectType>CSharp</ProjectType>  
-        </TemplateData>  
-    </VSTemplate>  
-    ```  
+   ```  
+   <VSTemplate Version="2.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">  
+       <TemplateData>  
+           <ProjectType>CSharp</ProjectType>  
+       </TemplateData>  
+   </VSTemplate>  
+   ```  
   
-7.  Save the.vstemplate file and close the editor.  
+7. Save the.vstemplate file and close the editor.  
   
-8.  Send the .vstemplate file to a new compressed MyProjectNode\MyProject.zip folder.  
+8. Send the .vstemplate file to a new compressed MyProjectNode\MyProject.zip folder.  
   
 9. From the Visual Studio command window, type:  
   
@@ -216,13 +198,13 @@ devenv /installvstemplates
     devenv /installvstemplates  
     ```  
   
- Open Visual Studio.  
+   Open Visual Studio.  
   
-1.  Open the **New Project** dialog box and expand the **Visual C#** project node.  
+10. Open the **New Project** dialog box and expand the **Visual C#** project node.  
   
- ![MyProjectNode](../../extensibility/internals/media/myprojectnode.png "MyProjectNode")  
+    ![MyProjectNode](../../extensibility/internals/media/myprojectnode.png "MyProjectNode")  
   
- **MyProjectNode** appears as a child node of Visual C# just under the Windows node.  
+    **MyProjectNode** appears as a child node of Visual C# just under the Windows node.  
   
 ## See Also  
  [New Project Generation: Under the Hood, Part Two](../../extensibility/internals/new-project-generation-under-the-hood-part-two.md)

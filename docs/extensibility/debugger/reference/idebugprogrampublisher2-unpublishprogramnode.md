@@ -1,35 +1,17 @@
 ---
 title: "IDebugProgramPublisher2::UnpublishProgramNode | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "IDebugProgramPublisher2::UnpublishProgramNode"
 helpviewer_keywords: 
   - "IDebugProgramPublisher2::UnpublishProgramNode"
 ms.assetid: 57c7e6e1-b84e-4e14-ad83-cbbb64e2f526
-caps.latest.revision: 8
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # IDebugProgramPublisher2::UnpublishProgramNode
 Removes a specified program node from availability to debug engines (DEs) and the session debug manager (SDM).  
@@ -38,13 +20,13 @@ Removes a specified program node from availability to debug engines (DEs) and th
   
 ```cpp  
 HRESULT UnpublishProgramNode(  
-   IDebugProgramNode2* pProgramNode  
+   IDebugProgramNode2* pProgramNode  
 );  
 ```  
   
-```c#  
+```csharp  
 int UnpublishProgramNode(  
-   IDebugProgramNode2 pProgramNode  
+   IDebugProgramNode2 pProgramNode  
 );  
 ```  
   

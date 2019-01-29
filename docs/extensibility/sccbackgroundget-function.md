@@ -1,52 +1,34 @@
 ---
 title: "SccBackgroundGet Function | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "SccBackgroundGet"
 helpviewer_keywords: 
   - "SccBackgroundGet function"
 ms.assetid: 69817e52-b9ac-4f4d-820b-2cc9c384f0dc
-caps.latest.revision: 13
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# SccBackgroundGet Function
+# SccBackgroundGet function
 This function retrieves from source control each of the specified files with no user interaction.  
   
 ## Syntax  
   
 ```cpp  
 SCCRTN SccBackgroundGet(  
-   LPVOID  pContext,  
-   LONG    nFiles,  
-   LPCSTR* lpFileNames,  
-   LONG    dwFlags,  
-   LONG    dwBackgroundOperationID  
+   LPVOID  pContext,  
+   LONG    nFiles,  
+   LPCSTR* lpFileNames,  
+   LONG    dwFlags,  
+   LONG    dwBackgroundOperationID  
 );  
 ```  
   
-#### Parameters  
+### Parameters  
  pContext  
  [in] The source control plug-in context pointer.  
   
@@ -65,7 +47,7 @@ SCCRTN SccBackgroundGet(
  dwBackgroundOperationID  
  [in] A unique value associated with this operation.  
   
-## Return Value  
+## Return value  
  The source control plug-in implementation of this function is expected to return one of the following values:  
   
 |Value|Description|  
@@ -79,6 +61,6 @@ SCCRTN SccBackgroundGet(
   
  The use of the `dwFlags` argument is the same as the [SccGet](../extensibility/sccget-function.md).  
   
-## See Also  
- [Source Control Plug-in API Functions](../extensibility/source-control-plug-in-api-functions.md)   
+## See also  
+ [Source control plug-in API functions](../extensibility/source-control-plug-in-api-functions.md)   
  [SccGet](../extensibility/sccget-function.md)

@@ -1,43 +1,24 @@
 ---
 title: "How to: Build the Same Source Files with Different Options | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "source files, building with different options"
   - "MSBuild, properties"
   - "project properties, modifying"
   - "Hello World example [Visual Studio]"
 ms.assetid: d14f1212-ddd9-434f-b138-f840011b0fb2
-caps.latest.revision: 20
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Build the Same Source Files with Different Options
+# How to: Build the same source files with different options
 When you build projects, you frequently compile the same components with different build options. For example, you can create a debug build with symbol information or a release build with no symbol information but with optimizations enabled. Or you can build a project to run on a specific platform, such as x86 or [!INCLUDE[vcprx64](../extensibility/internals/includes/vcprx64_md.md)]. In all these cases, most of the build options stay the same; only a few options are changed to control the build configuration. With [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)], you use properties and conditions to create the different build configurations.  
   
-## Using Properties to Modify Projects  
- The `Property` element defines a variable that is referenced several times in a project file, such as the location of a temporary directory, or to set the values for properties that are used in several configurations, such as a Debug build and a Release build. For more information about properties, see [MSBuild Properties](../msbuild/msbuild-properties.md).  
+## Use properties to modify projects  
+ The `Property` element defines a variable that is referenced several times in a project file, such as the location of a temporary directory, or to set the values for properties that are used in several configurations, such as a Debug build and a Release build. For more information about properties, see [MSBuild properties](../msbuild/msbuild-properties.md).  
   
  You can use properties to change the configuration of your build without having to change the project file. The `Condition` attribute of the `Property` element and the `PropertyGroup` element allows you to change the value of properties. For more information about [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] conditions, see [Conditions](../msbuild/msbuild-conditions.md).  
   
@@ -45,7 +26,7 @@ When you build projects, you frequently compile the same components with differe
   
 -   Use a `Condition` attribute in a `PropertyGroup` element similar to the following:  
   
-    ```  
+    ```xml  
     <PropertyGroup Condition="'$(Flavor)'=='DEBUG'">  
         <DebugType>full</DebugType>  
         <Optimize>no</Optimize>  
@@ -56,63 +37,63 @@ When you build projects, you frequently compile the same components with differe
   
 -   Use a `Condition` attribute in a `Property` element similar to the following:  
   
-    ```  
+    ```xml  
     <DebugType Condition="'$(Flavor)'=='DEBUG'">full</DebugType>  
     ```  
   
-## Specifying Properties on the Command Line  
- Once your project file is written to accept multiple configurations, you need to have the ability to change those configurations whenever you build your project. [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] provides this ability by allowing properties to be specified on the command line using the **/property** or **/p** switch.  
+## Specify properties on the command line  
+ Once your project file is written to accept multiple configurations, you need to have the ability to change those configurations whenever you build your project. [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] provides this ability by allowing properties to be specified on the command line using the **-property** or **-p** switch.  
   
 #### To set a project property at the command line  
   
--   Use the **/property** switch with the property and property value. For example:  
+-   Use the **-property** switch with the property and property value. For example:  
   
-    ```  
-    msbuild file.proj /property:Flavor=Debug  
+    ```cmd  
+    msbuild file.proj -property:Flavor=Debug  
     ```  
   
-     - or -  
+    or  
   
-    ```  
-    Msbuild file.proj /p:Flavor=Debug  
+    ```cmd  
+    Msbuild file.proj -p:Flavor=Debug  
     ```  
   
 #### To specify more than one project property at the command line  
   
--   Use the **/property** or **/p** switch multiple times with the property and property values, or use one **/property** or **/p** switch and separate multiple properties with semicolons (;). For example:  
+- Use the **-property** or **-p** switch multiple times with the property and property values, or use one **-property** or **-p** switch and separate multiple properties with semicolons (;). For example:  
   
-    ```  
-    msbuild file.proj /p:Flavor=Debug;Platform=x86  
-    ```  
+  ```cmd  
+  msbuild file.proj -p:Flavor=Debug;Platform=x86  
+  ```  
   
-     - or-  
+  or
   
-    ```  
-    msbuild file.proj /p:Flavor=Debug /p:Platform=x86  
-    ```  
+  ```cmd  
+  msbuild file.proj -p:Flavor=Debug -p:Platform=x86  
+  ```  
   
- Environment variables are also treated as properties and are automatically incorporated by [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. For more information about using environment variables, see [How to: Use Environment Variables in a Build](../msbuild/how-to-use-environment-variables-in-a-build.md).  
+  Environment variables are also treated as properties and are automatically incorporated by [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. For more information about using environment variables, see [How to: Use environment variables in a build](../msbuild/how-to-use-environment-variables-in-a-build.md).  
   
- The property value that is specified on the command line takes precedence over any value that is set for the same property in the project file, and that value in the project file takes precedence over the value in an environment variable.  
+  The property value that is specified on the command line takes precedence over any value that is set for the same property in the project file, and that value in the project file takes precedence over the value in an environment variable.  
   
- You can change this behavior by using the `TreatAsLocalProperty` attribute in a project tag. For property names that are listed with that attribute, the property value that's specified on the command line doesn't take precedence over the value in the project file. You can find an example later in this topic.  
+  You can change this behavior by using the `TreatAsLocalProperty` attribute in a project tag. For property names that are listed with that attribute, the property value that's specified on the command line doesn't take precedence over the value in the project file. You can find an example later in this topic.  
   
 ## Example  
  The following code example, the "Hello World" project, contains two new property groups that can be used to create a Debug build and a Release build.  
   
  To build the debug version of this project, type:  
   
-```  
-msbuild consolehwcs1.proj /p:flavor=debug  
+```cmd  
+msbuild consolehwcs1.proj -p:flavor=debug  
 ```  
   
  To build the retail version of this project, type:  
   
-```  
-msbuild consolehwcs1.proj /p:flavor=retail  
+```cmd  
+msbuild consolehwcs1.proj -p:flavor=retail  
 ```  
   
-```  
+```xml  
 <Project DefaultTargets = "Compile"  
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
   
@@ -169,11 +150,11 @@ msbuild consolehwcs1.proj /p:flavor=retail
   
  To build the project, enter the following command:  
   
-```  
-msbuild colortest.proj /t:go /property:Color=Green  
+```cmd  
+msbuild colortest.proj -t:go -property:Color=Green  
 ```  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"  
 ToolsVersion="4.0" TreatAsLocalProperty="Color">  
   
@@ -195,8 +176,8 @@ ToolsVersion="4.0" TreatAsLocalProperty="Color">
 -->  
 ```  
   
-## See Also  
-[MSBuild](../msbuild/msbuild1.md)  
- [MSBuild Concepts](../msbuild/msbuild-concepts.md)   
- [MSBuild Reference](../msbuild/msbuild-reference.md)   
- [Project Element (MSBuild)](../msbuild/project-element-msbuild.md)
+## See also  
+[MSBuild](../msbuild/msbuild.md)  
+ [MSBuild concepts](../msbuild/msbuild-concepts.md)   
+ [MSBuild reference](../msbuild/msbuild-reference.md)   
+ [Project element (MSBuild)](../msbuild/project-element-msbuild.md)

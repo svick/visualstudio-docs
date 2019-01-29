@@ -1,48 +1,28 @@
 ---
 title: "IDiaEnumSymbols::Next | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaEnumSymbols::Next method"
 ms.assetid: bfe5fe27-6a84-4392-910f-e325146d7552
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaEnumSymbols::Next
 Retrieves a specified number of symbols in the enumeration sequence.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT Next (   
-   ULONG        celt,  
-   IDiaSymbol** rgelt,  
-   ULONG*       pceltFetched  
+   ULONG        celt,  
+   IDiaSymbol** rgelt,  
+   ULONG*       pceltFetched  
 );  
 ```  
   
@@ -61,7 +41,7 @@ HRESULT Next ( 
   
 ## Example  
   
-```cpp#  
+```C++  
 IDiaEnumSymbols* pEnum  
 CComPtr< IDiaSymbol> pSym;  
 DWORD celt;  

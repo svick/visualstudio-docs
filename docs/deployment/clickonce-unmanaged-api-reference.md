@@ -1,13 +1,17 @@
 ---
 title: "ClickOnce Unmanaged API Reference | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+api_name: 
+  - "CleanOnlineAppCache"
+  - "GetDeploymentDataFromManifest"
+  - "LaunchApplication"
+api_location: 
+  - "dfshim.dll"
+api_type: 
+  - "COM"
+topic_type: 
+  - "apiref"
+ms.topic: "reference"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -19,32 +23,19 @@ helpviewer_keywords:
   - "CleanOnlineAppCacheW interface [ClickOnce unmanaged]"
   - "GetDeploymentDataFromManifest [ClickOnce unmanaged]"
 ms.assetid: ec002138-4054-456d-bcc1-79ac2f4a4fd7
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "cplusplus"
 ---
-# ClickOnce Unmanaged API Reference
+# ClickOnce unmanaged API reference
 [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] unmanaged public APIs from dfshim.dll.  
   
 ## CleanOnlineAppCache  
  Cleans or uninstalls all online applications from the [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] application cache.  
   
-### Return Value  
+### Return value  
  If successful, returns S_OK; otherwise, returns an HRESULT that represents the failure. If a managed exception occurs, returns 0x80020009 (DISP_E_EXCEPTION).  
   
 ### Remarks  
@@ -68,7 +59,7 @@ translation.priority.ht:
 |`pwzDeploymentProvider`|A pointer to a buffer to receive a NULL-terminated string that specifies the deployment provider from the manifest, if present. Otherwise, an empty string is returned.|LPWSTR|  
 |`pdwProviderBufferLength`|A pointer to a DWORD that is the length of the `pwzProviderBufferLength`.|LPDWORD|  
   
-### Return Value  
+### Return value  
  If successful, returns S_OK; otherwise, returns an HRESULT that represents the failure. Returns HRESULTFROMWIN32(ERROR_INSUFFICIENT_BUFFER) if a buffer is too small.  
   
 ### Remarks  
@@ -89,8 +80,8 @@ translation.priority.ht:
 |`data`|Reserved for future use. Must be NULL.|LPVOID|  
 |`flags`|Reserved for future use. Must be 0.|DWORD|  
   
-### Return Value  
+### Return value  
  If successful, returns S_OK; otherwise, returns an HRESULT that represents the failure. If a managed exception occurs, returns 0x80020009 (DISP_E_EXCEPTION).  
   
-## See Also  
+## See also  
  <xref:System.Deployment.Application.DeploymentServiceCom.CleanOnlineAppCache%2A>

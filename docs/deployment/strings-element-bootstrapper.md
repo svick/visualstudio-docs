@@ -1,13 +1,7 @@
 ---
 title: "&lt;Strings&gt; Element (Bootstrapper) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "MSBuild.GenerateBootstrapper.NoStringsForCulture"
   - "MSBuild.GenerateBootstrapper.ProductCultureNotFound"
@@ -19,31 +13,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<Strings> element [bootstrapper]"
 ms.assetid: d5ea3613-5fc9-4a11-bef3-46a01178bf60
-caps.latest.revision: 4
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;Strings&gt; Element (Bootstrapper)
+# &lt;Strings&gt; element (bootstrapper)
 Defines localized strings for product names, package names, and installation error messages.  
   
 ## Syntax  
   
-```  
+```xml  
 <Strings>  
     <String  
         Name  
@@ -52,7 +33,7 @@ Defines localized strings for product names, package names, and installation err
 </Strings>  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `Strings` element is a child of the `Package` element. It has no attributes.  
   
 ## String  
@@ -67,7 +48,7 @@ Defines localized strings for product names, package names, and installation err
 ## Example  
  The following code example specifies all of the English strings for the [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] installer.  
   
-```  
+```xml  
 <Strings>  
     <String Name="DisplayName">.NET Framework 2.0</String>  
     <String Name="Culture">en</String>  
@@ -86,5 +67,5 @@ Defines localized strings for product names, package names, and installation err
 </Strings>  
 ```  
   
-## See Also  
- [\<Package> Element](../deployment/package-element-bootstrapper.md)
+## See also  
+ [\<Package> element](../deployment/package-element-bootstrapper.md)

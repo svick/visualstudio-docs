@@ -1,13 +1,7 @@
 ---
 title: "&lt;assemblyIdentity&gt; Element (ClickOnce Application) | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "reference"
 f1_keywords: 
   - "urn:schemas-microsoft-com:asm.v2#assemblyIdentity"
 dev_langs: 
@@ -17,31 +11,18 @@ dev_langs:
 helpviewer_keywords: 
   - "<assemblyIdentity> element [ClickOnce application manifest]"
 ms.assetid: f48e9531-efac-4d11-8166-f63a5ece1ac5
-caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# &lt;assemblyIdentity&gt; Element (ClickOnce Application)
+# &lt;assemblyIdentity&gt; element (ClickOnce application)
 Identifies the application deployed in a [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] deployment.  
   
 ## Syntax  
   
-```  
+```xml
   
       <assemblyIdentity   
    name  
@@ -52,7 +33,7 @@ Identifies the application deployed in a [!INCLUDE[ndptecclick](../deployment/in
 />  
 ```  
   
-## Elements and Attributes  
+## Elements and attributes  
  The `assemblyIdentity` element is required. It contains no child elements and has the following attributes.  
   
 |Attribute|Description|  
@@ -70,7 +51,7 @@ Identifies the application deployed in a [!INCLUDE[ndptecclick](../deployment/in
   
 ### Code  
   
-```  
+```xml  
 <asmv1:assemblyIdentity   
   name="My Application Deployment.exe"   
   version="1.0.0.0"   
@@ -80,6 +61,6 @@ Identifies the application deployed in a [!INCLUDE[ndptecclick](../deployment/in
   type="win32" />  
 ```  
   
-## See Also  
- [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md)   
- [\<assemblyIdentity> Element](../deployment/assemblyidentity-element-clickonce-deployment.md)
+## See also  
+ [ClickOnce application manifest](../deployment/clickonce-application-manifest.md)   
+ [\<assemblyIdentity> element](../deployment/assemblyidentity-element-clickonce-deployment.md)

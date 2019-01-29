@@ -1,46 +1,28 @@
 ---
 title: "VSCT XML Schema Conditional Attributes | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 helpviewer_keywords: 
   - "VSCT XML schema elements, conditional attributes"
   - "conditional attributes (VSCT XML schema)"
 ms.assetid: 754d4f32-319b-44c9-915f-f7c60e53222e
-caps.latest.revision: 5
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
-# VSCT XML Schema Conditional Attributes
-Conditional attributes may be applied to all lists and items. Logical operators and symbol expansion expressions evaluate to true or false. If true, the associated list or item is included in the resulting output.  
+# VSCT XML schema conditional attributes
+You can apply conditional attributes to all lists and items. Logical operators and symbol expansion expressions evaluate to true or false. If true, the associated list or item is included in the resulting output.  
   
- Token expansions can be tested against other token expansions or constants. The function Defined() is used to test whether a particular name has been defined, even if it has no value.  
+ You can test token expansions against other token expansions or constants. The function `Defined()` tests whether a particular name has been defined, even if it has no value.  
   
  When a Condition attribute is applied to a list, the condition is applied to every child element in the list. If a child element itself contains a Condition attribute, then its condition is combined with the parent expression by an AND operation.  
   
- The values 1, ‘1’ and ‘true’ are evaluated as true, and 0, ‘0’ and ‘false’ are evaluated as false.  
+ The values 1, '1' and 'true' are evaluated as true, and 0, '0' and 'false' are evaluated as false.  
   
 ## Operators  
- The following operators may be used to evaluate conditional expressions.  
+ Use the following operators to evaluate conditional expressions.  
   
 |Operator|Definition|  
 |--------------|----------------|  
@@ -52,34 +34,34 @@ Conditional attributes may be applied to all lists and items. Logical operators 
   
 ## Examples  
   
-```  
-<Menu Condition="Defined(DEBUG)" …  
+```xml  
+<Menu Condition="Defined(DEBUG)" ...  
 </Menu>  
   
-<Menu Condition="%(SKU_MODE) = 'Demo'" …  
+<Menu Condition="%(SKU_MODE) = 'Demo'" ...  
 </Menu>  
   
 <Menus Condition="Defined(DEBUG)">  
-    <Menu …  
-    </Menu>  
+    <Menu ...  
+    </Menu>  
 </Menus>  
   
 <Menus Condition="Defined(DEMO_SKU)">  
-    <Menus Condition="!Defined(DEBUG)">  
-        <Menu …  
-        </Menu>  
-    </Menus>  
+    <Menus Condition="!Defined(DEBUG)">  
+        <Menu ...  
+        </Menu>  
+    </Menus>  
   
-    <Menu …  
-    </Menu>  
+    <Menu ...  
+    </Menu>  
 </Menus>  
   
 <Menus Condition="(Defined(DEMO_SKU) or Defined(SAMPLE_SKU))   
 and !Defined(DEBUG)">  
-    <Menu …  
-    </Menu>  
+    <Menu ...  
+    </Menu>  
 </Menus>  
 ```  
   
-## See Also  
- [Visual Studio Command Table (.Vsct) Files](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## See also  
+ [Visual Studio command table (.Vsct) files](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

@@ -1,45 +1,20 @@
 ---
 title: "Using the DebuggerDisplay Attribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
+ms.date: "01/09/2019"
+ms.topic: "conceptual"
 helpviewer_keywords: 
-  - "attributes [C#], debugger"
+  - "attributes, debugger"
   - "DebuggerDisplay attribute"
   - "DebuggerDisplayAttribute class"
 ms.assetid: f4eb7c76-af4e-493b-9ab6-9cb05949d9b3
-caps.latest.revision: 47
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# Using the DebuggerDisplay Attribute
-The [DebuggerDisplayAttribute Class](http://msdn.microsoft.com/Library/918cc8fc-3990-4250-b5c0-7e532602ddb4) controls how an object, property, or field is displayed in the debugger variable windows. This attribute can be applied to types, delegates, properties, fields, and assemblies.  
+# Using the DebuggerDisplay Attribute (C#, Visual Basic, C++/CLI)
+The <xref:System.Diagnostics.DebuggerDisplayAttribute> controls how an object, property, or field is displayed in the debugger variable windows. This attribute can be applied to types, delegates, properties, fields, and assemblies.  
   
  The `DebuggerDisplay` attribute has a single argument, which is a string to be displayed in the value column for instances of the type. This string can contain braces (`{` and `}`). Text within a pair of braces is evaluated as a field, property or method.  
   
@@ -49,11 +24,14 @@ The [DebuggerDisplayAttribute Class](http://msdn.microsoft.com/Library/918cc8fc-
   
 > [!IMPORTANT]
 >  If the **Show raw structure of objects in variables windows** check box is selected in the **Tools /Options / Debugging** dialog box, then the `DebuggerDisplay` attribute is ignored.  
+
+> [!NOTE]
+> For native code, this attribute is supported only in C++/CLI code.
   
  The following table shows some possible uses of the `DebuggerDisplay` attribute and example outputs.  
   
-|Attribute|Output appearing in the **Value** column)|  
-|---------------|------------------------------------------------|  
+|Attribute|Output appearing in the Value column|  
+|---------------| - |  
 |`[DebuggerDisplay("x = {x} y = {y}")]`<br /><br /> Used on a type with fields `x` and `y`.|`x = 5 y = 18`|  
 |`[DebuggerDisplay("String value is {getString()}")]`Parameter syntax can vary between languages. Therefore, use it with care.|`String value is [5, 6, 6]`|  
   
@@ -68,7 +46,7 @@ The [DebuggerDisplayAttribute Class](http://msdn.microsoft.com/Library/918cc8fc-
   
  To build autoexp.cs, open up a Developer Command Prompt for VS2015, and run the following commands  
   
-```  
+```cmd
 cd <directory containing autoexp.cs>  
 csc /t:library autoexp.cs  
 ```  
@@ -78,19 +56,19 @@ csc /t:library autoexp.cs
 ## Using Expressions in DebuggerDisplay  
  Although you can use a general expression between the braces in a DebuggerDisplay attribute, this practice is not recommended.  
   
- A general expression in DebuggerDisplay has implicit access to the `this` pointer for the current instance of the target type only. The expression has no access to aliases, locals, or pointers. If the expression references properties, attributes on those properties are not processed. For example, the C# code `[DebuggerDisplay("Object {count - 2}"`  would display `Object 6` if the field `count` was 8.  
+ A general expression in DebuggerDisplay has implicit access to the `this` pointer for the current instance of the target type only. The expression has no access to aliases, locals, or pointers. If the expression references properties, attributes on those properties are not processed. For example, the C# code `[DebuggerDisplay("Object {count - 2}")]`  would display `Object 6` if the field `count` was 8.  
   
  Using expressions in DebuggerDisplay can lead to the following issues:  
   
--   Evaluating expressions is the most expensive operation in the debugger and the expression is evaluated each time it is displayed. This can cause performance issues in stepping through code. For example, a complex expression that is used to display the values in a collection or list can be very slow when the number of elements is large.  
+- Evaluating expressions is the most expensive operation in the debugger and the expression is evaluated each time it is displayed. This can cause performance issues in stepping through code. For example, a complex expression that is used to display the values in a collection or list can be very slow when the number of elements is large.  
   
--   Expressions are evaluated by the expression evaluator of the language of the current stack frame and not by the evaluator of the language in which the expression was written. This can cause unpredictable results when the languages are different.  
+- Expressions are evaluated by the expression evaluator of the language of the current stack frame and not by the evaluator of the language in which the expression was written. This can cause unpredictable results when the languages are different.  
   
--   Evaluating an expression can change the state of the application. For example, an expression that sets the value of a property mutates the property value in the executing code.  
+- Evaluating an expression can change the state of the application. For example, an expression that sets the value of a property mutates the property value in the executing code.  
   
- One way to reduce the possible problems of expression evaluation is by creating a private property that performs the operation and returns a string. The DebuggerDisplay attribute can then display the value of that private property. The following example implements this pattern:  
+  One way to reduce the possible problems of expression evaluation is by creating a private property that performs the operation and returns a string. The DebuggerDisplay attribute can then display the value of that private property. The following example implements this pattern:  
   
-```c#  
+```csharp  
 [DebuggerDisplay("{DebuggerDisplay,nq}")]  
 public sealed class MyClass   
 {      
@@ -100,11 +78,12 @@ public sealed class MyClass
    {         
         get  
         {  
-             return string.Format("("Object {0}", count - 2);  
+             return string.Format("Object {0}", count - 2);  
         }      
     }  
 }  
 ```  
+The ",nq" suffix tells the expression evaluator to remove the quotes when displaying the final value (nq = no quotes). 
   
 ## Example  
  The following code example shows how to use `DebuggerDisplay`, together with `DebuggerBrowseable` and `DebuggerTypeProxy`. When viewed in a debugger variables window, such as the **Watch** window, it produces an expansion that looks like this:  
@@ -114,7 +93,7 @@ public sealed class MyClass
 |Key|"three"|object {string}|  
 |Value|3|object {int}|  
   
-```c#  
+```csharp  
 [DebuggerDisplay("{value}", Name = "{key}")]  
 internal class KeyValuePairs  
 {  
@@ -160,7 +139,9 @@ class MyHashtable
     public MyHashtable()  
     {  
         hashtable = new Hashtable();    
-    }    private string DebuggerDisplay    {        get { return "Count = " + hashtable.Count); }    }  
+    }
+    
+    private string DebuggerDisplay    {        get { return "Count = " + hashtable.Count); }    }  
   
     private class HashtableDebugView  
     {  
@@ -192,5 +173,6 @@ class MyHashtable
   
 ## See Also  
  [Using DebuggerTypeProxy Attribute](../debugger/using-debuggertypeproxy-attribute.md)   
- [Create custom views of .managed objects](../debugger/create-custom-views-of-dot-managed-objects.md)   
- [Enhancing Debugging with the Debugger Display Attributes](http://msdn.microsoft.com/Library/72bb7aa9-459b-42c4-9163-9312fab4c410)
+ [Create custom views of managed objects](../debugger/create-custom-views-of-dot-managed-objects.md)   
+ [Format specifiers in C#](../debugger/format-specifiers-in-csharp.md)   
+ [Enhancing Debugging with the Debugger Display Attributes](/dotnet/framework/debug-trace-profile/enhancing-debugging-with-the-debugger-display-attributes)

@@ -1,13 +1,7 @@
 ---
 title: "How to: Debug a ClickOnce Application with Restricted Permissions | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -17,27 +11,13 @@ helpviewer_keywords:
   - "ClickOnce deployment, debugging"
   - "ClickOnce applications, debugging"
 ms.assetid: 6991ea91-5253-451b-923d-22273a3d38b1
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+author: mikejo5000
+ms.author: mikejo
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
-# How to: Debug a ClickOnce Application with Restricted Permissions
+# How to: Debug a ClickOnce application with restricted permissions
 As a developer, you most likely are running your development computer with Full Trust permissions, so you will not see the same security exceptions when debugging a ClickOnce application that the end user may see when running it with restricted permissions.  
   
  In order to catch these exceptions, you need to debug the application with the same permissions as the end user. Debugging with restricted permissions can be enabled on the **Security** page of the **Project Designer**.  
@@ -73,7 +53,7 @@ As a developer, you most likely are running your development computer with Full 
 6.  In the **Debug this application as if it were downloaded from the following URL** text box, enter a URL or network path.  
   
 ## See Also  
- [How to: Set Custom Permissions for a ClickOnce Application](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md)   
- [Securing ClickOnce Applications](../deployment/securing-clickonce-applications.md)   
- [Code Access Security for ClickOnce Applications](../deployment/code-access-security-for-clickonce-applications.md)   
- [Securing ClickOnce Applications](../deployment/securing-clickonce-applications.md)
+ [How to: Set custom permissions for a ClickOnce application](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md)   
+ [Secure ClickOnce applications](../deployment/securing-clickonce-applications.md)   
+ [Code access security for ClickOnce applications](../deployment/code-access-security-for-clickonce-applications.md)   
+ [Secure ClickOnce applications](../deployment/securing-clickonce-applications.md)

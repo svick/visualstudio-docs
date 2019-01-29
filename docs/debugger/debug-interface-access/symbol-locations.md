@@ -1,38 +1,18 @@
 ---
 title: "Symbol Locations | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "LocationType values"
   - "symbols [DIA SDK], locations"
 ms.assetid: 7c8cd8fe-169e-4161-9cff-5e9015984add
-caps.latest.revision: 7
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # Symbol Locations
 Most symbols have a defined location within the image file. A symbol's location is specified with a value from the [LocationType Enumeration](../../debugger/debug-interface-access/locationtype.md) enumeration. The symbol may support additional properties depending on its location.  

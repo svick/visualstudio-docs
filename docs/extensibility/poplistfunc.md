@@ -1,35 +1,17 @@
 ---
 title: "POPLISTFUNC | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 f1_keywords: 
   - "POPDIRLISTFUNC"
 helpviewer_keywords: 
   - "POPLISTFUNC callback function"
 ms.assetid: b2199fd5-d707-4628-92dd-e2a01e2f507a
-caps.latest.revision: 16
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # POPLISTFUNC
 This callback is supplied to the [SccPopulateList](../extensibility/sccpopulatelist-function.md) by the IDE and is used by the source control plug-in to update a list of files or directories (also supplied to the `SccPopulateList` function).  
@@ -39,12 +21,12 @@ This callback is supplied to the [SccPopulateList](../extensibility/sccpopulatel
 ## Signature  
  The source control plug-in modifies the list by calling an IDE-implemented function with the following prototype:  
   
-```cpp#  
+```cpp  
 typedef BOOL (*POPLISTFUNC) (  
-   LPVOID pvCallerData,  
-   BOOL fAddRemove,  
-   LONG nStatus,  
-   LPSTR lpFileName  
+   LPVOID pvCallerData,  
+   BOOL fAddRemove,  
+   LONG nStatus,  
+   LPSTR lpFileName  
 );  
 ```  
   
@@ -61,7 +43,7 @@ typedef BOOL (*POPLISTFUNC) (
  lpFileName  
  Full directory path of the file name to add or delete from the list.  
   
-## Return Value  
+## Return value  
   
 |Value|Description|  
 |-----------|-----------------|  
@@ -74,8 +56,8 @@ typedef BOOL (*POPLISTFUNC) (
 > [!NOTE]
 >  The `SCC_CAP_POPULATELIST` capability bit is required for Visual Studio.  
   
-## See Also  
- [Callback Functions Implemented by the IDE](../extensibility/callback-functions-implemented-by-the-ide.md)   
- [Source Control Plug-ins](../extensibility/source-control-plug-ins.md)   
+## See also  
+ [Callback functions implemented by the IDE](../extensibility/callback-functions-implemented-by-the-ide.md)   
+ [Source control plug-ins](../extensibility/source-control-plug-ins.md)   
  [SccPopulateList](../extensibility/sccpopulatelist-function.md)   
- [File Status Code](../extensibility/file-status-code-enumerator.md)
+ [File status code](../extensibility/file-status-code-enumerator.md)

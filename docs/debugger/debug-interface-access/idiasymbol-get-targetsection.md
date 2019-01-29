@@ -1,46 +1,26 @@
 ---
 title: "IDiaSymbol::get_targetSection | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 dev_langs: 
   - "C++"
 helpviewer_keywords: 
   - "IDiaSymbol::get_targetSection method"
 ms.assetid: 95382395-da41-4aa8-87f1-5b03da128565
-caps.latest.revision: 8
 author: "mikejo5000"
 ms.author: "mikejo"
-manager: "ghogen"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: jillfra
+ms.workload: 
+  - "multiple"
 ---
 # IDiaSymbol::get_targetSection
 Retrieves the address section of a thunk target.  
   
 ## Syntax  
   
-```cpp#  
+```C++  
 HRESULT get_targetSection (   
-   DWORD* pRetVal  
+   DWORD* pRetVal  
 );  
 ```  
   

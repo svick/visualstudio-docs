@@ -1,52 +1,36 @@
 ---
 title: "Image Library Viewer | Microsoft Docs"
-ms.custom: ""
 ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.assetid: 9d9c7fbb-ebae-4b20-9dd8-3c9070c0d0d1
-caps.latest.revision: 6
+author: "gregvanl"
 ms.author: "gregvanl"
-manager: "ghogen"
-translation.priority.mt: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: jillfra
+ms.workload: 
+  - "vssdk"
 ---
 # Image Library Viewer
 The Visual Studio Image Library Viewer tool can load and search image manifests, allowing the user to manipulate them in the same way Visual Studio would. The user can alter background, sizes, DPI, high contrast, and other settings. The tool also displays loading information for each image manifest and displays source information for each image in the image manifest. This tool is useful for:  
   
-1.  Diagnosing errors  
+1. Diagnosing errors  
   
-2.  Ensuring attributes are set correctly in custom image manifests  
+2. Ensuring attributes are set correctly in custom image manifests  
   
-3.  Searching for images in the Visual Studio Image Catalog so that a Visual Studio extension can use images that fit the style of Visual Studio  
+3. Searching for images in the Visual Studio Image Catalog so that a Visual Studio extension can use images that fit the style of Visual Studio  
   
- ![Image Library Viewer Hero](../../extensibility/internals/media/image-library-viewer-hero.png "Image Library Viewer Hero")  
+   ![Image Library Viewer Hero](../../extensibility/internals/media/image-library-viewer-hero.png "Image Library Viewer Hero")  
   
- **Image moniker**  
+   **Image moniker**  
   
- An image moniker (or moniker for short) is a GUID:ID pair that uniquely identifies an image asset or image list asset in the Image Library.  
+   An image moniker (or moniker for short) is a GUID:ID pair that uniquely identifies an image asset or image list asset in the Image Library.  
   
- **Image manifest files**  
+   **Image manifest files**  
   
- Image manifest (.imagemanifest) files are XML files that define a set of image assets, the monikers that represent those assets, and the real image or images that represent each asset. Image manifests can define standalone images or image lists for legacy UI support. Additionally, there are attributes that can be set either on the asset or on the individual images behind each asset to change when and how those assets are displayed.  
+   Image manifest (.imagemanifest) files are XML files that define a set of image assets, the monikers that represent those assets, and the real image or images that represent each asset. Image manifests can define standalone images or image lists for legacy UI support. Additionally, there are attributes that can be set either on the asset or on the individual images behind each asset to change when and how those assets are displayed.  
   
- **Image manifest schema**  
+   **Image manifest schema**  
   
- A complete image manifest looks like this:  
+   A complete image manifest looks like this:  
   
 ```xml  
 <ImageManifest>  
@@ -140,8 +124,8 @@ The Visual Studio Image Library Viewer tool can load and search image manifests,
 |||  
 |-|-|  
 |**Attribute**|**Definition**|  
-|Uri|[Required] A URI that defines where the image can be loaded from. It can be one of the following:<br /><br /> -     A [Pack URI](http://msdn.microsoft.com/en-US/library/aa970069\(v=vs.100\).aspx) using the application:/// authority<br /><br /> - An absolute component resource reference<br /><br /> - A path to a file containing a native resource|  
-|Background|[Optional] Indicates what on kind of background the source is intended to be used.<br /><br /> It can be one of the following:<br /><br /> - *Light*: The source can be used on a light background.<br /><br /> - *Dark*: The source can be used on a dark background.<br /><br /> - *HighContrast*: The source can be used on any background in High Contrast mode.<br /><br /> - *HighContrastLight*: The source can be used on a light background in High Contrast mode.<br /><br /> -*HighContrastDark*: The source can be used on a dark background in High Contrast mode.<br /><br /> If the **Background** attribute is omitted, the source can be used on any background.<br /><br /> If **Background** is *Light*, *Dark*, *HighContrastLight*, or *HighContrastDark*, the source’s colors are never inverted. If **Background** is omitted or set to *HighContrast*, the inversion of the source’s colors is controlled by the image’s **AllowColorInversion** attribute.|  
+|Uri|[Required] A URI that defines where the image can be loaded from. It can be one of the following:<br /><br /> -     A [Pack URI](/dotnet/framework/wpf/app-development/pack-uris-in-wpf) using the application:/// authority<br /><br /> - An absolute component resource reference<br /><br /> - A path to a file containing a native resource|  
+|Background|[Optional] Indicates what on kind of background the source is intended to be used.<br /><br /> It can be one of the following:<br /><br /> - *Light*: The source can be used on a light background.<br /><br /> - *Dark*: The source can be used on a dark background.<br /><br /> - *HighContrast*: The source can be used on any background in High Contrast mode.<br /><br /> - *HighContrastLight*: The source can be used on a light background in High Contrast mode.<br /><br /> -*HighContrastDark*: The source can be used on a dark background in High Contrast mode.<br /><br /> If the **Background** attribute is omitted, the source can be used on any background.<br /><br /> If **Background** is *Light*, *Dark*, *HighContrastLight*, or *HighContrastDark*, the source's colors are never inverted. If **Background** is omitted or set to *HighContrast*, the inversion of the source's colors is controlled by the image's **AllowColorInversion** attribute.|  
   
  A \<Source> element can have exactly one of the following optional subelements:  
   
@@ -188,19 +172,19 @@ The Visual Studio Image Library Viewer tool can load and search image manifests,
 ## How to use the tool  
  **Validating a custom image manifest**  
   
- To create a custom manifest, we recommend that you use the ManifestFromResources tool to autogenerate the manifest. To validate the custom manifest, launch the Image Library Viewer and select File > Set Paths… to open the Search Directories dialog. The tool will use the search directories to load image manifests, but it will also use it them to find the .dll files that contain the images in a manifest, so make sure to include both the manifest and DLL directories in this dialog.  
+ To create a custom manifest, we recommend that you use the ManifestFromResources tool to autogenerate the manifest. To validate the custom manifest, launch the Image Library Viewer and select File > Set Paths... to open the Search Directories dialog. The tool will use the search directories to load image manifests, but it will also use it them to find the .dll files that contain the images in a manifest, so make sure to include both the manifest and DLL directories in this dialog.  
   
  ![Image Library Viewer Search](../../extensibility/internals/media/image-library-viewer-search.png "Image Library Viewer Search")  
   
- Click **Add…** to select new search directories to search for manifests and their corresponding DLLs. The tool will remember these search directories, and they can be turned on or off by checking or unchecking a directory.  
+ Click **Add...** to select new search directories to search for manifests and their corresponding DLLs. The tool will remember these search directories, and they can be turned on or off by checking or unchecking a directory.  
   
- By default, the tool will attempt to find the Visual Studio install directory and add those directories to the search directories list. You can manually add directories the tool doesn’t find.  
+ By default, the tool will attempt to find the Visual Studio install directory and add those directories to the search directories list. You can manually add directories the tool doesn't find.  
   
  Once all the manifests are loaded, the tool can be used to toggle **background** colors, **DPI**, **high contrast**, or **grayscaling** for the images so that a user can visually inspect image assets to verify they are being rendered correctly for various settings.  
   
  ![Image Library Viewer Background](../../extensibility/internals/media/image-library-viewer-background.png "Image Library Viewer Background")  
   
- The background color can be set to Light, Dark, or a custom value. Selecting “Custom Color” will open a color selection dialog and add that custom color to the bottom of the background combo box for easy recall later.  
+ The background color can be set to Light, Dark, or a custom value. Selecting "Custom Color" will open a color selection dialog and add that custom color to the bottom of the background combo box for easy recall later.  
   
  ![Image Library Viewer Custom Color](../../extensibility/internals/media/image-library-viewer-custom-color.png "Image Library Viewer Custom Color")  
   
@@ -208,7 +192,7 @@ The Visual Studio Image Library Viewer tool can load and search image manifests,
   
  ![Image Library Viewer Image Details](../../extensibility/internals/media/image-library-viewer-image-details.png "Image Library Viewer Image Details")  
   
- The information displayed for each image source includes what kind of background to display it on, whether it can be themed or supports High Contrast, what sizes it’s valid for or whether it’s size-neutral, and whether the image comes from a native assembly.  
+ The information displayed for each image source includes what kind of background to display it on, whether it can be themed or supports High Contrast, what sizes it's valid for or whether it's size-neutral, and whether the image comes from a native assembly.  
   
  ![Image Library Viewer Can Theme](../../extensibility/internals/media/image-library-viewer-can-theme.png "Image Library Viewer Can Theme")  
   
@@ -222,7 +206,7 @@ The Visual Studio Image Library Viewer tool can load and search image manifests,
   
  ![Image Library Viewer Filter](../../extensibility/internals/media/image-library-viewer-filter.png "Image Library Viewer Filter")  
   
- When searching for image monikers in existing manifests, we recommend that you search for and use only the Visual Studio Image Catalog’s monikers, other intentionally publicly accessible monikers, or your own custom monikers. If you use nonpublic monikers, custom UI might be broken or have its images changed in unexpected ways if or when those nonpublic monikers and images are changed or updated.  
+ When searching for image monikers in existing manifests, we recommend that you search for and use only the Visual Studio Image Catalog's monikers, other intentionally publicly accessible monikers, or your own custom monikers. If you use nonpublic monikers, custom UI might be broken or have its images changed in unexpected ways if or when those nonpublic monikers and images are changed or updated.  
   
  Additionally, searching by GUID is possible. This type of search is useful for filtering down the list to a single manifest, or single subsection of a manifest if that manifest contains multiple GUIDs.  
   
